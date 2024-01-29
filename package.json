@@ -4,7 +4,8 @@
   "description": "Structure de départ pour le projet Site de la TIM 2024",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "dart-sass --watch ressources/scss:public/liaisons/css"
   },
   "keywords": [],
   "author": "",

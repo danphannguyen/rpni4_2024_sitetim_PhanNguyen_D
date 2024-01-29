@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <title>@yield('title')</title>
+        <link rel="stylesheet" href="../public/liaisons/css/styles.css">
         <meta charset="utf-8">
     </head>
     <body>
