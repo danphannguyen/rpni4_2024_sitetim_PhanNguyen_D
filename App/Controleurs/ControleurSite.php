@@ -22,5 +22,11 @@ class ControleurSite
         $tDonnees = array("contenu"=>"Je suis le contenu de la page à propos...");
         echo App::getBlade()->run('apropos',$tDonnees);
     }
+
+    public function contact():void
+    {
+        $tDonnees = array("contenu"=>"Je suis le contenu de la page contact...");
+        echo App::getBlade()->run('contact',$tDonnees);
+    }
 }
 

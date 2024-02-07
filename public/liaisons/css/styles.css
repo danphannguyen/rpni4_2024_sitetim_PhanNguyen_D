@@ -230,8 +230,60 @@ h3--desktop,
 }
 
 /****** MODULES ******/
-h1 {
+/* h1 {
   color: red !important;
+} */
+
+:root {
+  --clr--bgLoader: #d1d1d1;
+  --clr-text: #080808;
+  --clr-sidetext: #6b6b6b;
+  --clr-background: #fafafa;
+  --clr-foreground: #ababab;
+  --clr-misc: #c2c2c2;
+  --clr-active: #91a6FF;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+*:focus-visible {
+  outline: 2px red solid !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  /* background-color: var(--clr-background) !important; */
+  /* color: var(--clr-text) !important; */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=styles.css.map */
