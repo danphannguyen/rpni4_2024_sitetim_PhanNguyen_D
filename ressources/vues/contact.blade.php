@@ -12,10 +12,10 @@
     <br>
     <br>
 
-    <form action="" id="contactForm">
+    <form action="index.php?controleur=message&action=inserer" id="contactForm" method="post">
         <div class="contactInput">
             <label for="fullname">Nom Complet*</label>
-            <input type="text" id="fullname" name="fullname" required>
+            <input type="text" id="fullname" name="prenom_nom" required>
         </div>
 
         <div class="contactInput">
@@ -27,13 +27,13 @@
             <label for="">Destinataires*</label>
 
             <div class="contactDestRow">
-                <input type="radio" name="destinataires" value="1">SYLVAIN LAMOUREUX</input>
-                <input type="radio" name="destinataires" value="2">ÈVE FÉVRIER</input>
+                <input type="radio" name="responsable_id" value="1">SYLVAIN LAMOUREUX</input>
+                <input type="radio" name="responsable_id" value="2">ÈVE FÉVRIER</input>
             </div>
 
             <div class="contactDestRow">
-                <input type="radio" name="destinataires" value="3">PASCAL LAROSE</input>
-                <input type="radio" name="destinataires" value="4">BENOÎT FRIGON</input>
+                <input type="radio" name="responsable_id" value="3">PASCAL LAROSE</input>
+                <input type="radio" name="responsable_id" value="4">BENOÎT FRIGON</input>
             </div>
         </div>
 
@@ -45,7 +45,7 @@
 
         <div class="contactInput">
             <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
+            <textarea id="message" name="contenu" required></textarea>
         </div>
 
         <button type="submit">Envoyer</button>

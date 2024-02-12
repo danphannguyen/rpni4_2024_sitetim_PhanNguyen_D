@@ -1,0 +1,1 @@
+Ceci est le contenu du courriel de message en version text: {{ $contenuCourriel }} Au plaisir.

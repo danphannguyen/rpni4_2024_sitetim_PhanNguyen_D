@@ -1,9 +1,12 @@
 <?php
+
 declare(strict_types=1);
+
 namespace App;
 
 
 use App\Controleurs\ControleurSite;
+use App\Controleurs\ControleurMessage;
 use \PDO;
 use eftec\bladeone\BladeOne;
 
@@ -23,18 +26,18 @@ class App
         $this->routerRequete();
     }
 
-    public static function getPDO():PDO
+    public static function getPDO(): PDO
     {
         // Retourne l'objet de connexion et si nécessaire l'instancie
         $pdo = null;
-        if (!isset(App::$refPdo)){
-            if($_SERVER['SERVER_NAME'] == 'localhost') {
+        if (!isset(App::$refPdo)) {
+            if ($_SERVER['SERVER_NAME'] == 'localhost') {
                 // Paramètres de connexion d'un BD local dans MAMP
                 $serveur = 'localhost';
                 $utilisateur = 'root';
                 $motDePasse = 'root'; // Pas mettre de mot de passe avec XAMP
-                $nomBd = 'maBdRpni4'; // À modifier...
-            }else{
+                $nomBd = 'rpni4_siteTim_db'; // À modifier...
+            } else {
                 // Paramètres de connexion d'une BD sur le serveur TIMUNIX
                 // À modifier...
                 $serveur = 'localhost';
@@ -50,26 +53,26 @@ class App
             $pdo->exec("SET NAMES utf8");
             // Affectation des attributs de la connexion : Obtenir des rapports d'erreurs et d'exception avec errorInfo()
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        }else{
+        } else {
             $pdo = App::$refPdo;
         }
         return $pdo;
     }
 
-    public static function getBlade():BladeOne
+    public static function getBlade(): BladeOne
     {
         // Retourne l'objet BladeOne et si nécessaire l'instancie
         // https://packagist.org/packages/eftec/bladeone
-        if(App::$refBlade === null){
+        if (App::$refBlade === null) {
             $cheminDossierVues = '../ressources/vues';
             $cheminDossierCache = '../ressources/cache';
-            App::$refBlade = new BladeOne($cheminDossierVues,$cheminDossierCache,BladeOne::MODE_AUTO);
+            App::$refBlade = new BladeOne($cheminDossierVues, $cheminDossierCache, BladeOne::MODE_AUTO);
         }
         return App::$refBlade;
     }
 
 
-    public function routerRequete():void
+    public function routerRequete(): void
     {
         // Anatomie d'une URL. Exemple pour accéder à la page à propos:
         // Exemple:    http://localhost:8888/index.php?controleur=site&action=apropos
@@ -82,17 +85,17 @@ class App
         $objControleur = null;
 
         // Déterminer le controleur responsable de traiter la requête
-        if (isset($_GET['controleur'])){
+        if (isset($_GET['controleur'])) {
             $urlControleur = $_GET['controleur'];
         }
 
         // Déterminer l'action du controleur
-        if (isset($_GET['action'])){
+        if (isset($_GET['action'])) {
             $urlAction = $_GET['action'];
         }
 
         // Instantier le bon controleur selon la page demandée
-        if ($urlControleur === 'site'){
+        if ($urlControleur === 'site') {
             $objControleur = new ControleurSite();
             switch ($urlAction) {
                 case 'accueil':
@@ -107,9 +110,19 @@ class App
                 default:
                     echo 'Erreur 404 - Action invalide';
             }
-        }else{
-                echo 'Erreur 404 - Controleur invalide';
-            }
         }
 
+        elseif ($urlControleur === 'message') {
+            $objControleur = new ControleurMessage();
+            switch ($urlAction) {
+                case 'inserer':
+                    $objControleur->inserer();
+                    break;
+                default:
+                    echo 'Erreur 404 - Action invalide';
+            }
+        } else {
+            echo 'Erreur 404 - Controleur invalide';
+        }
+    }
 }
