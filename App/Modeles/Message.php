@@ -21,7 +21,6 @@ class Message
     private int $consentement = 0;
     private string $sujet = '';
     private string $contenu = '';
-    private string $dateheure_creation = '';
     private int $responsable_id = 0;
 
     public function __construct()
@@ -66,11 +65,6 @@ class Message
         $this->contenu = $contenu;
     }
 
-    public function setDateHeureCreation(string $dateheure_creation): void
-    {
-        $this->dateheure_creation = $dateheure_creation;
-    }
-
     public function setResponsableId(int $responsable_id): void
     {
         $this->responsable_id = $responsable_id;
@@ -94,7 +88,7 @@ class Message
 
     public function envoyerCourriel(){
         // PRÉPARER LA VUE DU COURRIEL
-        $contenu = $_POST['contenu'];
+        $contenu = $this->contenu;
         $tDonnees = ["contenuCourriel" => $contenu];
         $vueTexte = App::getBlade()->run('courriels.messages.courrielTexte', $tDonnees); // Vue par défaut pour client low tech
         $vueHtml =  App::getBlade()->run('courriels.messages.courrielHtml' , $tDonnees); // Vue utilisée si supportée par le client

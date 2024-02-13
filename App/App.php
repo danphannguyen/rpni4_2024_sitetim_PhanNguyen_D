@@ -77,6 +77,8 @@ class App
         // Anatomie d'une URL. Exemple pour accéder à la page à propos:
         // Exemple:    http://localhost:8888/index.php?controleur=site&action=apropos
 
+        session_start();
+
         // Valeurs par défaut
         $urlControleur = 'site';
         $urlAction = 'accueil';
