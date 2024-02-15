@@ -18,7 +18,7 @@ class Message
     private string $prenom_nom = '';
     private string $courriel = '';
     private string $telephone = '';
-    private int $consentement = 0;
+    private bool $consentement = false;
     private string $sujet = '';
     private string $contenu = '';
     private int $responsable_id = 0;
@@ -50,7 +50,7 @@ class Message
         $this->telephone = $telephone;
     }
 
-    public function setConsentement(int $consentement): void
+    public function setConsentement(bool $consentement): void
     {
         $this->consentement = $consentement;
     }

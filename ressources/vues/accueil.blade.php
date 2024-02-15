@@ -9,5 +9,12 @@
     <p>{{$contenu}}</p>
 @endsection
 
+@section('script')
+<script>
+    document.querySelector("body").classList.add("dark-theme")
+    document.querySelector("body").classList.remove("light-theme")
+</script>
+@endsection
+
 
 

@@ -27,9 +27,9 @@ class ControleurMessage
 
         $validation = new Validation();
 
-        $regexTexte = "/^[a-zA-ZÀ-ÿ'-]+$/u";
+        $regexTexte = "/^[a-zA-ZÀ-ÿ'\s-]+$/u";
         $regexCourriel = "/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/";
-        $regexTelephone = "/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/";
+        $regexTelephone = "/^\d{3}[\s-]?\d{3}[\s-]?\d{4}$/";
 
 
         $tPrenom = $validation->validerChamp($_POST['prenom_nom'], $regexTexte, 'nom');
@@ -39,21 +39,18 @@ class ControleurMessage
         $tContenu = $validation->validerChamp($_POST['contenu'], $regexTexte, 'message');
         $tHumain = $validation->validerBoolean($humain, 'humain');
 
-        if (isset($_POST['consentement'])) {
+        if (isset($_POST['consentement']) && $_POST['consentement'] !== "" || isset($_POST['telephone']) && $_POST['telephone'] !== "") {
 
             if ($_POST['consentement'] == "on") {
-                $consentement = 1;
+                $consentement = true;
             }
+
+            $telephone = $_POST['telephone'];
+            $tTelephone = $validation->validerChamp($telephone, $regexTelephone, 'telephone');
 
             $tConsentement = $validation->validerBoolean($consentement, 'consentement');
         } else {
             $tConsentement = true;
-        }
-
-        if (isset($_POST['telephone'])) {
-            $telephone = $_POST['telephone'];
-            $tTelephone = $validation->validerChamp($telephone, $regexTelephone, 'telephone');
-        } else {
             $tTelephone = true;
         }
 
@@ -82,37 +79,37 @@ class ControleurMessage
         // Vérification de la variable $allTrue
         if ($allTrue) {
             // Si tous les états sont à true, insérer le message dans la base de données et envoyer le courriel
-            echo "Tous les états sont à true.";
 
+            // Création d'un objet Message
+            $message = new Message();
+            $message->setPrenomNom($_POST['prenom_nom']);
+            $message->setCourriel($_POST['courriel']);
+            $message->setTelephone($telephone);
+            $message->setConsentement($tConsentement);
+            $message->setSujet($_POST['sujet']);
+            $message->setContenu($_POST['contenu']);
+            $message->setResponsableId((int)$_POST['responsable_id']);
 
-
-
+            // Insérer le message dans la base de données et envoyer le courriel si tout est bon
+            try {
+                $message->insererBdd();
+                $message->envoyerCourriel();
+                $_SESSION['retroaction'] = "envoyer";
+            } catch (\Exception $e) {
+                $_SESSION['retroaction'] = "aborter";
+            }
 
         } else {
             // Si un ou plusieurs états sont à false, retourner à la page de contact avec les erreurs
             $_SESSION['validation'] = $tValidation;
             $_SESSION['retroaction'] = "completer";
-            header('Location: index.php?controleur=site&action=contact');
         }
 
+        print_r(json_encode($tValidation));
+        echo "<br>";
+        echo $_SESSION['retroaction'];
 
+        header('Location: index.php?controleur=site&action=contact');
 
-
-
-
-
-        // Création d'un objet Message
-        // $message = new Message();
-        // $message->setPrenomNom($prenomNom);
-        // $message->setCourriel($courriel);
-        // $message->setTelephone($telephone);
-        // $message->setConsentement($consentement);
-        // $message->setSujet($sujet);
-        // $message->setContenu($contenu);
-        // $message->setResponsableId($responsableId);
-
-
-        // $message->insererBdd();
-        // $message->envoyerCourriel();
     }
 }

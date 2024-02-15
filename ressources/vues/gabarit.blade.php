@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="../public/liaisons/css/styles.css">
         <meta charset="utf-8">
     </head>
-    <body>
+    <body class="light-theme">
         <header >
             @include('fragments.entete')
         </header>
@@ -18,6 +18,9 @@
             @include('fragments.pieddepage', ['date'=> (new \DateTime())->format('Y'), 'legal'=> '© Tous droits réservés'])
         </footer>
     </body>
+
+    @yield('script')
+
 </html>
 
 

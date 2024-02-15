@@ -1,0 +1,8 @@
+<span class="formError">
+ <?php
+ // Si la validation a échoué, on affiche le message d'erreur
+ if (isset($_SESSION['validation']) && $_SESSION['validation']['prenom_nom']['state'] !== true) {
+ echo $_SESSION['validation']['prenom_nom']['state'];
+ }
+ ?>
+</span>

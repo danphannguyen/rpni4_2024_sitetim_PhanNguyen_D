@@ -25,42 +25,153 @@ if (isset($_SESSION['retroaction'])) {
 <form action="index.php?controleur=message&action=inserer" id="contactForm" method="post">
     <div class="contactInput">
         <label for="fullname">Nom Complet*</label>
-        <input type="text" id="fullname" name="prenom_nom" required>
+        <input type="text" id="fullname" name="prenom_nom"
+        <?php
+        // Si la validation a échoué, on affiche la valeur entrée par l'utilisateur
+        if (isset($_SESSION['validation'])) {
+            echo "value='" . $_SESSION['validation']['prenom_nom']['value'] . "'";
+        }
+        ?>
+        required>
+
+        <!-- BladeOne si la variable de Session validation est set et que le state n'est pas à true on affiche l'erreur -->
+        @if (isset($_SESSION['validation']) && $_SESSION['validation']['prenom_nom']['state'] !== true)
+        @include('fragments.msgerror', ['champ' => $_SESSION['validation']['prenom_nom']['state']])
+        @endif
+        
     </div>
 
     <div class="contactInput">
         <label for="courriel">Courriel*</label>
-        <input type="email" id="courriel" name="courriel" required>
+        <input type="email" id="courriel" name="courriel" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
         <?php
+        // Si la validation a échoué, on affiche la valeur entrée par l'utilisateur
         if (isset($_SESSION['validation'])) {
-            echo $_SESSION['validation']['courriel']['state'];
+            echo "value='" . $_SESSION['validation']['courriel']['value'] . "'";
         }
         ?>
+        required>
+
+        <!-- BladeOne si la variable de Session validation est set et que le state n'est pas à true on affiche l'erreur -->
+        @if (isset($_SESSION['validation']) && $_SESSION['validation']['courriel']['state'] !== true)
+        @include('fragments.msgerror', ['champ' => $_SESSION['validation']['courriel']['state']])
+        @endif
     </div>
 
     <div class="contactDestWrapper">
         <label for="">Destinataires*</label>
 
         <div class="contactDestRow">
-            <input type="radio" name="responsable_id" value="1">SYLVAIN LAMOUREUX</input>
-            <input type="radio" name="responsable_id" value="2">ÈVE FÉVRIER</input>
+            <input type="radio" name="responsable_id" value="1" required
+            <?php
+            // Si la validation a échoué, on affiche la valeur entrée par l'utilisateur
+            if (isset($_SESSION['validation']) && $_SESSION['validation']['responsable_id']['value'] == 1) {
+                echo "checked";
+            }
+            ?>
+            >SYLVAIN LAMOUREUX</input>
+            <input type="radio" name="responsable_id" value="2"
+            <?php
+            // Si la validation a échoué, on affiche la valeur entrée par l'utilisateur
+            if (isset($_SESSION['validation']) && $_SESSION['validation']['responsable_id']['value'] == 2) {
+                echo "checked";
+            }
+            ?>
+            >ÈVE FÉVRIER</input>
         </div>
 
         <div class="contactDestRow">
-            <input type="radio" name="responsable_id" value="3">PASCAL LAROSE</input>
-            <input type="radio" name="responsable_id" value="4">BENOÎT FRIGON</input>
+            <input type="radio" name="responsable_id" value="3"
+            <?php
+            // Si la validation a échoué, on affiche la valeur entrée par l'utilisateur
+            if (isset($_SESSION['validation']) && $_SESSION['validation']['responsable_id']['value'] == 3) {
+                echo "checked";
+            }
+            ?>
+            >PASCAL LAROSE</input>
+            <input type="radio" name="responsable_id" value="4"
+            <?php
+            // Si la validation a échoué, on affiche la valeur entrée par l'utilisateur
+            if (isset($_SESSION['validation']) && $_SESSION['validation']['responsable_id']['value'] == 4) {
+                echo "checked";
+            }
+            ?>
+            >BENOÎT FRIGON</input>
         </div>
+
+        <!-- BladeOne si la variable de Session validation est set et que le state n'est pas à true on affiche l'erreur -->
+        @if (isset($_SESSION['validation']) && $_SESSION['validation']['responsable_id']['state'] !== true)
+        @include('fragments.msgerror', ['champ' => $_SESSION['validation']['responsable_id']['state']])
+        @endif
+    </div>
+
+    <div class="contactInput">
+        <label for="telephone">Téléphone</label>
+        <input type="text" id="telephone" name="telephone"
+        <?php
+        // Si la validation a échoué, on affiche la valeur entrée par l'utilisateur
+        if (isset($_SESSION['validation'])) {
+            echo "value='" . $_SESSION['validation']['telephone']['value'] . "'";
+        }
+        ?>
+        required>
+
+        <!-- BladeOne si la variable de Session validation est set et que le state n'est pas à true on affiche l'erreur -->
+        @if (isset($_SESSION['validation']) && $_SESSION['validation']['telephone']['state'] !== true)
+        @include('fragments.msgerror', ['champ' => $_SESSION['validation']['telephone']['state']])
+        @endif
+    </div>
+
+    <div class="contactInput">
+        <label for="consentement">Consentement</label>
+        <input type="checkbox" id="consentement" name="consentement"
+        <?php
+        // Si la validation a échoué, on affiche la valeur entrée par l'utilisateur
+        if (isset($_SESSION['validation']) && $_SESSION['validation']['consentement']['state']) {
+            echo "checked";
+        }
+        ?>
+        required>
+
+        <!-- BladeOne si la variable de Session validation est set et que le state n'est pas à true on affiche l'erreur -->
+        @if (isset($_SESSION['validation']) && $_SESSION['validation']['consentement']['state'] !== true)
+        @include('fragments.msgerror', ['champ' => $_SESSION['validation']['consentement']['state']])
+        @endif
     </div>
 
 
     <div class="contactInput">
         <label for="sujet">Sujet*</label>
-        <input type="text" id="sujet" name="sujet" required>
+        <input type="text" id="sujet" name="sujet"
+        <?php
+        // Si la validation a échoué, on affiche la valeur entrée par l'utilisateur
+        if (isset($_SESSION['validation'])) {
+            echo "value='" . $_SESSION['validation']['sujet']['value'] . "'";
+        }
+        ?>
+        required>
+
+        <!-- BladeOne si la variable de Session validation est set et que le state n'est pas à true on affiche l'erreur -->
+        @if (isset($_SESSION['validation']) && $_SESSION['validation']['sujet']['state'] !== true)
+        @include('fragments.msgerror', ['champ' => $_SESSION['validation']['sujet']['state']])
+        @endif
     </div>
 
     <div class="contactInput">
         <label for="message">Message</label>
-        <textarea id="message" name="contenu" required></textarea>
+        <textarea id="message" name="contenu" required>
+        <?php
+        // Si la validation a échoué, on affiche la valeur entrée par l'utilisateur
+        if (isset($_SESSION['validation'])) {
+            echo $_SESSION['validation']['contenu']['value'];
+        }
+        ?>
+        </textarea>
+
+        <!-- BladeOne si la variable de Session validation est set et que le state n'est pas à true on affiche l'erreur -->
+        @if (isset($_SESSION['validation']) && $_SESSION['validation']['contenu']['state'] !== true)
+        @include('fragments.msgerror', ['champ' => $_SESSION['validation']['contenu']['state']])
+        @endif
     </div>
 
     <button type="submit">Envoyer</button>
@@ -79,3 +190,8 @@ if (isset($_SESSION['retroaction'])) {
         unset($_SESSION['validation']);
     }
 ?>
+
+@section('script')
+
+
+@endsection

@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /**
  * @author Prenom Nom courriel
  * @todo Lier les modules avec des instructions @import
@@ -39,7 +40,43 @@
   font-family: Futura, sans-serif;
   src: url("../fonts/Futura.ttc") format("truetype");
 }
+
 /** Palette de couleurs **/
+.light-theme {
+  --clr-background: #e5e5e5;
+  --clr-foreground: #FAFAFA;
+  --clr-mainbutton: #496AF5;
+  --clr-sidebutton: #514747;
+
+}
+
+.dark-theme {
+  --clr-background: #222222;
+  --clr-foreground: #0E0E0E;
+  --clr-mainbutton: #496AF5;
+  --clr-sidebutton: #E5E5E5;
+
+}
+
+:root {
+  --clr-nav-hover: #222222;
+  --clr-text-black: #0E0E0E;
+  --clr-text-white: #FAFAFA;
+
+  --fontsize-h1-xl: 4rem;
+  --fontsize-h1-m: 3.5rem;
+  --fontsize-h1-s: 3rem;
+
+  --fontsize-h2-xl: 1.5rem;
+  --fontsize-h2-m: 1.25rem;
+  --fontsize-h2-s: 1rem;
+
+  --fontsize-text-xl: 1rem;
+  --fontsize-text-m: 1rem;
+  --fontsize-text-s: 0.75rem;
+
+}
+
 /* Couleurs de base */
 /* Autres couleurs */
 /** Points de rupture **/
@@ -73,7 +110,9 @@
   position: absolute;
   width: 1px;
 }
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus,
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus,
 .screen-reader-only.focusable:active,
 .screen-reader-only.focusable:focus {
   clip: auto;
@@ -106,6 +145,7 @@ body {
   line-height: 1.375;
   /* facteur multiplicateur de la taille de la police 1.375x16=22 */
 }
+
 h1,
 .titreNiveau1,
 h2,
@@ -130,6 +170,7 @@ h1--desktop,
   padding-bottom: 15px;
   position: relative;
 }
+
 h1--desktop:after,
 .titreNiveau1--desktop:after {
   background-color: #358ae0;
@@ -148,6 +189,7 @@ h2,
   font-size: 2rem;
   text-transform: uppercase;
 }
+
 h2--desktop,
 .titreNiveau2--desktop {
   font-size: 28px;
@@ -159,6 +201,7 @@ h3,
   font-size: 18px;
   font-size: 1.8rem;
 }
+
 h3--desktop,
 .titreNiveau3--desktop {
   font-size: 22px;
@@ -171,6 +214,7 @@ h3--desktop,
   font-size: 1.6rem;
   line-height: 1.375;
 }
+
 .texte--desktop {
   line-height: 1.5;
 }
@@ -184,13 +228,16 @@ h3--desktop,
   color: #2678B5;
   text-decoration: none;
 }
+
 .hyperlien--visited {
   color: #226aa0;
 }
+
 .hyperlien--hover {
   color: #144061;
   text-decoration: underline;
 }
+
 .hyperlien--active {
   color: #bbd531;
   text-decoration: underline;
@@ -208,42 +255,36 @@ h3--desktop,
   padding: 0.5em 1em;
   text-decoration: none;
 }
+
 .bouton:after {
   content: "»";
   margin-left: 0.4em;
 }
+
 .bouton--hover {
   background-color: rgba(187, 213, 49, 0.75);
 }
+
 .bouton--active {
   background-color: rgba(187, 213, 49, 0.5);
 }
+
 .bouton--inverse {
   background-color: white;
   border: 2px solid #bbd531;
 }
+
 .bouton--inverse--hover {
   border-color: rgba(187, 213, 49, 0.75);
 }
+
 .bouton--inverse--active {
   border-color: rgba(187, 213, 49, 0.5);
 }
 
 /****** MODULES ******/
-/* h1 {
-  color: red !important;
-} */
 
-:root {
-  --clr--bgLoader: #d1d1d1;
-  --clr-text: #080808;
-  --clr-sidetext: #6b6b6b;
-  --clr-background: #fafafa;
-  --clr-foreground: #ababab;
-  --clr-misc: #c2c2c2;
-  --clr-active: #91a6FF;
-}
-
+/* ========== Général ========== */
 *,
 *::after,
 *::before {
@@ -257,8 +298,7 @@ h3--desktop,
 body {
   margin: 0;
   padding: 0;
-
-  /* background-color: var(--clr-background) !important; */
+  background-color: var(--clr-background) !important;
   /* color: var(--clr-text) !important; */
 }
 
@@ -287,3 +327,66 @@ p {
 }
 
 /*# sourceMappingURL=styles.css.map */
+
+/* ========== Navbar ========== */
+
+nav {
+  display: flex;
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  border-radius: 500px;
+  border: 1px solid #FFF;
+  background: #E5E5E5;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  padding: 1rem;
+  border-radius: 10rem;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav ul li {
+  height: 100%;
+  padding: 0rem 3rem;
+  /* background-color: #514747; */
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+nav ul li:hover {
+  cursor: pointer;
+  background-color: var(--clr-nav-hover);
+  color: var(--clr-text-white);
+}
+
+#navLogoContainer {
+  padding: 0 1rem;
+}
+
+#navLogoContainer:hover {
+  cursor: pointer;
+  background-color: transparent !important;
+  color: transparent !important;
+  opacity: 0.5;
+}
+
+nav ul li a {
+  color: var(--clr-text);
+
+  text-decoration: none;
+  font-size: 1.5rem;
+}
