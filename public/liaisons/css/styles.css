@@ -36,10 +36,40 @@
 * @todo Utiliser le sélecteur & pour les sélecteurs des différentes couleurs
 */
 /** Polices de caractères **/
+/* Importation de la typographie Satoshi Black */
 @font-face {
-  font-family: Futura, sans-serif;
-  src: url("../fonts/Futura.ttc") format("truetype");
+  font-family: 'Satoshi Black';
+  src: url('../fonts/satoshi/Satoshi-Black.otf') format('opentype'),
+    url('../fonts/satoshi/Satoshi-Black.woff') format('woff'),
+    url('../fonts/satoshi/Satoshi-Black.woff2') format('woff2');
 }
+
+/* Importation de la typographie Satoshi Bold */
+@font-face {
+  font-family: 'Satoshi Bold';
+  src: url('../fonts/satoshi/Satoshi-Bold.otf') format('opentype'),
+    url('../fonts/satoshi/Satoshi-Bold.woff') format('woff'),
+    url('../fonts/satoshi/Satoshi-Bold.woff2') format('woff2');
+}
+
+/* Importation de la typographie Satoshi Medium */
+@font-face {
+  font-family: 'Satoshi Medium';
+  src: url('../fonts/satoshi/Satoshi-Medium.otf') format('opentype'),
+    url('../fonts/satoshi/Satoshi-Medium.woff') format('woff'),
+    url('../fonts/satoshi/Satoshi-Medium.woff2') format('woff2');
+}
+
+/* Importation de la typographie LcMogi A */
+@font-face {
+  font-family: 'Lc Mogi A';
+  src: url('../fonts/lcmogi/LCMogi-A.otf') format('opentype'),
+    url('../fonts/lcmogi/LCMogi-A.woff') format('woff'),
+    url('../fonts/lcmogi/LCMogi-A.woff2') format('woff2');
+}
+
+
+
 
 /** Palette de couleurs **/
 .light-theme {
@@ -62,6 +92,10 @@
   --clr-nav-hover: #222222;
   --clr-text-black: #0E0E0E;
   --clr-text-white: #FAFAFA;
+  --clr-error-bg: #FFB0AB;
+  --clr-succes-bg: #ABFFBD;
+  --clr-error-text: #FF0000;
+  --clr-succes-text: #00FF00;
 
   --fontsize-h1-xl: 4rem;
   --fontsize-h1-m: 3.5rem;
@@ -73,7 +107,7 @@
 
   --fontsize-text-xl: 1rem;
   --fontsize-text-m: 1rem;
-  --fontsize-text-s: 0.75rem;
+  --fontsize-text-s: 1.5rem;
 
 }
 
@@ -138,7 +172,7 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Satoshi Medium', sans-serif;
   font-size: 16px;
   /* 16px pour toutes les largeurs d'écran */
   font-size: 1.6rem;
@@ -152,14 +186,14 @@ h2,
 .titreNiveau2,
 h3,
 .titreNiveau3 {
-  font-family: Futura, sans-serif;
-  font-weight: 500;
+  font-family: "Satoshi Black", sans-serif;
+  font-weight: 900;
 }
 
 h1,
 .titreNiveau1 {
   font-size: 28px;
-  font-size: calc($size / 10px)rem;
+  font-size: calc(size / 10px)rem;
   margin: 0;
 }
 
@@ -186,7 +220,7 @@ h1--desktop:after,
 h2,
 .titreNiveau2 {
   font-size: 20px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
 }
 
@@ -209,7 +243,7 @@ h3--desktop,
 }
 
 .texte {
-  font-family: Arial, sans-serif;
+  font-family: "Satoshi medium", sans-serif;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.375;
@@ -292,7 +326,7 @@ h3--desktop,
 }
 
 *:focus-visible {
-  outline: 2px red solid !important;
+  outline: 2px var(--clr-mainbutton) solid !important;
 }
 
 body {
@@ -326,24 +360,33 @@ p {
   justify-content: center;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 2.5rem;
+}
+
 /*# sourceMappingURL=styles.css.map */
 
 /* ========== Navbar ========== */
 
 nav {
-  display: flex;
-  position: absolute;
+  max-width: 100%;
+  position: fixed;
   bottom: 4%;
   left: 50%;
   transform: translate(-50%, 0);
 
-  border-radius: 500px;
+  border-radius: 10rem;
   border: 1px solid #FFF;
   background: #E5E5E5;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
   padding: 1rem;
-  border-radius: 10rem;
+  z-index: 100;
 }
 
 nav ul {
@@ -352,41 +395,336 @@ nav ul {
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  justify-content: space-between;
 }
 
 nav ul li {
   height: 100%;
-  padding: 0rem 3rem;
-  /* background-color: #514747; */
   border-radius: 10rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  min-width: 80px;
+  gap: 4px;
 }
 
-nav ul li:hover {
-  cursor: pointer;
-  background-color: var(--clr-nav-hover);
-  color: var(--clr-text-white);
+#navLogoContainer img {
+  height: 3rem;
 }
 
 #navLogoContainer {
-  padding: 0 1rem;
-}
-
-#navLogoContainer:hover {
-  cursor: pointer;
-  background-color: transparent !important;
-  color: transparent !important;
-  opacity: 0.5;
+  padding: 0;
+  min-width: 0 !important;
 }
 
 nav ul li a {
   color: var(--clr-text);
 
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: var(--fontsize-text-s);
+}
+
+/* ========= Logo ========= */
+
+#leftTopLogo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 2.5rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Satoshi Black', sans-serif;
+}
+
+/* ========== Gabarit ========== */
+
+main {
+  margin-top: 14vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.mainTitle {
+  font-family: 'Lc Mogi A', sans-serif;
+  text-transform: uppercase;
+  font-size: var(--fontsize-h1-s);
+  color: var(--clr-text-black);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-weight: 100;
+}
+
+.mainButton {
+  font-family: 'Satoshi Bold', sans-serif;
+  font-size: var(--fontsize-text-s);
+  color: var(--clr-text-white);
+  background-color: var(--clr-mainbutton);
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.mainButton:hover {
+  cursor: pointer;
+  background-color: #3A4FCC;
+}
+
+.bgImg {
+  max-width: 100%;
+}
+
+/* ============================================ */
+/* ================ Form Page ================= */
+/* ============================================ */
+
+#contactFormWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 4rem;
+
+  border-radius: 20px;
+  border: 1px solid #FFF;
+  background: linear-gradient(164deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.20) 97.85%);
+  box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.10);
+  backdrop-filter: blur(10px);
+}
+
+#contactFormHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#contactFormHeader p {
+  text-align: right;
+}
+
+#contactFormError {
+  padding: 4px;
+  border-radius: 4px;
+  width: 100%;
+  text-align: center;
+}
+
+.formRequireStar {
+  color: var(--clr-mainbutton);
+}
+
+#contactForm {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0;
+}
+
+#contactForm input {
+  border: none;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+#contactForm textarea {
+  border: none;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.formRow {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contactInput {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contactInput input {
+  width: 100%;
+}
+
+.contactInput textarea {
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  height: 100px;
+}
+
+.contactDestRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contactDesWrapper {
+  gap: 8px;
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.contactDesInput {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactDesInput label {
+  font-family: 'Satoshi Black', sans-serif;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--clr-foreground);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contactDesInput label span {
+  font-family: 'Satoshi Medium', sans-serif;
+  font-size: 1rem;
+}
+
+.contactDesInput label:hover {
+  cursor: pointer;
+  background-color: rgba(73, 106, 245, 0.2);
+}
+
+input[type=radio]:checked + .contactRadioLabel {
+  background-color: var(--clr-mainbutton);
+  color: var(--clr-text-white);
+}
+
+.contactDesInput input {
+  position: absolute;
+  opacity: 0;
+}
+
+.formError {
+  color: var(--clr-error-text);
+  font-size: var(--fontsize-text-s);
+}
+
+#bgContact1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -10;
+  width: 100%;
+}
+
+#drawContact1 {
+  position: absolute;
+  left: 0;
+  top: 12vh;
+  z-index: 1;
+  opacity: 0.75;
+}
+
+/* ============================================ */
+/* ============= Media Queries ================ */
+/* ============================================ */
+
+@media only screen and (min-width: 768px) {
+
+  /* ========== Gabarit ========== */
+
+  main {
+    margin-top: 8vh;
+    padding: 0 5.875rem;
+  }
+
+  /* ========== Navbar ========== */
+
+  nav ul {
+    gap: 1rem;
+  }
+
+  nav ul li:hover {
+    cursor: pointer;
+    background-color: var(--clr-nav-hover);
+    color: var(--clr-text-white);
+  }
+
+  nav ul li {
+    padding: 1rem 3rem;
+  }
+
+  #navLogoContainer img {
+    height: 4rem;
+  }
+
+  #navLogoContainer:hover {
+    cursor: pointer;
+    background-color: transparent !important;
+    color: transparent !important;
+    opacity: 0.5;
+  }
+
+    /* ========== Contact Page ========== */
+
+    .formRow {
+      flex-direction: row;
+    }
+
+    .contactDestRow {
+      flex-direction: row;
+    }
+
+    #drawContact1 {
+      left: -6%;
+      top: 2%;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+    /* ========== Gabarit ========== */
+
+    main {
+      margin-top: 12vh;
+      padding: 0 14rem;
+    }
+
+    #drawContact1  {
+      left: -2%;
+      top: -2%;
+    }
+
 }
