@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    // permet de réafficher les champs lorsque l'utilisateur s'est trompé
+    // Permet d'affiché / caché les champs lorsque le responsable 4 est selectionné
     if($('#responsable4').is(':checked')){
         $('#telephoneWrapper').show()
         $('#consentementWrapper').show()
