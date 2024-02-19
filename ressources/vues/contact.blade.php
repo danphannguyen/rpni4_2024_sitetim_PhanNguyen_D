@@ -46,17 +46,17 @@ use App\Utilitaires\Validation;
 
     <form id="contactForm" action="index.php?controleur=message&action=inserer" id="contactForm" method="post">
         <div class="formRow">
+
             <div class="contactInput">
                 <label for="fullname">Nom Complet<span class="formRequireStar">*</span></label>
 
                 <!-- Ici il permet de remettre la value que l'utilisateur avait  -->
-                <input type="text" id="fullname" name="prenom_nom" placeholder="Dan phan nguyen" @if (isset($_SESSION['validation'])) value='{{ $_SESSION['validation']['prenom_nom']['value'] }}' @endif required>
+                <input type="text" id="fullname" name="prenom_nom" placeholder="Dan phan nguyen" pattern="^[a-zA-ZÀ-ÿ'\s-]+$" @if (isset($_SESSION['validation'])) value='{{ $_SESSION['validation']['prenom_nom']['value'] }}' @endif required>
 
                 <!-- BladeOne si la variable de Session validation est set et que le state n'est pas à true on affiche l'erreur -->
                 @if (isset($_SESSION['validation']) && $_SESSION['validation']['prenom_nom']['state'] !== true)
                 @include('fragments.msgerror', ['champ' => $_SESSION['validation']['prenom_nom']['state']])
                 @endif
-
             </div>
 
             <div class="contactInput">
@@ -88,6 +88,8 @@ use App\Utilitaires\Validation;
             <div class="contactDestRow">
                 <div class="contactDesInput">
                     <input class="contactRadio" id="responsable3" type="radio" name="responsable_id" value="3" @if (isset($_SESSION['validation']) && $_SESSION['validation']['responsable_id']['value']==3) checked @endif @if (isset($_GET['responsable']) && $_GET['responsable']==3) checked @endif>
+
+
                     <label class="contactRadioLabel" for="responsable3">PASCAL LAROSE <span>Responsable des stages</span></label>
                 </div>
                 <div class="contactDesInput">
@@ -104,7 +106,7 @@ use App\Utilitaires\Validation;
 
         <div id="telephoneWrapper" class="contactInput" style="display: none;">
             <label for="telephone">Téléphone<span class="formRequireStar">*</span> </label>
-            <input type="text" id="telephone" name="telephone" @if (isset($_SESSION['validation'])) value='{{ $_SESSION['validation']['telephone']['value'] }}' @endif>
+            <input type="text" id="telephone" name="telephone" pattern="^\d{3}[\s-]?\d{3}[\s-]?\d{4}$" @if (isset($_SESSION['validation'])) value='{{ $_SESSION['validation']['telephone']['value'] }}' @endif>
 
             <!-- BladeOne si la variable de Session validation est set et que le state n'est pas à true on affiche l'erreur -->
             @if (isset($_SESSION['validation']) && $_SESSION['validation']['telephone']['state'] !== true)
@@ -113,7 +115,7 @@ use App\Utilitaires\Validation;
         </div>
 
         <div id="consentementWrapper" class="contactInput" style="display: none;">
-            <label for="consentement">Consentement<span class="formRequireStar">*</span></label>
+            <label for="consentement">J’autorise le patage de mon numéro avec un étudiant guide.<span class="formRequireStar">*</span></label>
             <input type="checkbox" id="consentement" name="consentement" @if (isset($_SESSION['validation']) && $_SESSION['validation']['consentement']['state']) checked @endif>
 
             <!-- BladeOne si la variable de Session validation est set et que le state n'est pas à true on affiche l'erreur -->
@@ -125,7 +127,7 @@ use App\Utilitaires\Validation;
 
         <div class="contactInput">
             <label for="sujet">Sujet<span class="formRequireStar">*</span></label>
-            <input type="text" id="sujet" name="sujet" placeholder="Étudiant d’un jour" @if (isset($_SESSION['validation'])) value='{{ $_SESSION['validation']['sujet']['value'] }}' @endif required>
+            <input type="text" id="sujet" name="sujet" placeholder="Étudiant d’un jour" pattern="^[a-zA-ZÀ-ÿ'\s-]+$" @if (isset($_SESSION['validation'])) value='{{ $_SESSION['validation']['sujet']['value'] }}' @endif required>
 
             <!-- BladeOne si la variable de Session validation est set et que le state n'est pas à true on affiche l'erreur -->
             @if (isset($_SESSION['validation']) && $_SESSION['validation']['sujet']['state'] !== true)
@@ -135,11 +137,7 @@ use App\Utilitaires\Validation;
 
         <div class="contactInput">
             <label for="message">Message <span class="formRequireStar">*</span> </label>
-            <textarea id="message" name="contenu" required>
-                @if (isset($_SESSION['validation']))
-                    {{ $_SESSION['validation']['contenu']['value'] }}
-                @endif
-            </textarea>
+            <textarea id="message" name="contenu" pattern="^[a-zA-ZÀ-ÿ'\s-]+$" required>@if (isset($_SESSION['validation'])){{ $_SESSION['validation']['contenu']['value'] }}@endif</textarea>
 
             <!-- BladeOne si la variable de Session validation est set et que le state n'est pas à true on affiche l'erreur -->
             @if (isset($_SESSION['validation']) && $_SESSION['validation']['contenu']['state'] !== true)
@@ -151,9 +149,23 @@ use App\Utilitaires\Validation;
     </form>
 </div>
 
-<br>
-<br>
-<br>
+<div id="contactPhoneWrapper">
+
+    <div id="contactPhoneHeader">
+        <h2>PAR TÉLÉPHONE</h2>
+    </div>
+
+    <div class="phoneProfileTemplate">
+        <img src="" alt="">
+        <div class="phoneProfileText">
+            <h3>Sylvain Lamoureux</h3>
+            <p>Coordonnateur départemental</p>
+            <p>819 376-1721, poste 2575</p>
+        </div>
+    </div>
+
+</div>
+
 @endsection
 
 @if (isset($_SESSION['retroaction']))
@@ -170,6 +182,7 @@ use App\Utilitaires\Validation;
 @section('script')
 
 <script src="./liaisons/js/contact.js"></script>
+<script src="./liaisons/js/validation.js"></script>
 
 
 @endsection
