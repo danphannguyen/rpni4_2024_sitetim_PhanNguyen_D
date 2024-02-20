@@ -19,13 +19,13 @@ $infosBdd = new InfosBdd();
 <picture id="bgContact1">
  <source srcset="./liaisons/img/Bg_Contact_1_992.png" media="(min-width: 992px)" />
  <source srcset="./liaisons/img/Bg_Contact_1_768.png" media="(min-width: 768px)" />
- <img class="bgImg" src="./liaisons/img/Bg_Contact_1_320.png" alt="example" />
+ <img class="bgImg" src="./liaisons/img/Bg_Contact_1_320.png" alt="image décorative 1" />
 </picture>
 
 <picture id="drawContact1">
  <source srcset="./liaisons/img/Dessin_Contact_1_992.png" media="(min-width: 992px)" />
  <source srcset="./liaisons/img/Dessin_Contact_1_768.png" media="(min-width: 768px)" />
- <img src="./liaisons/img/Dessin_Contact_1_320.png" alt="example" />
+ <img src="./liaisons/img/Dessin_Contact_1_320.png" alt="dessin décoratif 1"/>
 </picture>
 
 <div id="contactFormWrapper">
@@ -154,12 +154,20 @@ $infosBdd = new InfosBdd();
 
 <div id="contactPhoneWrapper">
 
+ <picture id="drawContact2">
+ <source srcset="./liaisons/img/Dessin_Contact_2_992.png" media="(min-width: 992px)" />
+ <source srcset="./liaisons/img/Dessin_Contact_2_768.png" media="(min-width: 768px)" />
+ <img class="bgImg" src="./liaisons/img/Dessin_Contact_2_320.png" alt="dessin décoratif 2"/>
+ </picture>
+
  <div id="contactPhoneHeader">
  <h2>PAR TÉLÉPHONE</h2>
  </div>
 
 
  <div class="phoneProfileWrapper">
+
+
 
  <?php
  // On récupère les responsables de la base de données
@@ -187,7 +195,7 @@ $infosBdd = new InfosBdd();
  </div>
  </div>
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
- 
+
  </div>
 
 </div>
