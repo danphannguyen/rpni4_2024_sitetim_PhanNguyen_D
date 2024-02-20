@@ -10,6 +10,10 @@ Contact
 <?php
 
 use App\Utilitaires\Validation;
+use App\Utilitaires\InfosBdd;
+
+$validation = new Validation();
+$infosBdd = new InfosBdd();
 ?>
 
 <picture id="bgContact1">
@@ -37,7 +41,6 @@ use App\Utilitaires\Validation;
         <!-- Ici on affiche le message à l'aide du contenu de la variable de session retroaction et la fonction getRetroactions -->
         @if (isset($_SESSION['retroaction']))
         <?php
-        $validation = new Validation();
         echo $validation->getRetroactions($_SESSION['retroaction']);
         ?>
         @endif
@@ -106,7 +109,7 @@ use App\Utilitaires\Validation;
 
         <div id="telephoneWrapper" class="contactInput" style="display: none;">
             <label for="telephone">Téléphone<span class="formRequireStar">*</span> </label>
-            <input type="text" id="telephone" name="telephone" pattern="^\d{3}[\s-]?\d{3}[\s-]?\d{4}$" @if (isset($_SESSION['validation'])) value='{{ $_SESSION['validation']['telephone']['value'] }}' @endif>
+            <input type="text" id="telephone" name="telephone" pattern="^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$" @if (isset($_SESSION['validation'])) value='{{ $_SESSION['validation']['telephone']['value'] }}' @endif>
 
             <!-- BladeOne si la variable de Session validation est set et que le state n'est pas à true on affiche l'erreur -->
             @if (isset($_SESSION['validation']) && $_SESSION['validation']['telephone']['state'] !== true)
@@ -155,13 +158,35 @@ use App\Utilitaires\Validation;
         <h2>PAR TÉLÉPHONE</h2>
     </div>
 
-    <div class="phoneProfileTemplate">
-        <img src="" alt="">
-        <div class="phoneProfileText">
-            <h3>Sylvain Lamoureux</h3>
-            <p>Coordonnateur départemental</p>
-            <p>819 376-1721, poste 2575</p>
+
+    <div class="phoneProfileWrapper">
+
+        <?php
+        // On récupère les responsables de la base de données
+        $tResponsables = $infosBdd->getResponsables();
+        ?>
+
+        <!-- On affiche les responsables avec le foreach de bladeOne -->
+        @foreach ($tResponsables as $responsable)
+        <div class="phoneProfileTemplate">
+            <div class="phoneProfileLeft">
+                <div class="imgPhoneProfile" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(./liaisons/img/{{$responsable['nom']}}.jpg), lightgray 50% / cover no-repeat; background-size: cover;"></div>
+                <div class="phoneProfileText">
+                    <h3> {{$responsable['prenom'] . ' ' . $responsable['nom']}} </h3>
+                    <span>{{ $responsable['responsabilite'] }}</span>
+                    <span>{{ $responsable['telephone'] }}</span>
+                </div>
+            </div>
+            <div class="phoneProfileRight">
+                <button class="mainButton phoneButton" onclick="window.location.href='tel:(418) 659-6600'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M7.77194 2.43881L8.84895 2.09481C9.85695 1.77281 10.9349 2.29381 11.3669 3.31181L12.2269 5.33981C12.6019 6.22281 12.3939 7.26181 11.7129 7.90781L9.81994 9.70581C9.93694 10.7818 10.2979 11.8408 10.9039 12.8828C11.4798 13.891 12.252 14.7734 13.1749 15.4778L15.4509 14.7178C16.3129 14.4308 17.2519 14.7618 17.7809 15.5388L19.0129 17.3488C19.6289 18.2528 19.5179 19.4988 18.7549 20.2648L17.9369 21.0858C17.1229 21.9028 15.9609 22.1998 14.8849 21.8638C12.3459 21.0718 10.0119 18.7208 7.88194 14.8108C5.74894 10.8948 4.99694 7.57081 5.62394 4.84281C5.88794 3.69481 6.70595 2.77981 7.77395 2.43881" fill="white" />
+                    </svg>
+                </button>
+            </div>
         </div>
+        @endforeach
+        
     </div>
 
 </div>

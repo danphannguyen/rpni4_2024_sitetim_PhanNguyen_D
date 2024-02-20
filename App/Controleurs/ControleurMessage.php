@@ -43,6 +43,8 @@ class ControleurMessage
 
             if ($_POST['consentement'] == "on") {
                 $consentement = true;
+            } else {
+                $consentement = false;
             }
 
             $telephone = $_POST['telephone'];

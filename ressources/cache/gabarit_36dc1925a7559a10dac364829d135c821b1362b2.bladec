@@ -1,5 +1,5 @@
 <!DOCTTYPE html>
-<html lang="en">
+<html lang="fr">
  <head>
  <title><?php echo $this->yieldContent('title'); ?></title>
  <link rel="stylesheet" href="../public/liaisons/css/styles.css">

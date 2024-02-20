@@ -93,7 +93,7 @@
   --clr-text-black: #0E0E0E;
   --clr-text-white: #FAFAFA;
   --clr-error-bg: #FFB0AB;
-  --clr-succes-bg: #ABFFBD;
+  --clr-success-bg: #ABFFBD;
   --clr-error-text: #FF0000;
   --clr-succes-text: #00FF00;
 
@@ -233,7 +233,7 @@ h2--desktop,
 h3,
 .titreNiveau3 {
   font-size: 18px;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 
 h3--desktop,
@@ -425,6 +425,123 @@ nav ul li a {
   font-size: var(--fontsize-text-s);
 }
 
+/* ========== Footer ========== */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5rem;;
+  padding: 2rem;
+  padding-bottom: 14vh;
+  flex-direction: column;
+  background-color: var(--clr-text-black);
+  color: var(--clr-text-white);
+}
+
+.footerWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-direction: column;
+  text-align: center
+}
+
+.footerHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-direction: column;
+  text-align: center
+}
+
+.footerHeaderRight {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-direction: column;
+  text-align: center
+}
+
+.footerQuestion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footerQuestion p {
+  max-width: 400px;
+}
+
+.footerWrapper hr {
+  width: 100%;
+  margin: 0;
+}
+
+.footerSocialMedia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+}
+
+.footerSocialMedia a {
+  transition: all 0.3s ease;
+}
+
+.footerSocialMedia a:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.footerExternalLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.externalLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-text-white);
+  border-bottom: 1px solid var(--clr-text-white);
+  gap: 4px;
+  transition: all 0.3s ease;
+}
+
+.externalLink:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.footerBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  opacity: 0.75;
+  width: 100%;
+}
+
+.footerBottom span {
+  text-align: start;
+  font-size: 0.8rem;
+  max-width: 300px;
+}
+
 /* ========= Logo ========= */
 
 #leftTopLogo {
@@ -494,7 +611,7 @@ main {
   justify-content: center;
   gap: 1rem;
   width: 100%;
-  padding: 4rem;
+  padding: 2rem;
 
   border-radius: 20px;
   border: 1px solid #FFF;
@@ -625,7 +742,7 @@ main {
   background-color: rgba(73, 106, 245, 0.2);
 }
 
-input[type=radio]:checked + .contactRadioLabel {
+input[type=radio]:checked+.contactRadioLabel {
   background-color: var(--clr-mainbutton);
   color: var(--clr-text-white);
 }
@@ -660,14 +777,16 @@ input[type=radio]:checked + .contactRadioLabel {
   width: auto;
 }
 
+/* Section téléphone */
+
 #contactPhoneWrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   gap: 1rem;
   width: 100%;
-  padding: 4rem;
+  padding: 2rem;
 
   border-radius: 20px;
   border: 1px solid #FFF;
@@ -681,6 +800,82 @@ input[type=radio]:checked + .contactRadioLabel {
   display: flex;
   align-items: center;
   justify-content: start;
+}
+
+.phoneProfileTemplate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  background-color: var(--clr-foreground);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.phoneProfileWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.phoneProfileLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.phoneProfileText {
+  display: flex;
+  flex-direction: column;
+}
+
+.imgPhoneProfile {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.phoneProfileTemplate h3 {
+  font-family: 'Satoshi Black', sans-serif;
+  color: var(--clr-text-black);
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.phoneProfileTemplate span {
+  font-family: 'Satoshi Medium', sans-serif;
+  font-size: 1rem;
+}
+
+.phoneButton {
+  padding: 1rem;
+}
+
+#imgPhoneProfile1 {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(../img/Lamoureux.jpg), lightgray 50% / cover no-repeat;
+  background-size: cover;
+}
+
+#imgPhoneProfile2 {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(../img/Fevrier.png), lightgray 50% / cover no-repeat;
+  background-size: cover;
+}
+
+#imgPhoneProfile3 {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(../img/Larose.jpg), lightgray 50% / cover no-repeat;
+  background-size: cover;
+}
+
+#imgPhoneProfile4 {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(../img/frigonb.jpg), lightgray 50% / cover no-repeat;
+  background-size: cover;
 }
 
 /* ============================================ */
@@ -723,35 +918,115 @@ input[type=radio]:checked + .contactRadioLabel {
     opacity: 0.5;
   }
 
-    /* ========== Contact Page ========== */
+  /* ========== Footer ========== */
 
-    .formRow {
-      flex-direction: row;
-    }
+  footer {
+    padding: 5.875rem;
+    padding-bottom: 12vh;
+  }
 
-    .contactDestRow {
-      flex-direction: row;
-    }
+  .footerWrapper {
+    gap: 4rem;
+  }
 
-    #drawContact1 {
-      left: -6%;
-      top: 2%;
-    }
+  .footerQuestion {
+    gap: 2rem;
+  }
+
+  .footerBottom span { 
+    font-size: 1rem;
+    max-width: 400px;
+  }
+
+  /* ========== Contact Page ========== */
+
+  #contactFormWrapper {
+    padding: 4rem;
+  }
+
+  #contactPhoneWrapper {
+    padding: 4rem;
+  }
+
+  .formRow {
+    flex-direction: row;
+  }
+
+  .contactDestRow {
+    flex-direction: row;
+  }
+
+  #drawContact1 {
+    left: -6%;
+    top: 2%;
+  }
 
 }
 
 @media only screen and (min-width: 992px) {
 
-    /* ========== Gabarit ========== */
+  /* ========== Footer ========== */
 
-    main {
-      margin-top: 12vh;
-      padding: 0 14rem;
-    }
+  #firstHrFooter {
+    display: none;
+  }
 
-    #drawContact1  {
-      left: -2%;
-      top: -2%;
-    }
+  .footerHeader {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footerBottom span { 
+    font-size: 1.2rem;
+    max-width: 500px;
+  }
+
+  .footerQuestion {
+    align-items: start;
+    text-align: start;
+  }
+
+  .footerExternalLink {
+    align-items: start;
+    text-align: start;
+  }
+
+  .footerHeaderRight {
+    width: auto;
+    flex-direction: column-reverse;
+    align-items: start;
+  }
+
+  /* ========== Gabarit ========== */
+
+  main {
+    margin-top: 12vh;
+    padding: 0 14rem;
+  }
+
+  #drawContact1 {
+    left: -2%;
+    top: -2%;
+  }
+
+  /* ========== Contact Page ========== */
+
+  .phoneProfileWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+
+  .imgPhoneProfile {
+    width: 60px;
+    height: 60px;
+  }
+
+  .phoneProfileTemplate span {
+    font-family: 'Satoshi Medium', sans-serif;
+    font-size: 1.2rem;
+  }
 
 }

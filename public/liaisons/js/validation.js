@@ -34,15 +34,13 @@ $(document).ready(function () {
         const messages = {
             empty: "Le champ ne doit pas être vide",
             lengthMin: "Le champ doit contenir au moins 2 caractères",
-            lengthMax: "Le champ doit contenir au maximum 50 caractères",
-            specialChars: "Le champ ne doit pas contenir de caractères spéciaux"
+            specialChars: "Le champs contient des caractères non autorisés"
         };
 
         // Définition des conditions
         const conditions = {
             empty: value === "",
             lengthMin: value.length < 2,
-            lengthMax: value.length > 50,
             specialChars: !value.match(pattern)
         };
 

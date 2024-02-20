@@ -1,5 +1,5 @@
 <!DOCTTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <title>@yield('title')</title>
         <link rel="stylesheet" href="../public/liaisons/css/styles.css">
