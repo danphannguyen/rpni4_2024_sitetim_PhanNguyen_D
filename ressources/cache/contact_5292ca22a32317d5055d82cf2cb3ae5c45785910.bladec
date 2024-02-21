@@ -28,7 +28,7 @@ $infosBdd = new InfosBdd();
  <img src="./liaisons/img/Dessin_Contact_1_320.png" alt="dessin décoratif 1"/>
 </picture>
 
-<div id="contactFormWrapper">
+<div id="contactFormWrapper" class="whiteGlass">
 
  <div id="contactFormHeader">
  <h2>PAR COURRIEL</h2>
@@ -54,7 +54,7 @@ $infosBdd = new InfosBdd();
  <label for="fullname">Nom Complet<span class="formRequireStar">*</span></label>
 
  <!-- Ici il permet de remettre la value que l'utilisateur avait  -->
- <input type="text" id="fullname" name="prenom_nom" placeholder="Dan phan nguyen" pattern="^[a-zA-ZÀ-ÿ'\s-]+$" <?php if(isset($_SESSION['validation'])): ?> value='<?php echo \htmlentities($_SESSION['validation']['prenom_nom']['value']??'', ENT_QUOTES, 'UTF-8', false); ?>' <?php endif; ?> required>
+ <input type="text" id="fullname" name="prenom_nom" pattern="^[a-zA-ZÀ-ÿ'\s-]+$" <?php if(isset($_SESSION['validation'])): ?> value='<?php echo \htmlentities($_SESSION['validation']['prenom_nom']['value']??'', ENT_QUOTES, 'UTF-8', false); ?>' <?php endif; ?> required>
 
  <!-- BladeOne si la variable de Session validation est set et que le state n'est pas à true on affiche l'erreur -->
  <?php if(isset($_SESSION['validation']) && $_SESSION['validation']['prenom_nom']['state'] !== true): ?>
@@ -64,7 +64,7 @@ $infosBdd = new InfosBdd();
 
  <div class="contactInput">
  <label for="courriel">Courriel<span class="formRequireStar">*</span></label>
- <input type="email" id="courriel" name="courriel" placeholder="danphannguyen.contact@gmail.com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" <?php if(isset($_SESSION['validation'])): ?> value='<?php echo \htmlentities($_SESSION['validation']['courriel']['value']??'', ENT_QUOTES, 'UTF-8', false); ?>' <?php endif; ?> required>
+ <input type="email" id="courriel" name="courriel" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" <?php if(isset($_SESSION['validation'])): ?> value='<?php echo \htmlentities($_SESSION['validation']['courriel']['value']??'', ENT_QUOTES, 'UTF-8', false); ?>' <?php endif; ?> required>
 
  <!-- BladeOne si la variable de Session validation est set et que le state n'est pas à true on affiche l'erreur -->
  <?php if(isset($_SESSION['validation']) && $_SESSION['validation']['courriel']['state'] !== true): ?>
@@ -108,7 +108,7 @@ $infosBdd = new InfosBdd();
  </div>
 
  <div id="telephoneWrapper" class="contactInput" style="display: none;">
- <label for="telephone">Téléphone<span class="formRequireStar">*</span> </label>
+ <label for="telephone">Téléphone<span class="formRequireStar">*</span> (123) 629-7974 </label>
  <input type="text" id="telephone" name="telephone" pattern="^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$" <?php if(isset($_SESSION['validation'])): ?> value='<?php echo \htmlentities($_SESSION['validation']['telephone']['value']??'', ENT_QUOTES, 'UTF-8', false); ?>' <?php endif; ?>>
 
  <!-- BladeOne si la variable de Session validation est set et que le state n'est pas à true on affiche l'erreur -->
@@ -130,7 +130,7 @@ $infosBdd = new InfosBdd();
 
  <div class="contactInput">
  <label for="sujet">Sujet<span class="formRequireStar">*</span></label>
- <input type="text" id="sujet" name="sujet" placeholder="Étudiant d’un jour" pattern="^[a-zA-ZÀ-ÿ'\s-]+$" <?php if(isset($_SESSION['validation'])): ?> value='<?php echo \htmlentities($_SESSION['validation']['sujet']['value']??'', ENT_QUOTES, 'UTF-8', false); ?>' <?php endif; ?> required>
+ <input type="text" id="sujet" name="sujet" pattern="^[a-zA-ZÀ-ÿ'\s-]+$" <?php if(isset($_SESSION['validation'])): ?> value='<?php echo \htmlentities($_SESSION['validation']['sujet']['value']??'', ENT_QUOTES, 'UTF-8', false); ?>' <?php endif; ?> required>
 
  <!-- BladeOne si la variable de Session validation est set et que le state n'est pas à true on affiche l'erreur -->
  <?php if(isset($_SESSION['validation']) && $_SESSION['validation']['sujet']['state'] !== true): ?>
@@ -152,7 +152,7 @@ $infosBdd = new InfosBdd();
  </form>
 </div>
 
-<div id="contactPhoneWrapper">
+<div id="contactPhoneWrapper" class="whiteGlass">
 
  <picture id="drawContact2">
  <source srcset="./liaisons/img/Dessin_Contact_2_992.png" media="(min-width: 992px)" />
@@ -217,7 +217,6 @@ $infosBdd = new InfosBdd();
 
 <script src="./liaisons/js/contact.js"></script>
 <script src="./liaisons/js/validation.js"></script>
-
 
 <?php $this->stopSection(); ?>
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('gabarit'); } ?>

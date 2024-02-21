@@ -20,9 +20,11 @@ $(document).ready(function () {
         if (message !== true) {
             if ($(id).parent().find('.formError').length > 0) {
                 $(id).parent().find('.formError').remove();
+                $(id).parent().find('input').css('border', 'red').css('border-width', '0px').css('border-style', 'solid');
             }
 
             $(id).parent().append('<span class="formError"> ' + message + ' </span>');
+            $(id).parent().find('input').css('border-color', 'red').css('border-width', '2px').css('border-style', 'solid');
         } else {
             $(id).parent().find('.formError').remove();
         }

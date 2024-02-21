@@ -1,0 +1,113 @@
+@extends('gabarit')
+
+@section('title')
+Stage
+@endsection
+
+<?php
+
+use App\Utilitaires\InfosBdd;
+
+$textes = new InfosBdd();
+?>
+
+@section('contenu')
+<h1 class="mainTitle"> LES STAGES </h1>
+
+<picture id="bgStage1">
+    <source srcset="./liaisons/img/Bg_Stage_1_992.png" media="(min-width: 992px)" />
+    <source srcset="./liaisons/img/Bg_Stage_1_768.png" media="(min-width: 768px)" />
+    <img class="bgImg" src="./liaisons/img/Bg_Stage_1_320.png" alt="image décorative 1" />
+</picture>
+
+<picture id="bgStage2">
+    <source srcset="./liaisons/img/Bg_Stage_2_992.png" media="(min-width: 992px)" />
+    <source srcset="./liaisons/img/Bg_Stage_2_768.png" media="(min-width: 768px)" />
+    <img class="bgImg" src="./liaisons/img/Bg_Stage_2_320.png" alt="image décorative 1" />
+</picture>
+
+<section id="stageHeaderWrapper" class="whiteGlass">
+    <picture id="drawStage1">
+        <source srcset="./liaisons/img/Dessin_Stage_1_992.png" media="(min-width: 992px)" />
+        <source srcset="./liaisons/img/Dessin_Stage_1_768.png" media="(min-width: 768px)" />
+        <img src="./liaisons/img/Dessin_Stage_1_320.png" alt="dessin décoratif" />
+    </picture>
+    {!! $textes->getTextes(24) !!}
+    <hr>
+    {!! $textes->getTextes(25) !!}
+
+    <picture id="drawStage3">
+        <source srcset="./liaisons/img/Dessin_Stage_3_992.png" media="(min-width: 992px)" />
+        <source srcset="./liaisons/img/Dessin_Stage_3_768.png" media="(min-width: 768px)" />
+        <img src="./liaisons/img/Dessin_Stage_3_320.png" alt="dessin décoratif" />
+    </picture>
+</section>
+
+<section id="stageContentWrapper" class="whiteGlass">
+    <picture id="drawStage2">
+        <source srcset="./liaisons/img/Dessin_Stage_2_992.png" media="(min-width: 992px)" />
+        <source srcset="./liaisons/img/Dessin_Stage_2_768.png" media="(min-width: 768px)" />
+        <img src="./liaisons/img/Dessin_Stage_2_320.png" alt="dessin décoratif" />
+    </picture>
+    <h2>FUTUR.E.S ÉTUDIANT.E.S</h2>
+    <p>Le programme TIM du Cégep de Sainte-Foy offre des stages en Alternance travail études pendant l’été et un stage crédité à la session 6 qui peut être réalisé en France. Contacter <a class="textLink" href="index.php?controleur=site&action=contact&responsable=1">Pascal Larose</a> pour en savoir plus.</p>
+</section>
+
+<section id="stageFooterWrapper" class="whiteGlass">
+<picture id="drawStage4">
+        <source srcset="./liaisons/img/Dessin_Stage_4_992.png" media="(min-width: 992px)" />
+        <source srcset="./liaisons/img/Dessin_Stage_4_768.png" media="(min-width: 768px)" />
+        <img src="./liaisons/img/Dessin_Stage_4_320.png" alt="dessin décoratif" />
+    </picture>
+    <div id="stageFinauxWrapper">
+        <div class="stageTitleWrapper">
+            <h2>Stages</h2>
+            <div class="titreEntourerWrapper">
+                <h2>Finaux</h2>
+                <img src="./liaisons/svg/draw-round1.svg" alt="">
+            </div>
+        </div>
+        <div class="stageContentWrapper">
+            <h3>Stages finaux</h3>
+            <p>La dernière session de la formation est divisée en deux parties. La première comporte des cours réalisés en mode intensif d’une durée de sept semaines. La seconde est entièrement consacrée à un stage rémunéré en entreprise.</p>
+            <p>Les étudiant.e.s de troisième année sont par la suite immédiatement disponibles à l’emploi.</p>
+        </div>
+    </div>
+
+    <div id="stageAteWrapper">
+        <div class="stageTitleWrapper">
+            <h2>STAGE</h2>
+            <div class="titreEntourerWrapper">
+                <h2>ATE</h2>
+                <img src="./liaisons/svg/draw-round2.svg" alt="">
+            </div>
+        </div>
+        <div class="stageContentWrapper">
+            <h3>Alternance travail-études</h3>
+            <p>Les stages ATE est une formule qui permet aux étudiants et aux étudiantes qui le désirent, dès la fin de la première année, de vivre une expérience de travail enrichissante, tout en étant encadré par une personne enseignante et superviseure dans un milieu de travail authentique. Cette expérience permettra à l’étudiant et à l’étudiante de vivre la réalité du marché du travail et de mettre ses nouveaux acquis à profit.</p>
+        </div>
+
+        <div class="stageContentWrapper">
+            <h3>POURQUOI FAIRE UN STAGE ATE?</h3>
+            <ul>
+                <li>Découvrir la dynamique d’un environnement de travail de professionnel</li>
+                <li>Faire de nouveaux apprentissages complémentaire au programme</li>
+                <li>Développer ses compétences professionnelles</li>
+                <li>Agrandir son réseau de contact dans le domaine</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="stageButtonWrapper">
+        <button id="finauxButton" class="mainButton">Finaux</button>
+        <button id="ateButton" class="secondButton">ATE</button>
+    </div>
+
+</section>
+
+
+@endsection
+
+@section('script')
+<script src="./liaisons/js/stage.js"></script>
+@endsection

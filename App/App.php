@@ -109,6 +109,9 @@ class App
                 case 'contact':
                     $objControleur->contact();
                     break;
+                case 'stage':
+                    $objControleur->stage();
+                    break;
                 default:
                     echo 'Erreur 404 - Action invalide';
             }
