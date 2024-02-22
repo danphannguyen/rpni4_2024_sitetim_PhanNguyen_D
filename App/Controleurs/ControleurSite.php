@@ -34,5 +34,11 @@ class ControleurSite
         $tDonnees = array("contenu"=>"Je suis le contenu de la page stage...");
         echo App::getBlade()->run('stage',$tDonnees);
     }
+
+    public function rejoindre():void
+    {
+        $tDonnees = array("contenu"=>"Je suis le contenu de la page rejoindre...");
+        echo App::getBlade()->run('rejoindre',$tDonnees);
+    }
 }
 

@@ -1096,6 +1096,110 @@ input[type=radio]:checked+.contactRadioLabel {
   max-width: 100%;
 }
 
+/* ============================================ */
+/* ============= Rejoindre Page ================ */
+/* ============================================ */
+
+#sommaireRejoindre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  text-align: center;
+
+}
+
+#rejoindreResponsiveWrapper {
+  width: 100%;
+  display: flex;
+  align-items: normal;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.5rem;
+  text-align: start;
+}
+
+.sommaireWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+  text-align: start;
+}
+
+.anchor-button {
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  background: none;
+}
+
+.anchor-button img {
+  transform: rotate(90deg);
+  height: 2rem;
+  width: 2rem;
+}
+
+.anchor-button:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+#etudInter {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  text-align: start;
+
+}
+
+#bgRejoindre1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -10;
+  max-width: 100%;
+}
+
+#drawRejoindre1 {
+  position: absolute;
+  left: 0%;
+  top: 12%;
+  z-index: 1;
+}
+
+#drawRejoindre2 {
+  display: none;
+  position: absolute;
+  right: 0%;
+  bottom: -8%;
+  bottom: 0;
+  z-index: 1;
+}
+
+#drawRejoindre3 {
+  display: none;
+  position: absolute;
+  right: -4%;
+  bottom: -8%;
+  z-index: 1;
+}
+
+#drawRejoindre4 {
+  position: absolute;
+  left: -10%;
+  bottom: 10%;
+  z-index: 1;
+}
+
 
 /* ============================================ */
 /* ============= Media Queries ================ */
@@ -1194,8 +1298,8 @@ input[type=radio]:checked+.contactRadioLabel {
 
   #stageFooterWrapper {
     min-height: 500px;
-  } 
-  
+  }
+
   #drawStage1 {
     right: -4%;
     top: -10%;
@@ -1220,6 +1324,26 @@ input[type=radio]:checked+.contactRadioLabel {
     right: -8%;
     top: -20%;
     z-index: 1;
+  }
+
+  /* ===== Rejoindre Page ===== */
+
+  #drawRejoindre1 {
+    left: 16%;
+    top: 4%;
+  }
+
+  #drawRejoindre2 {
+    display: block;
+  }
+
+  #drawRejoindre3 {
+    display: block;
+  }
+
+  #drawRejoindre4 {
+    left: -8%;
+    bottom: 18%;
   }
 
 }
@@ -1268,7 +1392,7 @@ input[type=radio]:checked+.contactRadioLabel {
   /* ========== Gabarit ========== */
 
   main {
-    margin-top: 12vh;
+    margin-top: 14vh;
     padding: 0 14rem;
   }
 
@@ -1329,7 +1453,7 @@ input[type=radio]:checked+.contactRadioLabel {
   #drawStage1 {
     right: -4%;
     top: -24%;
-  
+
   }
 
   #drawStage2 {
@@ -1366,6 +1490,17 @@ input[type=radio]:checked+.contactRadioLabel {
     bottom: 0;
     z-index: -10;
     max-width: 60%;
+  }
+
+  /* ========== Rejoindre Page ========== */
+
+  #rejoindreResponsiveWrapper {
+    flex-direction: row;
+  }
+
+  #drawRejoindre1 {
+    left: 18%;
+    top: 12%;
   }
 
 }

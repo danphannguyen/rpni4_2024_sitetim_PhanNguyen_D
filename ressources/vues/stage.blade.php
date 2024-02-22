@@ -54,7 +54,7 @@ $textes = new InfosBdd();
 </section>
 
 <section id="stageFooterWrapper" class="whiteGlass">
-<picture id="drawStage4">
+    <picture id="drawStage4">
         <source srcset="./liaisons/img/Dessin_Stage_4_992.png" media="(min-width: 992px)" />
         <source srcset="./liaisons/img/Dessin_Stage_4_768.png" media="(min-width: 768px)" />
         <img src="./liaisons/img/Dessin_Stage_4_320.png" alt="dessin décoratif" />
@@ -68,9 +68,7 @@ $textes = new InfosBdd();
             </div>
         </div>
         <div class="stageContentWrapper">
-            <h3>Stages finaux</h3>
-            <p>La dernière session de la formation est divisée en deux parties. La première comporte des cours réalisés en mode intensif d’une durée de sept semaines. La seconde est entièrement consacrée à un stage rémunéré en entreprise.</p>
-            <p>Les étudiant.e.s de troisième année sont par la suite immédiatement disponibles à l’emploi.</p>
+        {!! $textes->getTextes(27) !!}
         </div>
     </div>
 
@@ -82,20 +80,7 @@ $textes = new InfosBdd();
                 <img src="./liaisons/svg/draw-round2.svg" alt="">
             </div>
         </div>
-        <div class="stageContentWrapper">
-            <h3>Alternance travail-études</h3>
-            <p>Les stages ATE est une formule qui permet aux étudiants et aux étudiantes qui le désirent, dès la fin de la première année, de vivre une expérience de travail enrichissante, tout en étant encadré par une personne enseignante et superviseure dans un milieu de travail authentique. Cette expérience permettra à l’étudiant et à l’étudiante de vivre la réalité du marché du travail et de mettre ses nouveaux acquis à profit.</p>
-        </div>
-
-        <div class="stageContentWrapper">
-            <h3>POURQUOI FAIRE UN STAGE ATE?</h3>
-            <ul>
-                <li>Découvrir la dynamique d’un environnement de travail de professionnel</li>
-                <li>Faire de nouveaux apprentissages complémentaire au programme</li>
-                <li>Développer ses compétences professionnelles</li>
-                <li>Agrandir son réseau de contact dans le domaine</li>
-            </ul>
-        </div>
+        {!! $textes->getTextes(26) !!}
     </div>
 
     <div id="stageButtonWrapper">

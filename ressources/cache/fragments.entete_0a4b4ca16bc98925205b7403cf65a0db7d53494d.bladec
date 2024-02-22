@@ -5,7 +5,7 @@
  <li id="navProjetContainer"><a href="">Projets</a></li>
  <li id="navLogoContainer"><img src="./liaisons/svg/logo-black.svg" alt=""></li>
  <li id="navStageContainer"><a href="index.php?controleur=site&action=stage">Stages</a></li>
- <li id="navRejoindreContainer"><a href="">Rejoindre</a></li>
+ <li id="navRejoindreContainer"><a href="index.php?controleur=site&action=rejoindre">Rejoindre</a></li>
  </ul>
 </nav>
 

@@ -112,12 +112,13 @@ class App
                 case 'stage':
                     $objControleur->stage();
                     break;
+                case 'rejoindre':
+                    $objControleur->rejoindre();
+                    break;
                 default:
                     echo 'Erreur 404 - Action invalide';
             }
-        }
-
-        elseif ($urlControleur === 'message') {
+        } elseif ($urlControleur === 'message') {
             $objControleur = new ControleurMessage();
             switch ($urlAction) {
                 case 'inserer':
