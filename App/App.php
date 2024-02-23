@@ -115,6 +115,9 @@ class App
                 case 'rejoindre':
                     $objControleur->rejoindre();
                     break;
+                    case 'formation':
+                    $objControleur->formation();
+                    break;
                 default:
                     echo 'Erreur 404 - Action invalide';
             }

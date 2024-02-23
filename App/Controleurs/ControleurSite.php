@@ -40,5 +40,11 @@ class ControleurSite
         $tDonnees = array("contenu"=>"Je suis le contenu de la page rejoindre...");
         echo App::getBlade()->run('rejoindre',$tDonnees);
     }
+
+    public function formation():void
+    {
+        $tDonnees = array("contenu"=>"Je suis le contenu de la page formation...");
+        echo App::getBlade()->run('formation',$tDonnees);
+    }
 }
 
