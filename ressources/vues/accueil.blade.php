@@ -1,20 +1,251 @@
 @extends('gabarit')
 
 @section('title')
-    Accueil
+Accueil
 @endsection
 
 @section('contenu')
-    <h1> Je suis la page d'accueil... </h1>
-    <p>{{$contenu}}</p>
+<section id="homeLanding">
+    <h1 id="homeMainTitle">
+        TECHNIQUES <br>
+        D'INTÉGRATION <br>
+        MULTIMÉDIA<br>
+    </h1>
+    <a href="index.php?controleur=site&action=rejoindre" class="mainButton">Nous Rejoindre</a>
+</section>
+
+<section id="homeFormation" class="blackGlass">
+
+    <div id="statsWrapper">
+
+        <div class="statistic">
+            <div class="statcircle--container">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;" xml:space="preserve">
+                    <circle class="statcircle statcircle__bottom" cx="200" cy="200" r="177.7" />
+                    <path class="statcircle statcircle__animated" style="stroke:#496AF5" d="M200.6,22.3c97.9,0.3,177.1,79.7,177.1,177.7c0,98.1-79.5,177.7-177.7,177.7S22.3,298.1,22.3,200
+              c0-97.8,79-177.2,176.7-177.7" />
+                </svg>
+                <div class="statistic__figure">
+                    <div class="figure__content">
+                        <img class="svgContent" src="./liaisons/svg/programmation.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="statsTextWrapper">
+                <span class="stastCat">programmation</span>
+                <div style="font-family: Satoshi Medium;">
+                    <span class="fig">25</span>
+                    <span class="perc">&#37;</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="statistic">
+            <div class="statcircle--container">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;" xml:space="preserve">
+                    <circle class="statcircle statcircle__bottom" cx="200" cy="200" r="177.7" />
+                    <path class="statcircle statcircle__animated" style="stroke:#496AF5" d="M200.6,22.3c97.9,0.3,177.1,79.7,177.1,177.7c0,98.1-79.5,177.7-177.7,177.7S22.3,298.1,22.3,200
+              c0-97.8,79-177.2,176.7-177.7" />
+                </svg>
+                <div class="statistic__figure">
+                    <div class="figure__content">
+                        <img class="svgContent" src="./liaisons/svg/integration.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="statsTextWrapper">
+                <span class="stastCat">Intégration</span>
+                <div style="font-family: Satoshi Medium;">
+                    <span class="fig">25</span>
+                    <span class="perc">&#37;</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="statistic">
+            <div class="statcircle--container">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;" xml:space="preserve">
+                    <circle class="statcircle statcircle__bottom" cx="200" cy="200" r="177.7" />
+                    <path class="statcircle statcircle__animated" style="stroke:#496AF5" d="M200.6,22.3c97.9,0.3,177.1,79.7,177.1,177.7c0,98.1-79.5,177.7-177.7,177.7S22.3,298.1,22.3,200
+              c0-97.8,79-177.2,176.7-177.7" />
+                </svg>
+                <div class="statistic__figure">
+                    <div class="figure__content">
+                        <img class="svgContent" src="./liaisons/svg/conception.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="statsTextWrapper">
+                <span class="stastCat">Conception</span>
+                <div style="font-family: Satoshi Medium;">
+                    <span class="fig">25</span>
+                    <span class="perc">&#37;</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="statistic">
+            <div class="statcircle--container">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;" xml:space="preserve">
+                    <circle class="statcircle statcircle__bottom" cx="200" cy="200" r="177.7" />
+                    <path class="statcircle statcircle__animated" style="stroke:#496AF5" d="M200.6,22.3c97.9,0.3,177.1,79.7,177.1,177.7c0,98.1-79.5,177.7-177.7,177.7S22.3,298.1,22.3,200
+              c0-97.8,79-177.2,176.7-177.7" />
+                </svg>
+                <div class="statistic__figure">
+                    <div class="figure__content">
+                        <img class="svgContent" src="./liaisons/svg/medias.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="statsTextWrapper">
+                <span class="stastCat">Médias</span>
+                <div style="font-family: Satoshi Medium;">
+                    <span class="fig">15</span>
+                    <span class="perc">&#37;</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="statistic">
+            <div class="statcircle--container">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;" xml:space="preserve">
+                    <circle class="statcircle statcircle__bottom" cx="200" cy="200" r="177.7" />
+                    <path class="statcircle statcircle__animated" style="stroke:#496AF5" d="M200.6,22.3c97.9,0.3,177.1,79.7,177.1,177.7c0,98.1-79.5,177.7-177.7,177.7S22.3,298.1,22.3,200
+              c0-97.8,79-177.2,176.7-177.7" />
+                </svg>
+                <div class="statistic__figure">
+                    <div class="figure__content">
+                        <img class="svgContent" src="./liaisons/svg/autres.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="statsTextWrapper">
+                <span class="stastCat">Autres</span>
+                <div style="font-family: Satoshi Medium;">
+                    <span class="fig">10</span>
+                    <span class="perc">&#37;</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <p>Tu t’intéresses à la conception et programmation de sites Web, d’applications mobiles et de produits interactifs ? Tu veux concevoir des interfaces visuelles, de la vidéo et des animations ? TIM, c’est ça !</p>
+    <div id="homeFormationButtonWrapper">
+        <a href="index.php?controleur=site&action=formation" class="mainButton">La formation</a>
+        <a href="index.php?controleur=site&action=projets" class="mainButton">Les projets</a>
+    </div>
+
+</section>
+
+<section id="homeSecondSection">
+
+    <div class="blackGlass">
+        <h2>LES AIDES DISPONIBLES</h2>
+        <p>Obtiens des bourses de 1500$ par session, pour un total de 9000$.</p>
+        <a href="https://www.csfoy.ca/services-aux-etudiants/aide-financiere-et-bourses/" class="externalLink">En savoir plus<img src="./liaisons/svg/arrow-up.svg"></a>
+    </div>
+
+    <div class="blackGlass">
+        <h2>Les Horaires</h2>
+        <p>Pour avoir de l’information plus spécifique sur les cours, visite le site du Cégep de Sainte-Foy. Pour télécharger la grille de cours du programme TIM </p>
+        <a href="./liaisons/docs/grille_cours_TIM.pdf" class="mainButton" target="_blank">Télécharger la grille de cours</a>
+    </div>
+
+</section>
+
+<section id="homeThirdSection">
+    <h2 class="mainTitle">ET APRÈS ?</h2>
+    <div id="homeThirdWrapper" class="blackGlass">
+        <p>Certains étudiantes et étudiants choisissent de poursuivre leur formation à l’Université après leur DEC en Techniques d’intégration multimédia. Design Baccalauréat en design graphique Baccalauréat en art et science de l’animation Baccalauréat en création numérique concentration cinéma, création 3D et création de jeux vidéo. Et plus… Programmation Baccalauréat en informatique Baccalauréat en génie informatique Baccalauréat en génie logiciel. Et plus…</p>
+        <div class="listeHome">
+            <div class="listeHomeColumn">
+                <span>✦ Agences Web et numériques</span>
+                <span>✦ Entreprises en multimédia</span>
+            </div>
+            <div class="listeHomeColumn">
+                <span>✦ Entreprises privées</span>
+                <span>✦ Secteurs publics et parapublics</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="homeFourthSection">
+    <h2 class="mainTitle">LES DÉBOUCHÉS</h2>
+    <div id="homeFourthWrapper">
+
+        <div class="blackGlass debouchee">
+            <div class="deboucheeTitleWrapper">
+                <img src="./liaisons/svg/concepteur.svg" alt="">
+                <h3>Concepteur <br> Conceptrice</h3>
+            </div>
+            <hr>
+            <p>Le concepteur/conceptrice Web conçoitet réalise l’interface visuelle d’un site internet pour lequel il ou elle créetous les éléments graphiques (illustrations, bannières, images, animations…)selon les objectifs du client, en fonction des besoins des utilisateurs et descontraintes techniques. Il ou elle analyse et imagine des solutions et desinterfaces adaptées. Postes en lien : Designer Web,Designer UI, Designer UX, Et plus…</p>
+        </div>
+
+        <div class="blackGlass debouchee">
+            <div class="deboucheeTitleWrapper">
+                <h3>Programmeur <br> Programmeuse</h3>
+                <span>WEB</span>
+            </div>
+            <hr>
+            <p>Le programmeur/programmeuse Web se charge de la mise en place, de la configuration, du développement et de la maintenance du serveur, de la base de données et de l’application Web en général. En bref, il ou elle participe au développement de tous les éléments d’un projet Web qui sont ”invisibles” lorsque l’on navigue sur un siteInternet. Postes en lien: Développeur/Développeuse Web, Développeur/Développeuse back-end (côté serveur), Et plus...</p>
+        </div>
+
+        <div class="blackGlass debouchee">
+            <div class="deboucheeTitleWrapper">
+                <img src="./liaisons/svg/integrateur.svg" alt="">
+                <h3>Intégrateur <br> Intégratrice</h3>
+            </div>
+            <hr>
+            <p>L’intégrateur/intégratrice est la personne en charge de traduire et de transposer les maquettes fournies par l’équipe graphique dans un langage informatique, ce qui permet d’avoir un rendu réel et manipulable du site dans un navigateur. Il ou elle s’occupe donc de la partie visible du site en créant une interface ergonomique et accessible. Postes en lien: Intégrateur/Intégratrice multimédia, Développeur/Développeuse web, Développeur/Développeuse front-end,Webmestre, Et plus...</p>
+        </div>
+    </div>
+    <a href="index.php?controleur=site&action=stage" id="homeCtaStage" class="mainButton">Nos stages et alternance</a>
+</section>
+
 @endsection
 
 @section('script')
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js'></script>
+<script src='https://az414866.vo.msecnd.net/cmsroot/cmsscripts/custom/libs/drawsvgplugin.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js'></script>
+<script src="./script.js"></script>
 <script>
     document.querySelector("body").classList.add("dark-theme")
     document.querySelector("body").classList.remove("light-theme")
+
+
+    var values = $('.statistic');
+    values.each(function() {
+
+        var percentage = $(this).find('.fig');
+        var textcontent = percentage.text();
+        var circle = $(this).find('.statcircle__animated');
+
+        // animate text from 0 to value
+        percentage.prop('Counter', 0).animate({
+            Counter: textcontent
+        }, {
+            duration: 1000,
+            easing: 'swing',
+            step: function(now) {
+                percentage.text(Math.ceil(now));
+            }
+        });
+
+        function initTweens() {
+            // animate circle path using GSAP DrawSVG
+            TweenMax.fromTo(circle, 1.5, {
+                // animate!
+                drawSVG: "0"
+            }, {
+                drawSVG: textcontent + "%"
+            }); // tween
+        };
+        initTweens();
+
+    }); // each 
 </script>
 @endsection
-
-
-

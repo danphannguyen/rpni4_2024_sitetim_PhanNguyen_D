@@ -647,6 +647,22 @@ main {
   backdrop-filter: blur(10px);
 }
 
+.blackGlass {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 2rem;
+
+  border-radius: 20px;
+  border: 1px solid #797979;
+  background: linear-gradient(164deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.20) 97.85%);
+  box-shadow: 0px 20px 40px 0px rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(10px);
+}
+
 /* ============================================ */
 /* ================ Form Page ================= */
 /* ============================================ */
@@ -1294,6 +1310,242 @@ input[type=radio]:checked+.contactRadioLabel {
 }
 
 /* ============================================ */
+/* ============== Accueil Page ================ */
+/* ============================================ */
+
+.dark-theme #leftTopLogo {
+  color: var(--clr-text-white);
+}
+
+.dark-theme #leftTopLogo img {
+  filter: invert(1);
+}
+
+.dark-theme section {
+  color: var(--clr-text-white);
+}
+
+.dark-theme .mainTitle {
+  color: var(--clr-text-white);
+}
+
+#homeMainTitle {
+  font-family: 'Satoshi Black', sans-serif;
+  font-size: 4rem;
+}
+
+#homeLanding {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  height: 76vh;
+  margin-bottom: 14vh;
+}
+
+#homeLanding .mainButton {
+  font-size: 2rem;
+}
+
+.statistic {
+  font-family: sans-serif;
+  width: 25%;
+  margin: 0 auto;
+}
+
+.statcircle--container {
+  position: relative;
+}
+
+.statistic__figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fig {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.svgContent {
+  width: 4rem;
+}
+
+.perc {
+  font-size: 2rem;
+}
+
+.statcircle {
+  fill: none;
+  stroke: #d7d7d7;
+  stroke-width: 25;
+  stroke-miterlimit: 10;
+}
+
+.statsTextWrapper {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+
+}
+
+#statsWrapper {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.stastCat {
+  font-family: "Satoshi Black", sans-serif;
+  text-transform: uppercase;
+}
+
+#homeFormation {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#homeFormationButtonWrapper
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+#homeSecondSection {
+  display: flex;
+  align-items: initial;
+  justify-content: start;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+#homeSecondSection .blackGlass {
+  justify-content: start;
+}
+
+#homeThirdSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 4rem;
+}
+
+#homeThirdWrapper {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.listeHome {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 2rem;
+  width: 100%;
+  text-align: start;
+}
+
+.listeHomeColumn {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  text-align: start;
+}
+
+.debouchee {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  text-align: start;
+
+}
+
+.debouchee h3 {
+  text-transform: uppercase;
+}
+
+.debouchee hr {
+  width: 100%;
+
+}
+
+#homeFourthSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 4rem;
+}
+
+#homeFourthWrapper {
+  display: flex;
+  align-items: initial;
+  justify-content: start;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.deboucheeTitleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  width: 100%;
+  text-align: start;
+  text-transform: uppercase;
+}
+
+.deboucheeTitleWrapper span {
+  font-size: 5rem;
+  font-family: 'Lc Mogi A', sans-serif;
+}
+
+#homeCtaStage {
+  width: 100%;
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 2rem;
+}
+
+/* ============================================ */
 /* ============= Media Queries ================ */
 /* ============================================ */
 
@@ -1360,6 +1612,10 @@ input[type=radio]:checked+.contactRadioLabel {
   /* ========== Contact Page ========== */
 
   .whiteGlass {
+    padding: 4rem;
+  }
+
+  .blackGlass {
     padding: 4rem;
   }
 
@@ -1455,6 +1711,42 @@ input[type=radio]:checked+.contactRadioLabel {
 
   #bgFormation2 {
     top: 10%;
+  }
+
+  /* ===== Accueil Page ===== */
+
+  #homeMainTitle {
+    font-size: 6rem;
+  }
+
+  #statsWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .statistic {
+    width: 10%;
+  }
+
+  .svgContent {
+    width: 2rem;
+  }
+
+  .stastCat {
+    font-size: 1rem;
+  }
+
+  .fig {
+    font-size: 1rem;
+  }
+
+  .perc {
+    font-size: 1rem;
+  }
+
+  #homeSecondSection {
+    flex-direction: row;
   }
 
 }
@@ -1614,6 +1906,10 @@ input[type=radio]:checked+.contactRadioLabel {
     top: 12%;
   }
 
+  #bgRejoindre1 {
+    max-width: 80%;
+  }
+
   /* ===== Formation Page ===== */
 
   .listeFormation {
@@ -1629,4 +1925,60 @@ input[type=radio]:checked+.contactRadioLabel {
     right: 0%;
     bottom: -34%;
   }
+
+  /* ===== Accueil Page ===== */
+
+  #homeMainTitle {
+    font-size: 8rem;
+  }
+
+  #statsWrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .statistic {
+    width: 8%;
+  }
+
+  .svgContent {
+    width: 3rem;
+  }
+
+  .stastCat {
+    font-size: 1.5rem;
+  }
+
+  .fig {
+    font-size: 1.5rem;
+  }
+
+  .perc {
+    font-size: 1.5rem;
+  }
+
+  #homeThirdWrapper {
+    flex-direction: row;
+  }
+
+  #homeThirdWrapper p {
+    width: 70%;
+  }
+  
+  .listeHome {
+    width: 30%;
+    flex-direction: column;
+  }
 }
+
+
+/* DESKTOP ONLYYY */
+@media only screen and (min-width: 1025px) {
+
+  /* ========= Accueil Page ========*/
+  #homeFourthWrapper {
+    flex-direction: row;
+  }
+
+}
+
