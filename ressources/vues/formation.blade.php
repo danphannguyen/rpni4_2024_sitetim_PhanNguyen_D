@@ -6,13 +6,6 @@ Formation
 
 @section('contenu')
 
-<?php
-
-use App\Utilitaires\InfosBdd;
-
-$textes = new InfosBdd();
-?>
-
 <picture id="bgFormation1">
     <source srcset="./liaisons/img/Bg_Formation_1_992.png" media="(min-width: 992px)" />
     <source srcset="./liaisons/img/Bg_Formation_1_768.png" media="(min-width: 768px)" />
@@ -32,7 +25,7 @@ $textes = new InfosBdd();
         <source srcset="./liaisons/img/Dessin_Formation_1_768.png" media="(min-width: 768px)" />
         <img src="./liaisons/img/Dessin_Formation_1_320.png" alt="dessin décoratif" />
     </picture>
-    <h1 class="mainTitle"> La Formation </h1>
+    {!! $tDonnees["titre12"] !!}
 </div>
 
 <section id="headerFormation" class="whiteGlass">
@@ -41,7 +34,7 @@ $textes = new InfosBdd();
         <source srcset="./liaisons/img/Dessin_Formation_2_768.png" media="(min-width: 768px)" />
         <img src="./liaisons/img/Dessin_Formation_2_320.png" alt="dessin décoratif" />
     </picture>
-    {!! $textes->getTextes(12) !!}
+    {!! $tDonnees["texte12"] !!}
 </section>
 
 <section id="contentFormation" class="whiteGlass">
@@ -56,11 +49,30 @@ $textes = new InfosBdd();
     </div>
     <hr>
 
-    {!! $textes->getTextes(13) !!}
-    {!! $textes->getTextes(14) !!}
-    {!! $textes->getTextes(15) !!}
-    {!! $textes->getTextes(16) !!}
-    {!! $textes->getTextes(17) !!}
+    <div id="conceptionDisplay" class="contentDisplayFormation" style="display: none;">
+    {!! $tDonnees["titre13"] !!}
+    {!! $tDonnees["texte13"] !!}
+    </div>
+
+    <div id="conceptionDisplay" class="contentDisplayFormation" style="display: none;">
+    {!! $tDonnees["titre14"] !!}
+    {!! $tDonnees["texte14"] !!}
+    </div>
+
+    <div id="conceptionDisplay" class="contentDisplayFormation" style="display: flex;">
+    {!! $tDonnees["titre15"] !!}
+    {!! $tDonnees["texte15"] !!}
+    </div>
+
+    <div id="conceptionDisplay" class="contentDisplayFormation" style="display: none;">
+    {!! $tDonnees["titre16"] !!}
+    {!! $tDonnees["texte16"] !!}
+    </div>
+
+    <div id="conceptionDisplay" class="contentDisplayFormation" style="display: none;">
+    {!! $tDonnees["titre17"] !!}
+    {!! $tDonnees["texte17"] !!}
+    </div>
 
     <picture id="drawFormation3">
         <source srcset="./liaisons/img/Dessin_Formation_3_992.png" media="(min-width: 992px)" />

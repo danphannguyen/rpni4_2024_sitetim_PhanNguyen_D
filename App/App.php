@@ -103,9 +103,6 @@ class App
                 case 'accueil':
                     $objControleur->accueil();
                     break;
-                case 'apropos':
-                    $objControleur->apropos();
-                    break;
                 case 'contact':
                     $objControleur->contact();
                     break;
@@ -115,8 +112,11 @@ class App
                 case 'rejoindre':
                     $objControleur->rejoindre();
                     break;
-                    case 'formation':
+                case 'formation':
                     $objControleur->formation();
+                    break;
+                case 'projets':
+                    $objControleur->projets();
                     break;
                 default:
                     echo 'Erreur 404 - Action invalide';

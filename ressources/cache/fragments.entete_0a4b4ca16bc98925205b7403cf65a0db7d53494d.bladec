@@ -1,12 +1,17 @@
-
 <nav>
  <ul>
- <li id="navAccueilContainer"><a href="index.php?controleur=site&action=accueil">Accueil</a></li>
- <li id="navProjetContainer"><a href="">Projets</a></li>
+ <a href="index.php?controleur=site&action=accueil">
+ <li id="navAccueilContainer">Accueil</li>
+ </a>
+ <a href="index.php?controleur=site&action=projets">
+ <li id="navProjetContainer">Projets</li>
+ </a>
  <li id="navLogoContainer"><img src="./liaisons/svg/logo-black.svg" alt=""></li>
- <li id="navStageContainer"><a href="index.php?controleur=site&action=stage">Stages</a></li>
- <li id="navRejoindreContainer"><a href="index.php?controleur=site&action=rejoindre">Rejoindre</a></li>
+ <a href="index.php?controleur=site&action=stage">
+ <li id="navStageContainer">Stages</li>
+ </a>
+ <a href="index.php?controleur=site&action=rejoindre">
+ <li id="navRejoindreContainer">Rejoindre</li>
+ </a>
  </ul>
 </nav>
-
-

@@ -7,15 +7,6 @@ Contact
 @section('contenu')
 <h1 class="mainTitle"> Nous Contacter </h1>
 
-<?php
-
-use App\Utilitaires\Validation;
-use App\Utilitaires\InfosBdd;
-
-$validation = new Validation();
-$infosBdd = new InfosBdd();
-?>
-
 <picture id="bgContact1">
     <source srcset="./liaisons/img/Bg_Contact_1_992.png" media="(min-width: 992px)" />
     <source srcset="./liaisons/img/Bg_Contact_1_768.png" media="(min-width: 768px)" />
@@ -97,7 +88,7 @@ $infosBdd = new InfosBdd();
                 </div>
                 <div class="contactDesInput">
                     <input class="contactRadio" id="responsable4" type="radio" name="responsable_id" value="4" @if (isset($_SESSION['validation']) && $_SESSION['validation']['responsable_id']['value']==4) checked @endif @if (isset($_GET['responsable']) && $_GET['responsable']==4) checked @endif>
-                    <label class="contactRadioLabel" for="responsable4">BENOÎT FRIGON <span>Responsable "Étudiant d'un jour"</span></label>
+                    <label class="contactRadioLabel" for="responsable4">BENOÎT FRIGON <span>Responsable "Étudiant d'un jour"</span></label>
                 </div>
             </div>
 
@@ -166,13 +157,6 @@ $infosBdd = new InfosBdd();
 
 
     <div class="phoneProfileWrapper">
-
-
-
-        <?php
-        // On récupère les responsables de la base de données
-        $tResponsables = $infosBdd->getResponsables();
-        ?>
 
         <!-- On affiche les responsables avec le foreach de bladeOne -->
         @foreach ($tResponsables as $responsable)

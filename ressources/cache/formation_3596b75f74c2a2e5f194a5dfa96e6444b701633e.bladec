@@ -6,13 +6,6 @@ Formation
 
 <?php $this->startSection('contenu'); ?>
 
-<?php
-
-use App\Utilitaires\InfosBdd;
-
-$textes = new InfosBdd();
-?>
-
 <picture id="bgFormation1">
  <source srcset="./liaisons/img/Bg_Formation_1_992.png" media="(min-width: 992px)" />
  <source srcset="./liaisons/img/Bg_Formation_1_768.png" media="(min-width: 768px)" />
@@ -32,7 +25,8 @@ $textes = new InfosBdd();
  <source srcset="./liaisons/img/Dessin_Formation_1_768.png" media="(min-width: 768px)" />
  <img src="./liaisons/img/Dessin_Formation_1_320.png" alt="dessin décoratif" />
  </picture>
- <h1 class="mainTitle"> La Formation </h1>
+ <?php echo $tDonnees["titre12"]; ?>
+
 </div>
 
 <section id="headerFormation" class="whiteGlass">
@@ -41,7 +35,7 @@ $textes = new InfosBdd();
  <source srcset="./liaisons/img/Dessin_Formation_2_768.png" media="(min-width: 768px)" />
  <img src="./liaisons/img/Dessin_Formation_2_320.png" alt="dessin décoratif" />
  </picture>
- <?php echo $textes->getTextes(12); ?>
+ <?php echo $tDonnees["texte12"]; ?>
 
 </section>
 
@@ -57,16 +51,40 @@ $textes = new InfosBdd();
  </div>
  <hr>
 
- <?php echo $textes->getTextes(13); ?>
+ <div id="conceptionDisplay" class="contentDisplayFormation" style="display: none;">
+ <?php echo $tDonnees["titre13"]; ?>
 
- <?php echo $textes->getTextes(14); ?>
+ <?php echo $tDonnees["texte13"]; ?>
 
- <?php echo $textes->getTextes(15); ?>
+ </div>
 
- <?php echo $textes->getTextes(16); ?>
+ <div id="conceptionDisplay" class="contentDisplayFormation" style="display: none;">
+ <?php echo $tDonnees["titre14"]; ?>
 
- <?php echo $textes->getTextes(17); ?>
+ <?php echo $tDonnees["texte14"]; ?>
 
+ </div>
+
+ <div id="conceptionDisplay" class="contentDisplayFormation" style="display: flex;">
+ <?php echo $tDonnees["titre15"]; ?>
+
+ <?php echo $tDonnees["texte15"]; ?>
+
+ </div>
+
+ <div id="conceptionDisplay" class="contentDisplayFormation" style="display: none;">
+ <?php echo $tDonnees["titre16"]; ?>
+
+ <?php echo $tDonnees["texte16"]; ?>
+
+ </div>
+
+ <div id="conceptionDisplay" class="contentDisplayFormation" style="display: none;">
+ <?php echo $tDonnees["titre17"]; ?>
+
+ <?php echo $tDonnees["texte17"]; ?>
+
+ </div>
 
  <picture id="drawFormation3">
  <source srcset="./liaisons/img/Dessin_Formation_3_992.png" media="(min-width: 992px)" />

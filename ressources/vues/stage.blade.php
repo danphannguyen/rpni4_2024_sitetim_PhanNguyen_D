@@ -4,14 +4,8 @@
 Stage
 @endsection
 
-<?php
-
-use App\Utilitaires\InfosBdd;
-
-$textes = new InfosBdd();
-?>
-
 @section('contenu')
+
 <h1 class="mainTitle"> LES STAGES </h1>
 
 <picture id="bgStage1">
@@ -32,9 +26,15 @@ $textes = new InfosBdd();
         <source srcset="./liaisons/img/Dessin_Stage_1_768.png" media="(min-width: 768px)" />
         <img src="./liaisons/img/Dessin_Stage_1_320.png" alt="dessin décoratif" />
     </picture>
-    {!! $textes->getTextes(24) !!}
+    <div id="stageHeaderLeft">
+        {!! $tDonnees["titre24"] !!}
+        {!! $tDonnees["texte24"] !!}
+    </div>
     <hr>
-    {!! $textes->getTextes(25) !!}
+    <div id="stageHeaderRight">
+        {!! $tDonnees["titre25"] !!}
+        {!! $tDonnees["texte25"] !!}
+    </div>
 
     <picture id="drawStage3">
         <source srcset="./liaisons/img/Dessin_Stage_3_992.png" media="(min-width: 992px)" />
@@ -63,12 +63,12 @@ $textes = new InfosBdd();
         <div class="stageTitleWrapper">
             <h2>Stages</h2>
             <div class="titreEntourerWrapper">
-                <h2>Finaux</h2>
+                {!! $tDonnees["titre27"] !!}
                 <img src="./liaisons/svg/draw-round1.svg" alt="">
             </div>
         </div>
         <div class="stageContentWrapper">
-        {!! $textes->getTextes(27) !!}
+            {!! $tDonnees["texte27"] !!}
         </div>
     </div>
 
@@ -76,11 +76,11 @@ $textes = new InfosBdd();
         <div class="stageTitleWrapper">
             <h2>STAGE</h2>
             <div class="titreEntourerWrapper">
-                <h2>ATE</h2>
+                {!! $tDonnees["titre26"] !!}
                 <img src="./liaisons/svg/draw-round2.svg" alt="">
             </div>
         </div>
-        {!! $textes->getTextes(26) !!}
+        {!! $tDonnees["texte26"] !!}
     </div>
 
     <div id="stageButtonWrapper">

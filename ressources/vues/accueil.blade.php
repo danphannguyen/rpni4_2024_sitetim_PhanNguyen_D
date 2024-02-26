@@ -5,6 +5,7 @@ Accueil
 @endsection
 
 @section('contenu')
+
 <section id="homeLanding">
     <h1 id="homeMainTitle">
         TECHNIQUES <br>
@@ -205,47 +206,40 @@ Accueil
     <a href="index.php?controleur=site&action=stage" id="homeCtaStage" class="mainButton">Nos stages et alternance</a>
 </section>
 
+<h2 id="titleFinissant" class="mainTitle">NOS FINISSANTS</h2>
+<section id="finissantsSection" class="block-center-center blackGlass">
+    <div class="content-3">
+        <div class="block gap-2">
+
+            <div class="inline">
+                <ul id="scroller" class="UserList Scroller inline gap-1">
+
+                @include('fragments.finissant', ['tFinissants' => $tFinissants])
+
+                </ul>
+                <div class="Controls block-center-center">
+                    <div class="Wrapper inline content-3 space-between"> <button id="PrevBtn" class="ControlsBtn previous" aria-label="Previous item" title="Previous item" onclick="scroller.scrollBy(-600, 0)"> <svg viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                            </svg> </button> <button id="NextBtn" class="ControlsBtn next" aria-label="Next item" title="Next item" onclick="scroller.scrollBy(600, 0)"> <svg viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg> </button> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 @endsection
 
 @section('script')
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js'></script>
 <script src='https://az414866.vo.msecnd.net/cmsroot/cmsscripts/custom/libs/drawsvgplugin.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js'></script>
-<script src="./script.js"></script>
+<script src="./liaisons/js/accueil.js"></script>
+
+
 <script>
     document.querySelector("body").classList.add("dark-theme")
     document.querySelector("body").classList.remove("light-theme")
-
-
-    var values = $('.statistic');
-    values.each(function() {
-
-        var percentage = $(this).find('.fig');
-        var textcontent = percentage.text();
-        var circle = $(this).find('.statcircle__animated');
-
-        // animate text from 0 to value
-        percentage.prop('Counter', 0).animate({
-            Counter: textcontent
-        }, {
-            duration: 1000,
-            easing: 'swing',
-            step: function(now) {
-                percentage.text(Math.ceil(now));
-            }
-        });
-
-        function initTweens() {
-            // animate circle path using GSAP DrawSVG
-            TweenMax.fromTo(circle, 1.5, {
-                // animate!
-                drawSVG: "0"
-            }, {
-                drawSVG: textcontent + "%"
-            }); // tween
-        };
-        initTweens();
-
-    }); // each 
 </script>
 @endsection

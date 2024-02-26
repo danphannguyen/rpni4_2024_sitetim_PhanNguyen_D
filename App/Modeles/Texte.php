@@ -1,15 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Utilitaires;
+namespace App\Modeles;
 
 use App\App;
-
 use PDO;
 use PDO\PDOStatement;
 
-class InfosBdd
-{
+class Texte {
+
     public function __construct()
     {
     }
@@ -47,5 +46,13 @@ class InfosBdd
 
     }
 
+    public function getFinissants(): array
+    {
+        $pdo = App::getPDO();
+        $requete = "SELECT * FROM temoignages";
+        $stmt = $pdo->prepare($requete);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 }

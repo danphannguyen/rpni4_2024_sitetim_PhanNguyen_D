@@ -1,50 +1,55 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Controleurs;
 
 use App\App;
+use App\Controleurs\ControleurTexte;
+
 
 class ControleurSite
 {
+
     public function __construct()
     {
     }
 
     public function accueil(): void
     {
-        $tDonnees = array("contenu"=>"Je suis le contenu de la page d'accueil...");
-        echo App::getBlade()->run('accueil',$tDonnees);
+        $tFinissants = ControleurTexte::getAllFinissants();
+        $tDonnees = ControleurTexte::getTexteArray([1,2,3,4,5,9,]);
+        echo App::getBlade()->run('accueil', ['tDonnees' => $tDonnees, 'tFinissants' => $tFinissants]);
     }
 
-    public function apropos():void
+    public function contact(): void
     {
-        $tDonnees = array("contenu"=>"Je suis le contenu de la page à propos...");
-        echo App::getBlade()->run('apropos',$tDonnees);
+        $tResponsables = ControleurTexte::getResponsables();
+        $tDonnees = ControleurTexte::getTexteArray([1,2,3,4,5,9,]);
+        echo App::getBlade()->run('contact', ['tDonnees' => $tDonnees, 'tResponsables' => $tResponsables]);
     }
 
-    public function contact():void
+    public function stage(): void
     {
-        $tDonnees = array("contenu"=>"Je suis le contenu de la page contact...");
-        echo App::getBlade()->run('contact',$tDonnees);
+        $tDonnees = ControleurTexte::getTexteArray([1,2,3,4,5,9,24,25,26,27]);
+        echo App::getBlade()->run('stage',['tDonnees' => $tDonnees]);
     }
 
-    public function stage():void
+    public function rejoindre(): void
     {
-        $tDonnees = array("contenu"=>"Je suis le contenu de la page stage...");
-        echo App::getBlade()->run('stage',$tDonnees);
+        $tDonnees = ControleurTexte::getTexteArray([1,2,3,4,5,6,7,8,9]);
+        echo App::getBlade()->run('rejoindre', ['tDonnees' => $tDonnees]);
     }
 
-    public function rejoindre():void
+    public function formation(): void
     {
-        $tDonnees = array("contenu"=>"Je suis le contenu de la page rejoindre...");
-        echo App::getBlade()->run('rejoindre',$tDonnees);
+        $tDonnees = ControleurTexte::getTexteArray([1,2,3,4,5,9,12,13,14, 15, 16, 17]);
+        echo App::getBlade()->run('formation', ['tDonnees' => $tDonnees]);
     }
 
-    public function formation():void
+    public function projets(): void
     {
-        $tDonnees = array("contenu"=>"Je suis le contenu de la page formation...");
-        echo App::getBlade()->run('formation',$tDonnees);
+        $tDonnees = ControleurTexte::getTexteArray([1,2,3,4,5,9,]);
+        echo App::getBlade()->run('projets', ['tDonnees' => $tDonnees]);
     }
 }
-

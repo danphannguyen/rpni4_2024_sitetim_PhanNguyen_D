@@ -24,6 +24,10 @@
  ** listeInteractivite - Éléments interactifs
  */
 /****** Librairies ******/
+@import "https://unpkg.com/open-props" layer(design.system);
+@import "https://www.unpkg.com/layout-craft@1.0.1/dist/utilities.css"
+layer(base.utilities);
+
 /** Normalize **/
 /**** UTILITAIRES ****/
 /** Variables **/
@@ -108,6 +112,17 @@
   --fontsize-text-xl: 1rem;
   --fontsize-text-m: 1rem;
   --fontsize-text-s: 1.5rem;
+
+
+  --surface-1: oklch(0.17 0 0);
+  --surface-2: oklch(0.24 0 0);
+  --surface-3: oklch(0.46 0 0);
+
+  --text-1: oklch(0.97 0 0);
+  --text-2: oklch(0.57 0 0);
+  --text-3: oklch(0.42 0 0);
+
+  --custom-radios: 10px;
 
 }
 
@@ -1425,8 +1440,7 @@ input[type=radio]:checked+.contactRadioLabel {
   gap: 2rem;
 }
 
-#homeFormationButtonWrapper
-{
+#homeFormationButtonWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1543,6 +1557,177 @@ input[type=radio]:checked+.contactRadioLabel {
   text-align: center;
   margin-top: 2.5rem;
   font-size: 2rem;
+}
+
+@layer base.reset {
+
+  :where(:not(dialog)) {
+    margin: 0;
+    padding: 0;
+  }
+
+  :where(a) {
+    text-decoration: unset;
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  :where(ul) {
+    list-style: none;
+  }
+
+  :where(button) {
+    font-family: inherit;
+    cursor: pointer;
+    border: unset;
+  }
+}
+
+
+#finissantsSection {
+  position: relative;
+  align-items: center;
+}
+
+@layer base.components {
+  .UserList {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .Card {
+    scroll-snap-align: start;
+    background-color: var(--surface-2);
+    border-radius: var(--custom-radios);
+    padding: var(--size-4);
+    position: relative;
+    inline-size: 186px;
+    text-decoration: none;
+
+    figcaption {
+      --_gap: 0.2ex;
+    }
+
+    img {
+      --size: 80px;
+      block-size: var(--size);
+      inline-size: var(--size);
+      border-radius: var(--radius-round);
+      background: var(--gradient-8);
+    }
+
+    .Name {
+      font-family: 'Satoshi Bold', sans-serif;
+      color: var(--clr-text-white);
+      font-size: 1.25rem;
+    }
+
+    .Username {
+      font-family: 'Satoshi Medium', sans-serif;
+      color: var(--clr-text-white);
+      font-size: 1rem;
+    }
+
+    :is(.Name, .Username) {
+      max-inline-size: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  
+  }
+
+  .Controls {
+    position: absolute;
+    inset-inline: 0;
+    inset-block: calc(85% - var(--size-3));
+
+    .Wrapper {
+      --_content: 800px;
+    }
+
+    @media (width < 768px) {
+      display: none;
+    }
+  }
+
+  .ControlsBtn {
+    inline-size: 44px;
+    block-size: 44px;
+    padding: 0.75rem;
+    border-radius: var(--radius-round);
+    background-color: var(--clr-sidebutton);
+    color: var(--clr-background);
+    transition: scale 0.2s ease;
+
+    &:hover {
+      scale: 1.07;
+    }
+  }
+
+  :where(.content-3) {
+    --_content: initial;
+    inline-size: min(80%, var(--_content, 980px));
+  }
+}
+
+@layer animation.scrollDriven {
+  body {
+    timeline-scope: --carousel;
+  }
+
+  .Scroller {
+    scroll-timeline: --carousel inline;
+  }
+
+  .next {
+    animation: auto next ease forwards;
+    animation-timeline: --carousel;
+  }
+
+  .previous {
+    animation: auto prev ease forwards;
+    animation-timeline: --carousel;
+  }
+}
+
+@keyframes prev {
+  from {
+    visibility: hidden;
+  }
+}
+
+@keyframes next {
+  to {
+    visibility: hidden;
+  }
+}
+
+#titleFinissant {
+  margin-top: 4rem;
+}
+
+.finissantButton {
+  padding: 0.5rem 3rem;
 }
 
 /* ============================================ */
@@ -1749,6 +1934,10 @@ input[type=radio]:checked+.contactRadioLabel {
     flex-direction: row;
   }
 
+  #finissantsSection {
+    padding-bottom: 8rem;
+  }
+
 }
 
 @media only screen and (min-width: 992px) {
@@ -1926,6 +2115,10 @@ input[type=radio]:checked+.contactRadioLabel {
     bottom: -34%;
   }
 
+  #autresDisplay p {
+    max-width: 700px;
+  }
+
   /* ===== Accueil Page ===== */
 
   #homeMainTitle {
@@ -1964,10 +2157,15 @@ input[type=radio]:checked+.contactRadioLabel {
   #homeThirdWrapper p {
     width: 70%;
   }
-  
+
   .listeHome {
     width: 30%;
     flex-direction: column;
+  }
+
+  :where(.content-3) {
+    --_content: initial;
+    inline-size: min(80%, var(--_content, 980px));
   }
 }
 
@@ -1979,6 +2177,6 @@ input[type=radio]:checked+.contactRadioLabel {
   #homeFourthWrapper {
     flex-direction: row;
   }
+  
 
 }
-

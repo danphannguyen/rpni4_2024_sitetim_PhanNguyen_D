@@ -4,13 +4,6 @@
 Accueil
 @endsection
 
-<?php
-
-use App\Utilitaires\InfosBdd;
-
-$textes = new InfosBdd();
-?>
-
 @section('contenu')
 
 <div>
@@ -32,15 +25,15 @@ $textes = new InfosBdd();
 <section id="sommaireRejoindre">
 
     <div class="whiteGlass sommaireWrapper">
-        <h2>1/ ÉTUDIANT.E.S D’UN JOUR</h2>
+        {!! $tDonnees["titre8"] !!}
         <button class="anchor-button" onclick="window.location.href='#etudUnJour'"><img src="./liaisons/svg/anchor-button.svg" alt=""></button>
     </div>
     <div class="whiteGlass sommaireWrapper">
-        <h2>2/ ÉTUDIANT.E.S INTERNATIONAL</h2>
+        {!! $tDonnees["titre7"] !!}
         <button class="anchor-button" onclick="window.location.href='#etudInter'"><img src="./liaisons/svg/anchor-button.svg" alt=""></button>
     </div>
     <div class="whiteGlass sommaireWrapper">
-        <h2>3/ DEMANDE D’ADMISSION</h2>
+        {!! $tDonnees["titre6"] !!}
         <button class="anchor-button" onclick="window.location.href='#admission'"><img src="./liaisons/svg/anchor-button.svg" alt=""></button>
     </div>
 
@@ -49,7 +42,8 @@ $textes = new InfosBdd();
 <div id="rejoindreResponsiveWrapper">
     <section id="etudUnJour" class="whiteGlass">
 
-        {!! $textes->getTextes(8) !!}
+        {!! $tDonnees["titre8"] !!}
+        {!! $tDonnees["texte8"] !!}
 
         <picture id="drawRejoindre2">
             <source srcset="./liaisons/img/Dessin_Rejoindre_2_992.png" media="(min-width: 992px)" />
@@ -61,7 +55,8 @@ $textes = new InfosBdd();
 
     <section id="etudInter" class="whiteGlass">
 
-        {!! $textes->getTextes(7) !!}
+        {!! $tDonnees["titre7"] !!}
+        {!! $tDonnees["texte7"] !!}
 
         <picture id="drawRejoindre3">
             <source srcset="./liaisons/img/Dessin_Rejoindre_3_992.png" media="(min-width: 992px)" />
@@ -73,7 +68,8 @@ $textes = new InfosBdd();
 
 <section id="admission" class="whiteGlass">
 
-    {!! $textes->getTextes(6) !!}
+    {!! $tDonnees["titre6"] !!}
+    {!! $tDonnees["texte6"] !!}
 
     <picture id="drawRejoindre4">
         <source srcset="./liaisons/img/Dessin_Rejoindre_4_992.png" media="(min-width: 992px)" />

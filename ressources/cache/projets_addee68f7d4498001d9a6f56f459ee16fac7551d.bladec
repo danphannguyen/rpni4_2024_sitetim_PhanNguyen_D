@@ -1,0 +1,15 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('title'); ?>
+Accueil
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection('contenu'); ?>
+<div>
+ Voici la page projets
+</div>
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection('script'); ?>
+<?php $this->stopSection(); ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('gabarit'); } ?>
