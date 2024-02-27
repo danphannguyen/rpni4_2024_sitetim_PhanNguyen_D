@@ -34,6 +34,7 @@ class ControleurTexte
 
         foreach ($finissans as $finissant) {
             $infoFinissant = array(
+                'id' => $finissant['id'],
                 'temoin' => $finissant['temoin'],
                 // 'photo' => $finissant['photo'],
                 'poste' => $finissant['titre_poste'],

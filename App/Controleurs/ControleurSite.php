@@ -18,7 +18,7 @@ class ControleurSite
     public function accueil(): void
     {
         $tFinissants = ControleurTexte::getAllFinissants();
-        $tDonnees = ControleurTexte::getTexteArray([1,2,3,4,5,9,]);
+        $tDonnees = ControleurTexte::getTexteArray([1,2,3,4,5,9,10,11,18,19,20,21,22,23]);
         echo App::getBlade()->run('accueil', ['tDonnees' => $tDonnees, 'tFinissants' => $tFinissants]);
     }
 

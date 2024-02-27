@@ -6,8 +6,13 @@ Accueil
 
 @section('contenu')
 
-<div>
+<div style="position: relative;">
     <h1 class="mainTitle"> Nous rejoindre </h1>
+    <picture id="drawRejoindre1">
+        <source srcset="./liaisons/img/Dessin_Rejoindre_1_992.png" media="(min-width: 992px)" />
+        <source srcset="./liaisons/img/Dessin_Rejoindre_1_768.png" media="(min-width: 768px)" />
+        <img src="./liaisons/img/Dessin_Rejoindre_1_320.png" alt="dessin décoratif 1" />
+    </picture>
 </div>
 
 <picture id="bgRejoindre1">
@@ -16,11 +21,7 @@ Accueil
     <img class="bgImg" src="./liaisons/img/Bg_Rejoindre_1_320.png" alt="dessin décoratif" />
 </picture>
 
-<picture id="drawRejoindre1">
-    <source srcset="./liaisons/img/Dessin_Rejoindre_1_992.png" media="(min-width: 992px)" />
-    <source srcset="./liaisons/img/Dessin_Rejoindre_1_768.png" media="(min-width: 768px)" />
-    <img src="./liaisons/img/Dessin_Rejoindre_1_320.png" alt="dessin décoratif 1" />
-</picture>
+
 
 <section id="sommaireRejoindre">
 

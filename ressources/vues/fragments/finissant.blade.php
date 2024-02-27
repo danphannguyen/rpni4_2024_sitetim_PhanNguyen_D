@@ -1,4 +1,3 @@
-
 @foreach ($tFinissants as $finissant)
 <li>
     <div class="Card block-center-center gap-2">
@@ -10,7 +9,8 @@
                 <div class="Name"> {{$finissant['temoin']}}</div>
                 <div class="Username">{{$finissant['poste']}}</div>
             </figcaption>
-        </figure> <button class="mainButton finissantButton">Voir</button>
+        </figure> <button type="button" data-target="{{$finissant['id']}}" class="mainButton finissantButton modalBtn">Voir</button>
     </div>
 </li>
+
 @endforeach
