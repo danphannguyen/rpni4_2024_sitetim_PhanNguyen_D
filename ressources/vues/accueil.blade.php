@@ -148,7 +148,7 @@ Accueil
 
     </div>
 
-    {!! $tDonnees["texte11"] !!}
+    {!! $tDonnees[11]->getTexte() !!}
     <div id="homeFormationButtonWrapper">
         <a href="index.php?controleur=site&action=formation" class="mainButton">La formation</a>
         <a href="index.php?controleur=site&action=projets" class="mainButton">Les projets</a>
@@ -159,13 +159,13 @@ Accueil
 <section id="homeSecondSection">
 
     <div class="blackGlass">
-        {!! $tDonnees["titre10"] !!}
-        {!! $tDonnees["texte10"] !!}
+        {!! $tDonnees[10]->getTitre() !!}
+        {!! $tDonnees[10]->getTexte() !!}
     </div>
 
     <div class="blackGlass" style="position: relative;">
-        {!! $tDonnees["titre18"] !!}
-        {!! $tDonnees["texte18"] !!}
+        {!! $tDonnees[18]->getTitre() !!}
+        {!! $tDonnees[18]->getTexte() !!}
     </div>
 
     <picture id="bgAccueil2">
@@ -179,8 +179,8 @@ Accueil
 <section id="homeThirdSection">
     <h2 class="mainTitle">ET APRÈS ?</h2>
     <div id="homeThirdWrapper" class="blackGlass">
-        {!! $tDonnees["texte22"] !!}
-        {!! $tDonnees["texte23"] !!}
+        {!! $tDonnees[22]->getTexte() !!}
+        {!! $tDonnees[23]->getTexte() !!}
     </div>
 </section>
 
@@ -198,27 +198,27 @@ Accueil
         <div class="blackGlass debouchee">
             <div class="deboucheeTitleWrapper">
                 <img src="./liaisons/svg/concepteur.svg" alt="">
-                {!! $tDonnees["titre21"] !!}
+                {!! $tDonnees[21]->getTitre() !!}
             </div>
             <hr>
-            {!! $tDonnees["texte21"] !!}
+            {!! $tDonnees[21]->getTexte() !!}
         </div>
 
         <div class="blackGlass debouchee">
             <div class="deboucheeTitleWrapper">
-                {!! $tDonnees["titre20"] !!}
+            {!! $tDonnees[20]->getTitre() !!}
             </div>
             <hr>
-            {!! $tDonnees["texte20"] !!}
+            {!! $tDonnees[20]->getTexte() !!}
         </div>
 
         <div class="blackGlass debouchee">
             <div class="deboucheeTitleWrapper">
                 <img src="./liaisons/svg/integrateur.svg" alt="">
-                {!! $tDonnees["titre19"] !!}
+                {!! $tDonnees[19]->getTitre() !!}
             </div>
             <hr>
-            {!! $tDonnees["texte19"] !!}
+            {!! $tDonnees[19]->getTexte() !!}
         </div>
     </div>
     <a href="index.php?controleur=site&action=stage" id="homeCtaStage" class="mainButton">Nos stages et alternance</a>

@@ -27,13 +27,13 @@ Stage
         <img src="./liaisons/img/Dessin_Stage_1_320.png" alt="dessin décoratif" />
     </picture>
     <div id="stageHeaderLeft">
-        {!! $tDonnees["titre24"] !!}
-        {!! $tDonnees["texte24"] !!}
+        {!! $tDonnees[24]->getTitre() !!}
+        {!! $tDonnees[24]->getTexte() !!}
     </div>
     <hr>
     <div id="stageHeaderRight">
-        {!! $tDonnees["titre25"] !!}
-        {!! $tDonnees["texte25"] !!}
+        {!! $tDonnees[25]->getTitre() !!}
+        {!! $tDonnees[25]->getTexte() !!}
     </div>
 
     <picture id="drawStage3">
@@ -63,12 +63,12 @@ Stage
         <div class="stageTitleWrapper">
             <h2>Stages</h2>
             <div class="titreEntourerWrapper">
-                {!! $tDonnees["titre27"] !!}
+                {!! $tDonnees[27]->getTitre() !!}
                 <img src="./liaisons/svg/draw-round1.svg" alt="">
             </div>
         </div>
         <div class="stageContentWrapper">
-            {!! $tDonnees["texte27"] !!}
+            {!! $tDonnees[27]->getTexte() !!}
         </div>
     </div>
 
@@ -76,11 +76,11 @@ Stage
         <div class="stageTitleWrapper">
             <h2>STAGE</h2>
             <div class="titreEntourerWrapper">
-                {!! $tDonnees["titre26"] !!}
+            {!! $tDonnees[26]->getTitre() !!}
                 <img src="./liaisons/svg/draw-round2.svg" alt="">
             </div>
         </div>
-        {!! $tDonnees["texte26"] !!}
+        {!! $tDonnees[26]->getTexte() !!}
     </div>
 
     <div id="stageButtonWrapper">

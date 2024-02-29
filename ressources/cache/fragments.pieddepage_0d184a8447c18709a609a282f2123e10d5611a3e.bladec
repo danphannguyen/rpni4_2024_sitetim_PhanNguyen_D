@@ -1,29 +1,28 @@
-
 <section class="footerWrapper">
  <div class="footerHeader">
  <div class="footerQuestion">
- <?php echo $tDonnees["titre9"]; ?>
+ <?php echo $tDonnees[9]->getTitre(); ?>
 
- <?php echo $tDonnees["texte9"]; ?>
+ <?php echo $tDonnees[9]->getTexte(); ?>
 
  </div>
 
- <hr id="firstHrFooter" >
+ <hr id="firstHrFooter">
 
  <div class="footerHeaderRight">
  <div class="footerSocialMedia">
- <?php echo $tDonnees["texte3"]; ?>
+ <?php echo $tDonnees[3]->getTexte(); ?>
 
- <?php echo $tDonnees["texte4"]; ?>
+ <?php echo $tDonnees[4]->getTexte(); ?>
 
- <?php echo $tDonnees["texte5"]; ?>
+ <?php echo $tDonnees[5]->getTexte(); ?>
 
  </div>
  <div class="footerExternalLink">
  <a class="externalLink" href="http://www.csfoy.ca">
  Cégep de Sainte-Foy<img src="./liaisons/svg/arrow-up.svg" alt="Page du cégep de sainte foy">
  </a>
- <?php echo $tDonnees["texte2"]; ?>
+ <?php echo $tDonnees[2]->getTexte(); ?>
 
  </div>
  </div>
@@ -31,9 +30,9 @@
 
  <hr>
 
- <div class="footerBottom" >
+ <div class="footerBottom">
  <span>Conception et développement web par Dan Phan Nguyen Tous droits réservés © 2024 Techniques d'intégration multimédia - Web et apps, Cégep de Sainte-Foy.</span>
- <?php echo $tDonnees["texte1"]; ?>
+ <?php echo $tDonnees[1]->getTexte(); ?>
 
 
  </div>

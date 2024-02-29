@@ -26,17 +26,17 @@ Accueil
 <section id="sommaireRejoindre">
 
  <div class="whiteGlass sommaireWrapper">
- <?php echo $tDonnees["titre8"]; ?>
+ <?php echo $tDonnees[8]->getTitre(); ?>
 
  <button class="anchor-button" onclick="window.location.href='#etudUnJour'"><img src="./liaisons/svg/anchor-button.svg" alt=""></button>
  </div>
  <div class="whiteGlass sommaireWrapper">
- <?php echo $tDonnees["titre7"]; ?>
+ <?php echo $tDonnees[7]->getTitre(); ?>
 
  <button class="anchor-button" onclick="window.location.href='#etudInter'"><img src="./liaisons/svg/anchor-button.svg" alt=""></button>
  </div>
  <div class="whiteGlass sommaireWrapper">
- <?php echo $tDonnees["titre6"]; ?>
+ <?php echo $tDonnees[6]->getTitre(); ?>
 
  <button class="anchor-button" onclick="window.location.href='#admission'"><img src="./liaisons/svg/anchor-button.svg" alt=""></button>
  </div>
@@ -46,9 +46,9 @@ Accueil
 <div id="rejoindreResponsiveWrapper">
  <section id="etudUnJour" class="whiteGlass">
 
- <?php echo $tDonnees["titre8"]; ?>
+ <?php echo $tDonnees[8]->getTitre(); ?>
 
- <?php echo $tDonnees["texte8"]; ?>
+ <?php echo $tDonnees[8]->getTexte(); ?>
 
 
  <picture id="drawRejoindre2">
@@ -61,9 +61,9 @@ Accueil
 
  <section id="etudInter" class="whiteGlass">
 
- <?php echo $tDonnees["titre7"]; ?>
+ <?php echo $tDonnees[7]->getTitre(); ?>
 
- <?php echo $tDonnees["texte7"]; ?>
+ <?php echo $tDonnees[7]->getTexte(); ?>
 
 
  <picture id="drawRejoindre3">
@@ -76,9 +76,9 @@ Accueil
 
 <section id="admission" class="whiteGlass">
 
- <?php echo $tDonnees["titre6"]; ?>
+ <?php echo $tDonnees[6]->getTitre(); ?>
 
- <?php echo $tDonnees["texte6"]; ?>
+ <?php echo $tDonnees[6]->getTexte(); ?>
 
 
  <picture id="drawRejoindre4">

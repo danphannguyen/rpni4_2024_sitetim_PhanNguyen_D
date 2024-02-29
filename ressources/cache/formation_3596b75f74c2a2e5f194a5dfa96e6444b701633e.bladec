@@ -25,7 +25,7 @@ Formation
  <source srcset="./liaisons/img/Dessin_Formation_1_768.png" media="(min-width: 768px)" />
  <img src="./liaisons/img/Dessin_Formation_1_320.png" alt="dessin décoratif" />
  </picture>
- <?php echo $tDonnees["titre12"]; ?>
+ <?php echo $tDonnees[12]->getTitre(); ?>
 
 </div>
 
@@ -35,7 +35,7 @@ Formation
  <source srcset="./liaisons/img/Dessin_Formation_2_768.png" media="(min-width: 768px)" />
  <img src="./liaisons/img/Dessin_Formation_2_320.png" alt="dessin décoratif" />
  </picture>
- <?php echo $tDonnees["texte12"]; ?>
+ <?php echo $tDonnees[12]->getTexte(); ?>
 
 </section>
 
@@ -52,37 +52,37 @@ Formation
  <hr>
 
  <div id="conceptionDisplay" class="contentDisplayFormation" style="display: none;">
- <?php echo $tDonnees["titre13"]; ?>
+ <?php echo $tDonnees[13]->getTitre(); ?>
 
- <?php echo $tDonnees["texte13"]; ?>
-
- </div>
-
- <div id="conceptionDisplay" class="contentDisplayFormation" style="display: none;">
- <?php echo $tDonnees["titre14"]; ?>
-
- <?php echo $tDonnees["texte14"]; ?>
+ <?php echo $tDonnees[13]->getTexte(); ?>
 
  </div>
 
- <div id="conceptionDisplay" class="contentDisplayFormation" style="display: flex;">
- <?php echo $tDonnees["titre15"]; ?>
+ <div id="mediasDisplay" class="contentDisplayFormation" style="display: none;">
+ <?php echo $tDonnees[14]->getTitre(); ?>
 
- <?php echo $tDonnees["texte15"]; ?>
-
- </div>
-
- <div id="conceptionDisplay" class="contentDisplayFormation" style="display: none;">
- <?php echo $tDonnees["titre16"]; ?>
-
- <?php echo $tDonnees["texte16"]; ?>
+ <?php echo $tDonnees[14]->getTexte(); ?>
 
  </div>
 
- <div id="conceptionDisplay" class="contentDisplayFormation" style="display: none;">
- <?php echo $tDonnees["titre17"]; ?>
+ <div id="integrationDisplay" class="contentDisplayFormation" style="display: flex;">
+ <?php echo $tDonnees[15]->getTitre(); ?>
 
- <?php echo $tDonnees["texte17"]; ?>
+ <?php echo $tDonnees[15]->getTexte(); ?>
+
+ </div>
+
+ <div id="programmationDisplay" class="contentDisplayFormation" style="display: none;">
+ <?php echo $tDonnees[16]->getTitre(); ?>
+
+ <?php echo $tDonnees[16]->getTexte(); ?>
+
+ </div>
+
+ <div id="autresDisplay" class="contentDisplayFormation" style="display: none;">
+ <?php echo $tDonnees[17]->getTitre(); ?>
+
+ <?php echo $tDonnees[17]->getTexte(); ?>
 
  </div>
 

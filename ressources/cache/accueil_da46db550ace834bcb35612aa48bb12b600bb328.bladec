@@ -148,7 +148,7 @@ Accueil
 
  </div>
 
- <?php echo $tDonnees["texte11"]; ?>
+ <?php echo $tDonnees[11]->getTexte(); ?>
 
  <div id="homeFormationButtonWrapper">
  <a href="index.php?controleur=site&action=formation" class="mainButton">La formation</a>
@@ -160,16 +160,16 @@ Accueil
 <section id="homeSecondSection">
 
  <div class="blackGlass">
- <?php echo $tDonnees["titre10"]; ?>
+ <?php echo $tDonnees[10]->getTitre(); ?>
 
- <?php echo $tDonnees["texte10"]; ?>
+ <?php echo $tDonnees[10]->getTexte(); ?>
 
  </div>
 
  <div class="blackGlass" style="position: relative;">
- <?php echo $tDonnees["titre18"]; ?>
+ <?php echo $tDonnees[18]->getTitre(); ?>
 
- <?php echo $tDonnees["texte18"]; ?>
+ <?php echo $tDonnees[18]->getTexte(); ?>
 
  </div>
 
@@ -184,9 +184,9 @@ Accueil
 <section id="homeThirdSection">
  <h2 class="mainTitle">ET APRÈS ?</h2>
  <div id="homeThirdWrapper" class="blackGlass">
- <?php echo $tDonnees["texte22"]; ?>
+ <?php echo $tDonnees[22]->getTexte(); ?>
 
- <?php echo $tDonnees["texte23"]; ?>
+ <?php echo $tDonnees[23]->getTexte(); ?>
 
  </div>
 </section>
@@ -205,32 +205,32 @@ Accueil
  <div class="blackGlass debouchee">
  <div class="deboucheeTitleWrapper">
  <img src="./liaisons/svg/concepteur.svg" alt="">
- <?php echo $tDonnees["titre21"]; ?>
+ <?php echo $tDonnees[21]->getTitre(); ?>
 
  </div>
  <hr>
- <?php echo $tDonnees["texte21"]; ?>
+ <?php echo $tDonnees[21]->getTexte(); ?>
 
  </div>
 
  <div class="blackGlass debouchee">
  <div class="deboucheeTitleWrapper">
- <?php echo $tDonnees["titre20"]; ?>
+ <?php echo $tDonnees[20]->getTitre(); ?>
 
  </div>
  <hr>
- <?php echo $tDonnees["texte20"]; ?>
+ <?php echo $tDonnees[20]->getTexte(); ?>
 
  </div>
 
  <div class="blackGlass debouchee">
  <div class="deboucheeTitleWrapper">
  <img src="./liaisons/svg/integrateur.svg" alt="">
- <?php echo $tDonnees["titre19"]; ?>
+ <?php echo $tDonnees[19]->getTitre(); ?>
 
  </div>
  <hr>
- <?php echo $tDonnees["texte19"]; ?>
+ <?php echo $tDonnees[19]->getTexte(); ?>
 
  </div>
  </div>

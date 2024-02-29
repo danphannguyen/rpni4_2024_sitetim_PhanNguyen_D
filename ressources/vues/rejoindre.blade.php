@@ -26,15 +26,15 @@ Accueil
 <section id="sommaireRejoindre">
 
     <div class="whiteGlass sommaireWrapper">
-        {!! $tDonnees["titre8"] !!}
+        {!! $tDonnees[8]->getTitre() !!}
         <button class="anchor-button" onclick="window.location.href='#etudUnJour'"><img src="./liaisons/svg/anchor-button.svg" alt=""></button>
     </div>
     <div class="whiteGlass sommaireWrapper">
-        {!! $tDonnees["titre7"] !!}
+        {!! $tDonnees[7]->getTitre() !!}
         <button class="anchor-button" onclick="window.location.href='#etudInter'"><img src="./liaisons/svg/anchor-button.svg" alt=""></button>
     </div>
     <div class="whiteGlass sommaireWrapper">
-        {!! $tDonnees["titre6"] !!}
+        {!! $tDonnees[6]->getTitre() !!}
         <button class="anchor-button" onclick="window.location.href='#admission'"><img src="./liaisons/svg/anchor-button.svg" alt=""></button>
     </div>
 
@@ -43,8 +43,8 @@ Accueil
 <div id="rejoindreResponsiveWrapper">
     <section id="etudUnJour" class="whiteGlass">
 
-        {!! $tDonnees["titre8"] !!}
-        {!! $tDonnees["texte8"] !!}
+        {!! $tDonnees[8]->getTitre() !!}
+        {!! $tDonnees[8]->getTexte() !!}
 
         <picture id="drawRejoindre2">
             <source srcset="./liaisons/img/Dessin_Rejoindre_2_992.png" media="(min-width: 992px)" />
@@ -56,8 +56,8 @@ Accueil
 
     <section id="etudInter" class="whiteGlass">
 
-        {!! $tDonnees["titre7"] !!}
-        {!! $tDonnees["texte7"] !!}
+        {!! $tDonnees[7]->getTitre() !!}
+        {!! $tDonnees[7]->getTexte() !!}
 
         <picture id="drawRejoindre3">
             <source srcset="./liaisons/img/Dessin_Rejoindre_3_992.png" media="(min-width: 992px)" />
@@ -69,8 +69,8 @@ Accueil
 
 <section id="admission" class="whiteGlass">
 
-    {!! $tDonnees["titre6"] !!}
-    {!! $tDonnees["texte6"] !!}
+    {!! $tDonnees[6]->getTitre() !!}
+    {!! $tDonnees[6]->getTexte() !!}
 
     <picture id="drawRejoindre4">
         <source srcset="./liaisons/img/Dessin_Rejoindre_4_992.png" media="(min-width: 992px)" />

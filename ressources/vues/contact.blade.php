@@ -162,11 +162,11 @@ Contact
         @foreach ($tResponsables as $responsable)
         <div class="phoneProfileTemplate">
             <div class="phoneProfileLeft">
-                <div class="imgPhoneProfile" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(./liaisons/img/{{$responsable['nom']}}.jpg), lightgray 50% / cover no-repeat; background-size: cover;"></div>
+                <div class="imgPhoneProfile" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(./liaisons/img/{{$responsable->getNom()}}.jpg), lightgray 50% / cover no-repeat; background-size: cover;"></div>
                 <div class="phoneProfileText">
-                    <h3> {{$responsable['prenom'] . ' ' . $responsable['nom']}} </h3>
-                    <span>{{ $responsable['responsabilite'] }}</span>
-                    <span>{{ $responsable['telephone'] }}</span>
+                    <h3> {{$responsable->getPrenom() . ' ' . $responsable->getNom()}} </h3>
+                    <span>{{ $responsable->getResponsabilite() }}</span>
+                    <span>{{ $responsable->getTelephone() }}</span>
                 </div>
             </div>
             <div class="phoneProfileRight">

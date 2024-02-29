@@ -27,16 +27,16 @@ Stage
  <img src="./liaisons/img/Dessin_Stage_1_320.png" alt="dessin décoratif" />
  </picture>
  <div id="stageHeaderLeft">
- <?php echo $tDonnees["titre24"]; ?>
+ <?php echo $tDonnees[24]->getTitre(); ?>
 
- <?php echo $tDonnees["texte24"]; ?>
+ <?php echo $tDonnees[24]->getTexte(); ?>
 
  </div>
  <hr>
  <div id="stageHeaderRight">
- <?php echo $tDonnees["titre25"]; ?>
+ <?php echo $tDonnees[25]->getTitre(); ?>
 
- <?php echo $tDonnees["texte25"]; ?>
+ <?php echo $tDonnees[25]->getTexte(); ?>
 
  </div>
 
@@ -67,13 +67,13 @@ Stage
  <div class="stageTitleWrapper">
  <h2>Stages</h2>
  <div class="titreEntourerWrapper">
- <?php echo $tDonnees["titre27"]; ?>
+ <?php echo $tDonnees[27]->getTitre(); ?>
 
  <img src="./liaisons/svg/draw-round1.svg" alt="">
  </div>
  </div>
  <div class="stageContentWrapper">
- <?php echo $tDonnees["texte27"]; ?>
+ <?php echo $tDonnees[27]->getTexte(); ?>
 
  </div>
  </div>
@@ -82,12 +82,12 @@ Stage
  <div class="stageTitleWrapper">
  <h2>STAGE</h2>
  <div class="titreEntourerWrapper">
- <?php echo $tDonnees["titre26"]; ?>
+ <?php echo $tDonnees[26]->getTitre(); ?>
 
  <img src="./liaisons/svg/draw-round2.svg" alt="">
  </div>
  </div>
- <?php echo $tDonnees["texte26"]; ?>
+ <?php echo $tDonnees[26]->getTexte(); ?>
 
  </div>
 

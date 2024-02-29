@@ -25,7 +25,7 @@ Formation
         <source srcset="./liaisons/img/Dessin_Formation_1_768.png" media="(min-width: 768px)" />
         <img src="./liaisons/img/Dessin_Formation_1_320.png" alt="dessin décoratif" />
     </picture>
-    {!! $tDonnees["titre12"] !!}
+    {!! $tDonnees[12]->getTitre() !!}
 </div>
 
 <section id="headerFormation" class="whiteGlass">
@@ -34,7 +34,7 @@ Formation
         <source srcset="./liaisons/img/Dessin_Formation_2_768.png" media="(min-width: 768px)" />
         <img src="./liaisons/img/Dessin_Formation_2_320.png" alt="dessin décoratif" />
     </picture>
-    {!! $tDonnees["texte12"] !!}
+    {!! $tDonnees[12]->getTexte() !!}
 </section>
 
 <section id="contentFormation" class="whiteGlass">
@@ -50,28 +50,28 @@ Formation
     <hr>
 
     <div id="conceptionDisplay" class="contentDisplayFormation" style="display: none;">
-    {!! $tDonnees["titre13"] !!}
-    {!! $tDonnees["texte13"] !!}
+        {!! $tDonnees[13]->getTitre() !!}
+        {!! $tDonnees[13]->getTexte() !!}
     </div>
 
-    <div id="conceptionDisplay" class="contentDisplayFormation" style="display: none;">
-    {!! $tDonnees["titre14"] !!}
-    {!! $tDonnees["texte14"] !!}
+    <div id="mediasDisplay" class="contentDisplayFormation" style="display: none;">
+        {!! $tDonnees[14]->getTitre() !!}
+        {!! $tDonnees[14]->getTexte() !!}
     </div>
 
-    <div id="conceptionDisplay" class="contentDisplayFormation" style="display: flex;">
-    {!! $tDonnees["titre15"] !!}
-    {!! $tDonnees["texte15"] !!}
+    <div id="integrationDisplay" class="contentDisplayFormation" style="display: flex;">
+        {!! $tDonnees[15]->getTitre() !!}
+        {!! $tDonnees[15]->getTexte() !!}
     </div>
 
-    <div id="conceptionDisplay" class="contentDisplayFormation" style="display: none;">
-    {!! $tDonnees["titre16"] !!}
-    {!! $tDonnees["texte16"] !!}
+    <div id="programmationDisplay" class="contentDisplayFormation" style="display: none;">
+        {!! $tDonnees[16]->getTitre() !!}
+        {!! $tDonnees[16]->getTexte() !!}
     </div>
 
-    <div id="conceptionDisplay" class="contentDisplayFormation" style="display: none;">
-    {!! $tDonnees["titre17"] !!}
-    {!! $tDonnees["texte17"] !!}
+    <div id="autresDisplay" class="contentDisplayFormation" style="display: none;">
+        {!! $tDonnees[17]->getTitre() !!}
+        {!! $tDonnees[17]->getTexte() !!}
     </div>
 
     <picture id="drawFormation3">
