@@ -83,10 +83,14 @@ class ControleurProjet
         // Recupère les textes
         $tDonnees = Texte::getTexteArray([1, 2, 3, 4, 5, 9,]);
 
+        // Recupère les recommandations
+        $diplomeID = Projet::getProjetById($id)->getDiplomeId();
+        $tRecommandations = Projet::getProjetsByDiplomeId($diplomeID, $id);
+
         // Recupère les projets
         $tProjet = Projet::getProjetById($id);
 
         // Affiche la fiche du projet
-        echo App::getBlade()->run('fiche', ['tDonnees' => $tDonnees, 'tProjet' => $tProjet]);
+        echo App::getBlade()->run('fiche', ['tDonnees' => $tDonnees, 'tProjet' => $tProjet, 'tRecommandations' => $tRecommandations]);
     }
 }

@@ -7,50 +7,88 @@ Projets
 <?php $this->startSection('contenu'); ?>
 <h1 class="mainTitle"> LES PROJETS </h1>
 
-<form action="index.php" method="get">
+<div class="blackGlass">
+ <div class="accordion">
+ <div id="accordionSub" class="center">
+ <img src="./liaisons/svg/ion_filter.svg" alt="">
+ <h2>Filtrer les projets</h2>
+ </div>
+ <img id="accodionArrow" src="./liaisons/svg/ep_arrow-up-bold.svg" alt="">
+ </div>
+ <div class="panel">
+ <form action="index.php" method="get">
  <input type="hidden" name="controleur" value="projet">
  <input type="hidden" name="action" value="filtrer">
- <div>
- <label for="Annee1">Année 1</label>
- <input type="checkbox" name="annee[]" id="Annee1" value="1">
- </div>
- <div>
- <label for="Annee2">Année 2</label>
- <input type="checkbox" name="annee[]" id="Annee2" value="2">
- </div>
- <div>
- <label for="Annee3">Année 3</label>
- <input type="checkbox" name="annee[]" id="Annee3" value="3">
- </div>
- <br>
- <br>
- <br>
- <div>
- <label for="Axe1">Conception</label>
- <input type="checkbox" name="axe_id[]" id="Axe1" value="1">
- </div>
- <div>
- <label for="Axe2">Intégration</label>
- <input type="checkbox" name="axe_id[]" id="Axe2" value="2">
- </div>
- <div>
- <label for="Axe3">Programmation</label>
- <input type="checkbox" name="axe_id[]" id="Axe3" value="3">
- </div>
- <div>
- <label for="Axe4">Médias</label>
- <input type="checkbox" name="axe_id[]" id="Axe4" value="4">
- </div>
- <div>
- <label for="Axe5">Autres</label>
- <input type="checkbox" name="axe_id[]" id="Axe5" value="5">
- </div>
- <button type="submit">Envoyer</button>
-</form>
 
-<?php
-print_r($tProjets)
-?>
+
+ <div class="filtreWrapper">
+ <h2>PAR ANNÉES</h2>
+ <div class="filtreInputWrapper">
+ <div>
+ <input type="checkbox" class="filtreInput" name="annee[]" id="Annee1" value="1" <?php if(isset($_GET['annee']) && in_array('1', $_GET['annee'])) echo 'checked'; ?>>
+ <label class="filtreLabel" for="Annee1">Année 1</label>
+ </div>
+ <div>
+ <input type="checkbox" class="filtreInput" name="annee[]" id="Annee2" value="2" <?php if(isset($_GET['annee']) && in_array('2', $_GET['annee'])) echo 'checked'; ?>>
+ <label class="filtreLabel" for="Annee2">Année 2</label >
+ </div>
+ <div>
+ <input type="checkbox" class="filtreInput" name="annee[]" id="Annee3" value="3" <?php if(isset($_GET['annee']) && in_array('3', $_GET['annee'])) echo 'checked'; ?>>
+ <label class="filtreLabel" for="Annee3">Année 3</label>
+ </div>
+ </div>
+ </div>
+
+ <div class="filtreWrapper">
+ <h2>PAR AXE DE FORMATION</h2>
+ <div class="filtreInputWrapper">
+ <div>
+ <input type="checkbox" class="filtreInput" name="axe_id[]" id="Axe1" value="1" <?php if(isset($_GET['axe_id']) && in_array('1', $_GET['axe_id'])) echo 'checked'; ?>>
+ <label class="filtreLabel" for="Axe1">Conception</label>
+ </div>
+ <div>
+ <input type="checkbox" class="filtreInput" name="axe_id[]" id="Axe2" value="2" <?php if(isset($_GET['axe_id']) && in_array('2', $_GET['axe_id'])) echo 'checked'; ?>>
+ <label class="filtreLabel" for="Axe2">Intégration</label>
+ </div>
+ <div>
+ <input type="checkbox" class="filtreInput" name="axe_id[]" id="Axe3" value="3" <?php if(isset($_GET['axe_id']) && in_array('3', $_GET['axe_id'])) echo 'checked'; ?>>
+ <label class="filtreLabel" for="Axe3">Programmation</label>
+ </div>
+ <div>
+ <input type="checkbox" class="filtreInput" name="axe_id[]" id="Axe4" value="4" <?php if(isset($_GET['axe_id']) && in_array('4', $_GET['axe_id'])) echo 'checked'; ?>>
+ <label class="filtreLabel" for="Axe4">Médias</label>
+ </div>
+ <div>
+ <input type="checkbox" class="filtreInput" name="axe_id[]" id="Axe5" value="5" <?php if(isset($_GET['axe_id']) && in_array('5', $_GET['axe_id'])) echo 'checked'; ?>>
+ <label class="filtreLabel" for="Axe5">Autres</label>
+ </div>
+ </div>
+ </div>
+
+ <hr>
+ <div class="filtreButtonWrapper">
+ <button class="mainButton" type="submit">Envoyer</button>
+ <a class="secondButton" href="index.php?controleur=projet&action=index">Effacer</a>
+ </div>
+ </form>
+ </div>
+</div>
+
+<section id="projetWrapperGrid">
+
+
+<?php $__currentLoopData = $tProjets; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $projet): $loop = $this->incrementLoopIndices();  ?>
+<div class="blackGlass">
+ <img class="imgProjet" src="./liaisons/imgProjets/600/<?php echo $projet->getDiplomeId(); ?>_<?php echo $projet->getId(); ?>_01.png" alt="">
+ <h2><?php echo $projet->getTitre(); ?></h2>
+ <a class="mainButton" href="index.php?controleur=projet&action=fiche&id=<?php echo $projet->getId(); ?>">Voir le projet</a>
+</div>
+<?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+
+
+
+</section>
 
 <?php $this->stopSection(); ?>
 
@@ -58,6 +96,29 @@ print_r($tProjets)
 <script>
  document.querySelector("body").classList.add("dark-theme")
  document.querySelector("body").classList.remove("light-theme")
+</script>
+
+<script>
+ var acc = document.getElementsByClassName("accordion");
+ var i;
+
+ for (i = 0; i < acc.length; i++) {
+ acc[i].addEventListener("click", function() {
+ /* Toggle between adding and removing the "active" class,
+ to highlight the button that controls the panel */
+ this.classList.toggle("active");
+
+ /* Toggle between hiding and showing the active panel */
+ var panel = this.nextElementSibling;
+ if (panel.style.display === "block") {
+ panel.style.display = "none";
+ $("#accodionArrow").attr("src", "./liaisons/svg/ep_arrow-up-bold.svg");
+ } else {
+ panel.style.display = "block";
+ $("#accodionArrow").attr("src", "./liaisons/svg/ep_arrow-down-bold.svg");
+ }
+ });
+ }
 </script>
 <?php $this->stopSection(); ?>
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('gabarit'); } ?>
