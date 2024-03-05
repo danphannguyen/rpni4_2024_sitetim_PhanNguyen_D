@@ -29,30 +29,15 @@ class ControleurProjet
     // Affiche les projets selon les filtres
     public function filtrer(): void
     {
-        // Récupère les paramètres de l'URL
-        if (isset($_GET['annee'])) {
-            print_r($_GET['annee']);
-            // Si on a une année, on vérifie si c'est un tableau
-            if (!is_array($_GET['annee'])) {
-                // Si ce n'est pas un tableau, on le transforme en tableau
-                echo $_GET['annee'];
-                $annee = array_map('intval', str_split($_GET['annee']));
-                print_r($annee);
-            }
-            // Si c'est un tableau, on le garde tel quel
-            $annee = $_GET['annee'];
-        } else {
-            // Si on n'a pas d'année, on met la variable à null
-            $annee = null;
-        }
-
+        // Récupère les paramètres
+        $annee = isset($_GET['annee']) ? $_GET['annee'] : null;
         $axe = isset($_GET['axe_id']) ? $_GET['axe_id'] : null;
 
         // Vérifie si on a un filtre
         $filter = ($annee !== null) || ($axe !== null);
 
         if ($filter) {
-            if($annee && $axe){
+            if ($annee && $axe) {
                 // Si on a une année et un axe
 
                 // Récupère les cours selon l'année
@@ -65,12 +50,14 @@ class ControleurProjet
                         if ($projet->getAssoAxeCourAxe()[0]->getId() == $value) {
                             // Si le projet est dans l'axe
                             $check = 1;
+                            break;
                         } else {
                             // Si le projet n'est pas dans l'axe
                             $check = 0;
                         }
                     }
                     if ($check === 0) {
+                        // Supprime le projet
                         unset($tProjets[$keyProjet]);
                     }
                 }
