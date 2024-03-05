@@ -224,7 +224,7 @@ Accueil
     <a href="index.php?controleur=site&action=stage" id="homeCtaStage" class="mainButton">Nos stages et alternance</a>
 </section>
 
-<h2 id="titleFinissant" class="mainTitle">NOS FINISSANTS</h2>
+<h2 id="titleFinissant" class="mainTitle">NOS DIPLÔMÉ.E.S</h2>
 <picture id="bgAccueil4">
     <source srcset="./liaisons/img/Bg_Accueil_4_992.png" media="(min-width: 992px)" />
     <source srcset="./liaisons/img/Bg_Accueil_4_768.png" media="(min-width: 768px)" />

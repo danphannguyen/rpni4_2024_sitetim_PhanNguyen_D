@@ -3,7 +3,7 @@
  <a href="index.php?controleur=site&action=accueil">
  <li id="navAccueilContainer">Accueil</li>
  </a>
- <a href="index.php?controleur=site&action=projets">
+ <a href="index.php?controleur=projet&action=index">
  <li id="navProjetContainer">Projets</li>
  </a>
  <li id="navLogoContainer"><img src="./liaisons/svg/logo-black.svg" alt=""></li>

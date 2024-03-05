@@ -8,6 +8,7 @@ use App\App;
 use App\Modeles\Texte;
 use App\Modeles\Finissant;
 use App\Modeles\Responsable;
+use App\Modeles\Projet;
 
 
 
@@ -50,9 +51,5 @@ class ControleurSite
         echo App::getBlade()->run('formation', ['tDonnees' => $tDonnees]);
     }
 
-    public function projets(): void
-    {
-        $tDonnees = Texte::getTexteArray([1,2,3,4,5,9,]);
-        echo App::getBlade()->run('projets', ['tDonnees' => $tDonnees]);
-    }
+
 }

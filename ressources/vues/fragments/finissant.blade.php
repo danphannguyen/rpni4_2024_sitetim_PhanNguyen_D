@@ -12,5 +12,4 @@
         </figure> <button type="button" data-target="{{$finissant->getId()}}" class="mainButton finissantButton modalBtn">Voir</button>
     </div>
 </li>
-
 @endforeach

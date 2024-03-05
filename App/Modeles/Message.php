@@ -90,6 +90,9 @@ class Message
         // PRÉPARER LA VUE DU COURRIEL
         $contenu = $this->contenu;
         $tDonnees = ["contenuCourriel" => $contenu];
+        $from = $this->courriel;
+        $responsable_id = $this->responsable_id;
+
         $vueTexte = App::getBlade()->run('courriels.messages.courrielTexte', $tDonnees); // Vue par défaut pour client low tech
         $vueHtml =  App::getBlade()->run('courriels.messages.courrielHtml' , $tDonnees); // Vue utilisée si supportée par le client
 

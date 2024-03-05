@@ -1,18 +1,5 @@
 $(document).ready(function () {
 
-    // ========== Récupération des données JSON ==========
-    fetch('./liaisons/json/messages-erreur_form.json')
-        .then(response => response.json()) // Convertir la réponse en JSON
-        .then(data => {
-            // Sauvegarder les données JSON dans une variable
-            let errorJsonData = data;
-
-        })
-        .catch(error => {
-            console.error('Une erreur s\'est produite lors de la récupération du JSON:', error);
-        });
-
-
     //  ========== Fonctions de validation des champs du formulaire de contact ==========
 
     function Erreur(id, message) {
