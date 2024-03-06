@@ -11,6 +11,7 @@ use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+use App\Modeles\Responsable;
 
 class Message
 {
@@ -89,9 +90,9 @@ class Message
     public function envoyerCourriel(){
         // PRÉPARER LA VUE DU COURRIEL
         $contenu = $this->contenu;
-        $tDonnees = ["contenuCourriel" => $contenu];
+        $tDonnees = ["contenuCourriel" => $contenu, "courriel" => $this->courriel, "prenom_nom" => $this->prenom_nom, "telephone" => $this->telephone];
         $from = $this->courriel;
-        $responsable_id = $this->responsable_id;
+        $responsable_courriel = Responsable::getResponsableById($this->responsable_id)->getCourriel();
 
         $vueTexte = App::getBlade()->run('courriels.messages.courrielTexte', $tDonnees); // Vue par défaut pour client low tech
         $vueHtml =  App::getBlade()->run('courriels.messages.courrielHtml' , $tDonnees); // Vue utilisée si supportée par le client
@@ -106,7 +107,7 @@ class Message
             //->bcc('bcc@example.com')
             //->replyTo('fabien@example.com')
             //->priority(Email::PRIORITY_HIGH)
-            ->subject('Test courriel avec le serveur SMTP de Gmail.')
+            ->subject($this->sujet)
             ->text($vueTexte)
             ->html($vueHtml);
 

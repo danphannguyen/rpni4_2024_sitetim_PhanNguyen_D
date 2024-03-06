@@ -21,7 +21,7 @@ class ControleurMessage
     {
 
         $telephone = "";
-        $humain = 1;
+        $humain = 0;
 
         // ========= Validation des données ==========
 
@@ -55,6 +55,17 @@ class ControleurMessage
             $tConsentement = true;
             $tTelephone = true;
         }
+
+        if (isset($_POST['g-recaptcha-response']) && $_POST['g-recaptcha-response'] !== "") {
+            $captcha=$_POST['g-recaptcha-response'];
+            $secretKey = "6LfoOI8pAAAAAJ1UnYl_16cjrpA1lUbRnZywmuGq";
+            $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
+            $response = file_get_contents($url);
+            $responseKeys = json_decode($response,true);
+            $tHumain = $validation->validerBoolean($responseKeys["success"], 'humain');
+        }
+
+        var_dump($responseKeys);
 
         // Création d'un array pour contenir les erreurs de validation
         $tValidation = array(
@@ -100,18 +111,12 @@ class ControleurMessage
             } catch (\Exception $e) {
                 $_SESSION['retroaction'] = "aborter";
             }
-
         } else {
             // Si un ou plusieurs états sont à false, retourner à la page de contact avec les erreurs
             $_SESSION['validation'] = $tValidation;
             $_SESSION['retroaction'] = "completer";
         }
 
-        print_r(json_encode($tValidation));
-        echo "<br>";
-        echo $_SESSION['retroaction'];
-
         header('Location: index.php?controleur=site&action=contact');
-
     }
 }

@@ -9,6 +9,7 @@ use App\Modeles\Texte;
 use App\Modeles\Finissant;
 use App\Modeles\Responsable;
 use App\Modeles\Projet;
+use App\Utilitaires\Validation;
 
 
 
@@ -30,7 +31,8 @@ class ControleurSite
     {
         $tResponsables = Responsable::getResponsables();
         $tDonnees = Texte::getTexteArray([1,2,3,4,5,9,]);
-        echo App::getBlade()->run('contact', ['tDonnees' => $tDonnees, 'tResponsables' => $tResponsables]);
+        $validation = new Validation();
+        echo App::getBlade()->run('contact', ['tDonnees' => $tDonnees, 'tResponsables' => $tResponsables, 'validation' => $validation]);
     }
 
     public function stage(): void

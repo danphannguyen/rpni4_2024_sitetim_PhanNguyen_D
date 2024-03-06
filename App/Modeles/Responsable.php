@@ -33,6 +33,18 @@ class Responsable
         return $stmt->fetchAll();
     }
 
+    public static function getResponsableById($id)
+    {
+        $pdo = App::getPDO();
+        $requete = "SELECT * FROM responsables WHERE id = :id";
+        $stmt = $pdo->prepare($requete);
+        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+        $stmt->execute();
+        // Instancier les objets Texte avec les résultats de la requête
+        $stmt->setFetchMode(PDO::FETCH_CLASS, Responsable::class);
+        return $stmt->fetch();
+    }
+
     // Méthode Get
     public function getId(): int
     {

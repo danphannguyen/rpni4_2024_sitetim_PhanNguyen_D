@@ -31,9 +31,7 @@ Contact
 
         <!-- Ici on affiche le message à l'aide du contenu de la variable de session retroaction et la fonction getRetroactions -->
         @if (isset($_SESSION['retroaction']))
-        <?php
-        echo $validation->getRetroactions($_SESSION['retroaction']);
-        ?>
+        {{ $validation->getRetroactions($_SESSION['retroaction']) }}
         @endif
 
     </div>
@@ -99,7 +97,7 @@ Contact
         </div>
 
         <div id="telephoneWrapper" class="contactInput" style="display: none;">
-            <label for="telephone">Téléphone<span class="formRequireStar">*</span> (123) 629-7974 </label>
+            <label for="telephone">Téléphone<span class="formRequireStar">*</span> 123 629-7974 </label>
             <input type="text" id="telephone" name="telephone" pattern="^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$" @if (isset($_SESSION['validation'])) value='{{ $_SESSION['validation']['telephone']['value'] }}' @endif>
 
             <!-- BladeOne si la variable de Session validation est set et que le state n'est pas à true on affiche l'erreur -->
@@ -139,6 +137,8 @@ Contact
             @endif
         </div>
 
+        <div class="g-recaptcha" data-sitekey="6LfoOI8pAAAAAOruj1Zh2gJwFjl7l0i-C-z9hed6"></div>
+
         <button id="contactSubmitBtn" class="mainButton" type="submit">Envoyer</button>
     </form>
 </div>
@@ -162,7 +162,7 @@ Contact
         @foreach ($tResponsables as $responsable)
         <div class="phoneProfileTemplate">
             <div class="phoneProfileLeft">
-                <div class="imgPhoneProfile" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(./liaisons/img/{{$responsable->getNom()}}.jpg), lightgray 50% / cover no-repeat; background-size: cover;"></div>
+                <div class="imgPhoneProfile" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(./liaisons/img/{{$responsable->getNom()}}.webp), lightgray 50% / cover no-repeat; background-size: cover;"></div>
                 <div class="phoneProfileText">
                     <h3> {{$responsable->getPrenom() . ' ' . $responsable->getNom()}} </h3>
                     <span>{{ $responsable->getResponsabilite() }}</span>
@@ -197,7 +197,7 @@ Contact
 
 
 @section('script')
-
+<script src='https://www.google.com/recaptcha/api.js' async defer></script>
 <script src="./liaisons/js/contact.js"></script>
 <script src="./liaisons/js/validation.js"></script>
 
