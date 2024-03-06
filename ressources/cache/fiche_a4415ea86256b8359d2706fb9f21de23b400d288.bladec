@@ -25,7 +25,7 @@ Fiche
  </div>
 </div>
 
-<img class="imgFiche1" src="./liaisons/imgProjets/1200/<?php echo $tProjet->getDiplomeId(); ?>_<?php echo $tProjet->getId(); ?>_01.png" alt="">
+<img class="imgFiche1" src="./liaisons/imgProjets/1200/<?php echo $tProjet->getDiplomeId(); ?>_<?php echo $tProjet->getId(); ?>_01.webp" alt="">
 
 <div class="blackGlass">
  <div id="projectTopWrapper">
@@ -40,7 +40,7 @@ Fiche
 
 <section class="imageWrapper">
  <?php 
- $chemin_image2 = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() . '_' . $tProjet->getId() . '_02.png';
+ $chemin_image2 = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() . '_' . $tProjet->getId() . '_02.webp';
  ?>
 
  <?php if(file_exists($chemin_image2)): ?>
@@ -48,7 +48,7 @@ Fiche
  <?php endif; ?>
 
  <?php 
- $chemin_image3 = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() . '_' . $tProjet->getId() . '_03.png';
+ $chemin_image3 = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() . '_' . $tProjet->getId() . '_03.webp';
  ?>
 
  <?php if(file_exists($chemin_image3)): ?>
@@ -138,7 +138,7 @@ Fiche
 <?php $__currentLoopData = $tProjet->getAssoEtapes(); $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $key => $etape): $loop = $this->incrementLoopIndices();  ?>
 <?php 
-$chemin_image_etape = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() . '_' . $tProjet->getId() . '_e' . $etape->getId() . '.png';
+$chemin_image_etape = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() . '_' . $tProjet->getId() . '_e' . $etape->getId() . '.webp';
  ?>
 
 <div class="etapeWrapper blackGlass">
@@ -163,7 +163,7 @@ $chemin_image_etape = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() .
  <?php $__currentLoopData = $tRecommandations; $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $recommandation): $loop = $this->incrementLoopIndices();  ?>
  <div class="blackGlass">
- <img class="imgProjet" src="./liaisons/imgProjets/600/<?php echo $recommandation->getDiplomeId(); ?>_<?php echo $recommandation->getId(); ?>_01.png" alt="">
+ <img class="imgProjet" src="./liaisons/imgProjets/600/<?php echo $recommandation->getDiplomeId(); ?>_<?php echo $recommandation->getId(); ?>_01.webp" alt="">
  <h2><?php echo $recommandation->getTitre(); ?></h2>
  <a class="mainButton" href="index.php?controleur=projet&action=fiche&id=<?php echo $recommandation->getId(); ?>">Voir le projet</a>
  </div>

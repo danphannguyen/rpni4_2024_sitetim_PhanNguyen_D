@@ -7,19 +7,19 @@ Accueil
 @section('contenu')
 
 <picture id="bgAccueil1">
-    <source srcset="./liaisons/img/Bg_Accueil_1_992.png" media="(min-width: 992px)" />
-    <source srcset="./liaisons/img/Bg_Accueil_1_768.png" media="(min-width: 768px)" />
-    <img class="bgImg" src="./liaisons/img/Bg_Accueil_1_320.png" alt="image décorative 1" />
+    <source srcset="./liaisons/img/Bg_Accueil_1_992.webp" media="(min-width: 992px)" />
+    <source srcset="./liaisons/img/Bg_Accueil_1_768.webp" media="(min-width: 768px)" />
+    <img class="bgImg" src="./liaisons/img/Bg_Accueil_1_320.webp" alt="image décorative 1" />
 </picture>
 
 <picture id="drawAccueil1">
-    <source srcset="./liaisons/img/Dessin_Accueil_1_992.png" media="(min-width: 992px)" />
-    <img src="./liaisons/img/Dessin_Accueil_1_768.png" alt="dessin décoratif" />
+    <source srcset="./liaisons/img/Dessin_Accueil_1_992.webp" media="(min-width: 992px)" />
+    <img src="./liaisons/img/Dessin_Accueil_1_768.webp" alt="dessin décoratif" />
 </picture>
 
 <picture id="drawAccueil2">
-    <source srcset="./liaisons/img/Dessin_Accueil_2_992.png" media="(min-width: 992px)" />
-    <img src="./liaisons/img/Dessin_Accueil_2_768.png" alt="dessin décoratif" />
+    <source srcset="./liaisons/img/Dessin_Accueil_2_992.webp" media="(min-width: 992px)" />
+    <img src="./liaisons/img/Dessin_Accueil_2_768.webp" alt="dessin décoratif" />
 </picture>
 
 
@@ -169,9 +169,9 @@ Accueil
     </div>
 
     <picture id="bgAccueil2">
-        <source srcset="./liaisons/img/Bg_Accueil_2_992.png" media="(min-width: 992px)" />
-        <source srcset="./liaisons/img/Bg_Accueil_2_768.png" media="(min-width: 768px)" />
-        <img class="bgImg" src="./liaisons/img/Bg_Accueil_2_320.png" alt="image décorative 1" />
+        <source srcset="./liaisons/img/Bg_Accueil_2_992.webp" media="(min-width: 992px)" />
+        <source srcset="./liaisons/img/Bg_Accueil_2_768.webp" media="(min-width: 768px)" />
+        <img class="bgImg" src="./liaisons/img/Bg_Accueil_2_320.webp" alt="image décorative 1" />
     </picture>
 
 </section>
@@ -187,9 +187,9 @@ Accueil
 <section id="homeFourthSection">
 
     <picture id="bgAccueil3">
-        <source srcset="./liaisons/img/Bg_Accueil_3_992.png" media="(min-width: 992px)" />
-        <source srcset="./liaisons/img/Bg_Accueil_3_768.png" media="(min-width: 768px)" />
-        <img class="bgImg" src="./liaisons/img/Bg_Accueil_3_320.png" alt="image décorative 1" />
+        <source srcset="./liaisons/img/Bg_Accueil_3_992.webp" media="(min-width: 992px)" />
+        <source srcset="./liaisons/img/Bg_Accueil_3_768.webp" media="(min-width: 768px)" />
+        <img class="bgImg" src="./liaisons/img/Bg_Accueil_3_320.webp" alt="image décorative 1" />
     </picture>
 
     <h2 class="mainTitle">LES DÉBOUCHÉS</h2>
@@ -226,9 +226,9 @@ Accueil
 
 <h2 id="titleFinissant" class="mainTitle">NOS DIPLÔMÉ.E.S</h2>
 <picture id="bgAccueil4">
-    <source srcset="./liaisons/img/Bg_Accueil_4_992.png" media="(min-width: 992px)" />
-    <source srcset="./liaisons/img/Bg_Accueil_4_768.png" media="(min-width: 768px)" />
-    <img class="bgImg" src="./liaisons/img/Bg_Accueil_4_320.png" alt="image décorative 1" />
+    <source srcset="./liaisons/img/Bg_Accueil_4_992.webp" media="(min-width: 992px)" />
+    <source srcset="./liaisons/img/Bg_Accueil_4_768.webp" media="(min-width: 768px)" />
+    <img class="bgImg" src="./liaisons/img/Bg_Accueil_4_320.webp" alt="image décorative 1" />
 </picture>
 <section id="finissantsSection" class="block-center-center blackGlass">
 

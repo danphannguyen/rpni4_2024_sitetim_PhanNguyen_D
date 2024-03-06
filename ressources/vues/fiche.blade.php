@@ -23,7 +23,7 @@ Fiche
     </div>
 </div>
 
-<img class="imgFiche1" src="./liaisons/imgProjets/1200/{!! $tProjet->getDiplomeId() !!}_{!! $tProjet->getId() !!}_01.png" alt="">
+<img class="imgFiche1" src="./liaisons/imgProjets/1200/{!! $tProjet->getDiplomeId() !!}_{!! $tProjet->getId() !!}_01.webp" alt="">
 
 <div class="blackGlass">
     <div id="projectTopWrapper">
@@ -38,7 +38,7 @@ Fiche
 
 <section class="imageWrapper">
     @php
-    $chemin_image2 = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() . '_' . $tProjet->getId() . '_02.png';
+    $chemin_image2 = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() . '_' . $tProjet->getId() . '_02.webp';
     @endphp
 
     @if (file_exists($chemin_image2))
@@ -46,7 +46,7 @@ Fiche
     @endif
 
     @php
-    $chemin_image3 = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() . '_' . $tProjet->getId() . '_03.png';
+    $chemin_image3 = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() . '_' . $tProjet->getId() . '_03.webp';
     @endphp
 
     @if (file_exists($chemin_image3))
@@ -135,7 +135,7 @@ Fiche
 @if($tProjet->getAssoEtapes() != null)
 @foreach($tProjet->getAssoEtapes() as $key => $etape)
 @php
-$chemin_image_etape = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() . '_' . $tProjet->getId() . '_e' . $etape->getId() . '.png';
+$chemin_image_etape = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() . '_' . $tProjet->getId() . '_e' . $etape->getId() . '.webp';
 @endphp
 
 <div class="etapeWrapper blackGlass">
@@ -158,7 +158,7 @@ $chemin_image_etape = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() .
 
         @foreach($tRecommandations as $recommandation)
         <div class="blackGlass">
-            <img class="imgProjet" src="./liaisons/imgProjets/600/{!! $recommandation->getDiplomeId() !!}_{!! $recommandation->getId() !!}_01.png" alt="">
+            <img class="imgProjet" src="./liaisons/imgProjets/600/{!! $recommandation->getDiplomeId() !!}_{!! $recommandation->getId() !!}_01.webp" alt="">
             <h2>{!! $recommandation->getTitre() !!}</h2>
             <a class="mainButton" href="index.php?controleur=projet&action=fiche&id={!! $recommandation->getId() !!}">Voir le projet</a>
         </div>

@@ -9,16 +9,16 @@ Accueil
 <div style="position: relative;">
     <h1 class="mainTitle"> Nous rejoindre </h1>
     <picture id="drawRejoindre1">
-        <source srcset="./liaisons/img/Dessin_Rejoindre_1_992.png" media="(min-width: 992px)" />
-        <source srcset="./liaisons/img/Dessin_Rejoindre_1_768.png" media="(min-width: 768px)" />
-        <img src="./liaisons/img/Dessin_Rejoindre_1_320.png" alt="dessin décoratif 1" />
+        <source srcset="./liaisons/img/Dessin_Rejoindre_1_992.webp" media="(min-width: 992px)" />
+        <source srcset="./liaisons/img/Dessin_Rejoindre_1_768.webp" media="(min-width: 768px)" />
+        <img src="./liaisons/img/Dessin_Rejoindre_1_320.webp" alt="dessin décoratif 1" />
     </picture>
 </div>
 
 <picture id="bgRejoindre1">
-    <source srcset="./liaisons/img/Bg_Rejoindre_1_992.png" media="(min-width: 992px)" />
-    <source srcset="./liaisons/img/Bg_Rejoindre_1_768.png" media="(min-width: 768px)" />
-    <img class="bgImg" src="./liaisons/img/Bg_Rejoindre_1_320.png" alt="dessin décoratif" />
+    <source srcset="./liaisons/img/Bg_Rejoindre_1_992.webp" media="(min-width: 992px)" />
+    <source srcset="./liaisons/img/Bg_Rejoindre_1_768.webp" media="(min-width: 768px)" />
+    <img class="bgImg" src="./liaisons/img/Bg_Rejoindre_1_320.webp" alt="dessin décoratif" />
 </picture>
 
 
@@ -47,9 +47,9 @@ Accueil
         {!! $tDonnees[8]->getTexte() !!}
 
         <picture id="drawRejoindre2">
-            <source srcset="./liaisons/img/Dessin_Rejoindre_2_992.png" media="(min-width: 992px)" />
-            <source srcset="./liaisons/img/Dessin_Rejoindre_2_768.png" media="(min-width: 768px)" />
-            <img src="./liaisons/img/Dessin_Rejoindre_2_320.png" alt="dessin décoratif 1" />
+            <source srcset="./liaisons/img/Dessin_Rejoindre_2_992.webp" media="(min-width: 992px)" />
+            <source srcset="./liaisons/img/Dessin_Rejoindre_2_768.webp" media="(min-width: 768px)" />
+            <img src="./liaisons/img/Dessin_Rejoindre_2_320.webp" alt="dessin décoratif 1" />
         </picture>
 
     </section>
@@ -60,9 +60,9 @@ Accueil
         {!! $tDonnees[7]->getTexte() !!}
 
         <picture id="drawRejoindre3">
-            <source srcset="./liaisons/img/Dessin_Rejoindre_3_992.png" media="(min-width: 992px)" />
-            <source srcset="./liaisons/img/Dessin_Rejoindre_3_768.png" media="(min-width: 768px)" />
-            <img src="./liaisons/img/Dessin_Rejoindre_3_320.png" alt="dessin décoratif 1" />
+            <source srcset="./liaisons/img/Dessin_Rejoindre_3_992.webp" media="(min-width: 992px)" />
+            <source srcset="./liaisons/img/Dessin_Rejoindre_3_768.webp" media="(min-width: 768px)" />
+            <img src="./liaisons/img/Dessin_Rejoindre_3_320.webp" alt="dessin décoratif 1" />
         </picture>
     </section>
 </div>
@@ -73,9 +73,9 @@ Accueil
     {!! $tDonnees[6]->getTexte() !!}
 
     <picture id="drawRejoindre4">
-        <source srcset="./liaisons/img/Dessin_Rejoindre_4_992.png" media="(min-width: 992px)" />
-        <source srcset="./liaisons/img/Dessin_Rejoindre_4_768.png" media="(min-width: 768px)" />
-        <img src="./liaisons/img/Dessin_Rejoindre_4_320.png" alt="dessin décoratif 1" />
+        <source srcset="./liaisons/img/Dessin_Rejoindre_4_992.webp" media="(min-width: 992px)" />
+        <source srcset="./liaisons/img/Dessin_Rejoindre_4_768.webp" media="(min-width: 768px)" />
+        <img src="./liaisons/img/Dessin_Rejoindre_4_320.webp" alt="dessin décoratif 1" />
     </picture>
 
 </section>

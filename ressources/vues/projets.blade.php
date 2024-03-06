@@ -8,9 +8,9 @@ Projets
 <h1 class="mainTitle"> LES PROJETS </h1>
 
 <picture id="bgStage1">
-    <source srcset="./liaisons/img/Bg_Stage_1_992.png" media="(min-width: 992px)" />
-    <source srcset="./liaisons/img/Bg_Stage_1_768.png" media="(min-width: 768px)" />
-    <img class="bgImg" src="./liaisons/img/Bg_Stage_1_320.png" alt="image décorative 1" />
+    <source srcset="./liaisons/img/Bg_Stage_1_992.webp" media="(min-width: 992px)" />
+    <source srcset="./liaisons/img/Bg_Stage_1_768.webp" media="(min-width: 768px)" />
+    <img class="bgImg" src="./liaisons/img/Bg_Stage_1_320.webp" alt="image décorative 1" />
 </picture>
 
 <div class="blackGlass">
@@ -85,7 +85,7 @@ Projets
 
 @foreach($tProjets as $projet)
 <div class="blackGlass">
-    <img class="imgProjet" src="./liaisons/imgProjets/600/{!! $projet->getDiplomeId() !!}_{!! $projet->getId() !!}_01.png" alt="">
+    <img class="imgProjet" src="./liaisons/imgProjets/600/{!! $projet->getDiplomeId() !!}_{!! $projet->getId() !!}_01.webp" alt="">
     <h2>{!! $projet->getTitre() !!}</h2>
     <a class="mainButton" href="index.php?controleur=projet&action=fiche&id={!! $projet->getId() !!}">Voir le projet</a>
 </div>
