@@ -7,6 +7,12 @@ Projets
 @section('contenu')
 <h1 class="mainTitle"> LES PROJETS </h1>
 
+<picture id="bgStage1">
+    <source srcset="./liaisons/img/Bg_Stage_1_992.png" media="(min-width: 992px)" />
+    <source srcset="./liaisons/img/Bg_Stage_1_768.png" media="(min-width: 768px)" />
+    <img class="bgImg" src="./liaisons/img/Bg_Stage_1_320.png" alt="image décorative 1" />
+</picture>
+
 <div class="blackGlass">
     <div class="accordion">
         <div id="accordionSub" class="center">

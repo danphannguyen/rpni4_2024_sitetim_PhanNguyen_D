@@ -20,11 +20,12 @@ Fiche
  </div>
 
  <div id="projectRightWrapper">
- <p>Réalisation d’une exposition en ligne, de type immergent, pour l’exposition sur Anticoste. Pour ce projet nous devions réaliser une interface avec les critères que notre client nous avait fixée. Dans ses critères nous pouvions retrouver l’obligation d’avoir une boussole dans notre navigation ainsi que de faire une mises-en-page permettant aux œuvres d’être mis en valeur.</p>
+ <?php echo $tProjet->getDescription(); ?>
+
  </div>
 </div>
 
-<img class="imgFiche1" src="./liaisons/imgProjets/1200/1_1_01.png" alt="">
+<img class="imgFiche1" src="./liaisons/imgProjets/1200/<?php echo $tProjet->getDiplomeId(); ?>_<?php echo $tProjet->getId(); ?>_01.png" alt="">
 
 <div class="blackGlass">
  <div id="projectTopWrapper">
@@ -33,19 +34,143 @@ Fiche
  </div>
  <div id="projectBottomWrapper">
  <span>À L’AIDE DE</span>
- <h2>FIGMA, ADOBE PHOTOSHOP, ADOBE ILLUSTRATOR</h2>
+ <h2><?php echo $tProjet->getTechnologies(); ?></h2>
  </div>
 </div>
 
-<?php
+<section class="imageWrapper">
+ <?php 
+ $chemin_image2 = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() . '_' . $tProjet->getId() . '_02.png';
+ ?>
+
+ <?php if(file_exists($chemin_image2)): ?>
+ <img class="imgFiche" src="<?php echo \htmlentities($chemin_image2??'', ENT_QUOTES, 'UTF-8', false); ?>" alt="">
+ <?php endif; ?>
+
+ <?php 
+ $chemin_image3 = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() . '_' . $tProjet->getId() . '_03.png';
+ ?>
+
+ <?php if(file_exists($chemin_image3)): ?>
+ <img class="imgFiche" src="<?php echo \htmlentities($chemin_image3??'', ENT_QUOTES, 'UTF-8', false); ?>" alt="">
+ <?php endif; ?>
+</section>
+
+<section id="finissantWrapper" class="blackGlass">
+ <div class="headerFinissant">
+ <span>PROJET RÉALISÉ PAR</span>
+ <h2><?php echo \htmlentities($tProjet->getAssoDiplome()[0]->getPrenom()??'', ENT_QUOTES, 'UTF-8', false); ?> <?php echo \htmlentities($tProjet->getAssoDiplome()[0]->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?></h2>
+ </div>
+ <div class="contentFinissant">
+ <p>
+ J’ai débuté mon parcours avec un premier DEC en graphisme au collège Ahuntsic à Montréal. J’y ai appris la grosse base du HTML et du CSS avec Brackets. Ces petits cours de multimédias m’ont davantage donné le goût d’en apprendre sur le web et la création de sites web. Voulant changer d’air, je me suis dirigé vers une ville un peu plus tranquille qu’est la belle ville de Québec. Après quelques recherches, mon choix s’est arrêté, sans trop de difficulté, sur le programme que m’offrait le Cégep de Sainte-Foy. J’y ai, donc, poursuivi mes études dans le domaine numérique. Dans ce programme, j’ai pu améliorer mes connaissances du HTML et du CSS et même en voir beaucoup plus que je ne l’avais imaginé. J’ai même pu réaliser des design d’interface beaucoup plus poussés et réfléchis, grâce des recherches, des diagrammes et des interviews utilisateur qui me permettait de mieux viser mon public cible.
+ </p>
+ </div>
+</section>
+
+<section id="finissantContentWapper">
+ <div class="blackGlass">
+ <h2>INTÉRÊTS</h2>
+ <div class="interetWrapper">
+ <div class="interetRow">
+ <label class="interetLabel" for="IConception">
+ <h3>Conception</h3>
+ </label>
+ <div class="subInteret">
+ <progress class="interetProgress" id="IConception" value="<?php echo \htmlentities($tProjet->getAssoDiplome()[0]->getInteretConception()??'', ENT_QUOTES, 'UTF-8', false); ?>" max="10"></progress>
+ <span><?php echo \htmlentities($tProjet->getAssoDiplome()[0]->getInteretConception()??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+ </div>
+
+ <div class="interetRow">
+ <label class="interetLabel" for="IMedias">
+ <h3>Médias</h3>
+ </label>
+ <div class="subInteret">
+ <progress class="interetProgress" id="IMedias" value="<?php echo \htmlentities($tProjet->getAssoDiplome()[0]->getInteretMedias()??'', ENT_QUOTES, 'UTF-8', false); ?>" max="10"></progress>
+ <span><?php echo \htmlentities($tProjet->getAssoDiplome()[0]->getInteretMedias()??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+ </div>
+
+ <div class="interetRow">
+ <label class="interetLabel" for="IIntegration">
+ <h3>Intégration</h3>
+ </label>
+ <div class="subInteret">
+ <progress class="interetProgress" id="IIntegration" value="<?php echo \htmlentities($tProjet->getAssoDiplome()[0]->getInteretIntegration()??'', ENT_QUOTES, 'UTF-8', false); ?>" max="10"></progress>
+ <span><?php echo \htmlentities($tProjet->getAssoDiplome()[0]->getInteretIntegration()??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+ </div>
+
+ <div class="interetRow">
+ <label class="interetLabel" for="IProgrammation">
+ <h3>Programmation</h3>
+ </label>
+ <div class="subInteret">
+ <progress class="interetProgress" id="IProgrammation" value="<?php echo \htmlentities($tProjet->getAssoDiplome()[0]->getInteretProgrammation()??'', ENT_QUOTES, 'UTF-8', false); ?>" max="10"></progress>
+ <span><?php echo \htmlentities($tProjet->getAssoDiplome()[0]->getInteretProgrammation()??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+ </div>
+
+ </div>
+ </div>
+ <div class="blackGlass">
+ <h2>Réseaux</h2>
+ <div class="reseauxWrapper">
+ <a class="externalLink" href="<?php echo \htmlentities($tProjet->getAssoDiplome()[0]->getLinkedin()??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ Linkedin
+ <img src="./liaisons/svg/arrow-up.svg" alt="Liens vers Linkedin">
+ </a>
+ <a class="externalLink" href="mailto:<?php echo \htmlentities($tProjet->getAssoDiplome()[0]->getCourriel()??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ Courriel
+ <img src="./liaisons/svg/arrow-up.svg" alt="Envoyer un courriel">
+ </a>
+
+ <?php if($tProjet->getAssoDiplome()[0]->getSiteWeb() != null): ?>
+ <a class="externalLink" href="<?php echo \htmlentities($tProjet->getAssoDiplome()[0]->getSiteWeb()??'', ENT_QUOTES, 'UTF-8', false); ?>">Site web<img src="./liaisons/svg/arrow-up.svg" alt="Liens vers le site web"></a>
+ <?php endif; ?>
+
+ </div>
+ </div>
+</section>
+
+<?php if($tProjet->getAssoEtapes() != null): ?>
+<?php $__currentLoopData = $tProjet->getAssoEtapes(); $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $key => $etape): $loop = $this->incrementLoopIndices();  ?>
+<?php 
+$chemin_image_etape = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() . '_' . $tProjet->getId() . '_e' . $etape->getId() . '.png';
+ ?>
+
+<div class="etapeWrapper blackGlass">
+ <img class="etapeImg" src="<?php echo \htmlentities($chemin_image_etape??'', ENT_QUOTES, 'UTF-8', false); ?>" alt="">
+ <div>
+ <h2><?php echo \htmlentities($etape->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?></h2>
+ <?php echo $etape->getDescription(); ?>
+
+ </div>
+</div>
+<?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+<?php endif; ?>
 
 
-// print_r($tProjet->getCoursId());
+<section id="recommandation">
+
+ <h2>VOIR D'AUTRES PROJETS PAR <?php echo \htmlentities($tProjet->getAssoDiplome()[0]->getPrenom()??'', ENT_QUOTES, 'UTF-8', false); ?></h2>
+
+ <div id="recommandationWrapper">
 
 
-print_r($tProjet->getAssoAxeCourAxe()[1]->getNom());
+ <?php $__currentLoopData = $tRecommandations; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $recommandation): $loop = $this->incrementLoopIndices();  ?>
+ <div class="blackGlass">
+ <img class="imgProjet" src="./liaisons/imgProjets/600/<?php echo $recommandation->getDiplomeId(); ?>_<?php echo $recommandation->getId(); ?>_01.png" alt="">
+ <h2><?php echo $recommandation->getTitre(); ?></h2>
+ <a class="mainButton" href="index.php?controleur=projet&action=fiche&id=<?php echo $recommandation->getId(); ?>">Voir le projet</a>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
 
-?>
+</section>
 
 <?php $this->stopSection(); ?>
 

@@ -56,7 +56,7 @@ class Projet
     public static function getProjetsByDiplomeId($diplomeId, $projetId)
     {
         $pdo = App::getPDO();
-        $requete = "SELECT * FROM projets WHERE diplome_id = :id AND id != :projet_id";
+        $requete = "SELECT * FROM projets WHERE diplome_id = :id AND id != :projet_id LIMIT 3";
         $stmt = $pdo->prepare($requete);
         $stmt->bindValue(":id", $diplomeId, PDO::PARAM_INT);
         $stmt->bindValue(":projet_id", $projetId, PDO::PARAM_INT);
