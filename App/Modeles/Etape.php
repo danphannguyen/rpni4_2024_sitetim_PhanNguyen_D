@@ -27,7 +27,7 @@ class Etape
     {
         try {
             $pdo = App::getPDO();
-            $requete = "SELECT * FROM etapes WHERE projet_id = :idProjet";
+            $requete = "SELECT * FROM etapes WHERE projet_id = :idProjet ORDER BY ordre ASC";
             $stmt = $pdo->prepare($requete);
             $stmt->bindValue(":idProjet", $idProjet, PDO::PARAM_INT);
             $stmt->execute();

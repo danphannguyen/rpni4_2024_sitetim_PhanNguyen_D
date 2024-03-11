@@ -2182,6 +2182,7 @@ progress[value]::-moz-progress-bar {
   flex-direction: column;
   width: 100%;
   text-align: start;
+  gap: 10px;
 }
 
 #projectRightWrapper p {

@@ -93,6 +93,11 @@ $(document).ready(function () {
         // On envoie le message d'erreur et l'id du container à la fonction Erreur ( id, message)
         Erreur($(this), error);
     });
+    
+    let silvain = document.getElementById('#silvain').
+    silvain.addEventListener("click", function () {
+        console.log("click");
+    })
 
     window.addEventListener('load', () => {
         const $recaptcha = document.querySelector('#g-recaptcha-response');

@@ -16,6 +16,9 @@ Fiche
             <span class="technoTag">{{$axe->getNom()}}</span>
             @endforeach
         </div>
+        @if($tProjet->getUrl() != null)
+        <a class="mainButton" href="{{$tProjet->getUrl()}}">Voir le projet</a>
+        @endif
     </div>
 
     <div id="projectRightWrapper">
@@ -61,7 +64,7 @@ Fiche
     </div>
     <div class="contentFinissant">
         <p>
-            J’ai débuté mon parcours avec un premier DEC en graphisme au collège Ahuntsic à Montréal. J’y ai appris la grosse base du HTML et du CSS avec Brackets. Ces petits cours de multimédias m’ont davantage donné le goût d’en apprendre sur le web et la création de sites web. Voulant changer d’air, je me suis dirigé vers une ville un peu plus tranquille qu’est la belle ville de Québec. Après quelques recherches, mon choix s’est arrêté, sans trop de difficulté, sur le programme que m’offrait le Cégep de Sainte-Foy. J’y ai, donc, poursuivi mes études dans le domaine numérique. Dans ce programme, j’ai pu améliorer mes connaissances du HTML et du CSS et même en voir beaucoup plus que je ne l’avais imaginé. J’ai même pu réaliser des design d’interface beaucoup plus poussés et réfléchis, grâce des recherches, des diagrammes et des interviews utilisateur qui me permettait de mieux viser mon public cible.
+            {!! $tProjet->getAssoDiplome()[0]->getPresentation() !!}
         </p>
     </div>
 </section>
@@ -132,22 +135,24 @@ Fiche
     </div>
 </section>
 
-@if($tProjet->getAssoEtapes() != null)
-@foreach($tProjet->getAssoEtapes() as $key => $etape)
-@php
-$chemin_image_etape = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() . '_' . $tProjet->getId() . '_e' . $etape->getId() . '.webp';
-@endphp
+<section>
+    @if($tProjet->getAssoEtapes() != null)
+    <h2 class="mainTitle">Les Étapes</h2>
+    @foreach($tProjet->getAssoEtapes() as $key => $etape)
+    @php
+    $chemin_image_etape = './liaisons/imgProjets/1200/' . $tProjet->getDiplomeId() . '_' . $tProjet->getId() . '_e' . $etape->getId() . '.webp';
+    @endphp
 
-<div class="etapeWrapper blackGlass">
-    <img class="etapeImg" src="{{ $chemin_image_etape }}" alt="">
-    <div>
-        <h2>{{$etape->getNom()}}</h2>
-        {!!$etape->getDescription()!!}
+    <div class="etapeWrapper blackGlass">
+        <img class="etapeImg" src="{{ $chemin_image_etape }}" alt="">
+        <div>
+            <h2>{{$etape->getNom()}}</h2>
+            {!!$etape->getDescription()!!}
+        </div>
     </div>
-</div>
-@endforeach
-@endif
-
+    @endforeach
+    @endif
+</section>
 
 <section id="recommandation">
 
