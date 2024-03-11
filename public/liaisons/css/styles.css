@@ -2653,7 +2653,7 @@ progress[value]::-moz-progress-bar {
     left: 0;
     bottom: 0;
     z-index: -10;
-    max-width: 60%;
+    max-width: 40%;
   }
 
   /* ========== Rejoindre Page ========== */
@@ -2668,7 +2668,7 @@ progress[value]::-moz-progress-bar {
   }
 
   #bgRejoindre1 {
-    max-width: 80%;
+    max-width: 60%;
   }
 
   /* ===== Formation Page ===== */

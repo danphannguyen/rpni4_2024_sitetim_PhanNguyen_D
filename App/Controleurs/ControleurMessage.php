@@ -65,8 +65,6 @@ class ControleurMessage
             $tHumain = $validation->validerBoolean($responseKeys["success"], 'humain');
         }
 
-        var_dump($responseKeys);
-
         // Création d'un array pour contenir les erreurs de validation
         $tValidation = array(
             "prenom_nom" => array("state" => $tPrenom, "value" => $_POST['prenom_nom']),
