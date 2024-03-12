@@ -101,7 +101,7 @@ class Message
         //       Remplacer bbbbbb par: Votre nouvelle adresse courriel Gmail (où va le courriel -> pour tester).
         $courriel = new Email();
         $courriel->from('timcsfoy@gmail.com')
-            ->to('ndan101104@gmail.com')
+            ->to()
             //->cc('cc@example.com')
             //->bcc('bcc@example.com')
             //->replyTo('fabien@example.com')

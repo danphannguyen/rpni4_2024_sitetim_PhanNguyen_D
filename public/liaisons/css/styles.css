@@ -343,7 +343,7 @@ h3--desktop,
 }
 
 *:focus-visible {
-  outline: 2px var(--clr-mainbutton) solid !important;
+  outline: 2px var(--clr-checked-bg) solid !important;
 }
 
 body {
