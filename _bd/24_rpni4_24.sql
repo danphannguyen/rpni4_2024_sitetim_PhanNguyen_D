@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:8889
--- Généré le : lun. 11 mars 2024 à 19:27
--- Version du serveur : 5.7.39
--- Version de PHP : 8.2.0
+-- Host: localhost
+-- Generation Time: Mar 12, 2024 at 09:32 PM
+-- Server version: 10.5.22-MariaDB
+-- PHP Version: 8.2.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,22 +18,22 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `rpni4_siteTim_db`
+-- Database: `24_rpni4_24`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `axes`
+-- Table structure for table `axes`
 --
 
 CREATE TABLE `axes` (
   `id` int(11) UNSIGNED NOT NULL,
-  `nom` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `nom` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `axes`
+-- Dumping data for table `axes`
 --
 
 INSERT INTO `axes` (`id`, `nom`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `axes` (`id`, `nom`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `axes_cours`
+-- Table structure for table `axes_cours`
 --
 
 CREATE TABLE `axes_cours` (
@@ -56,7 +56,7 @@ CREATE TABLE `axes_cours` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `axes_cours`
+-- Dumping data for table `axes_cours`
 --
 
 INSERT INTO `axes_cours` (`id`, `axe_id`, `cours_id`) VALUES
@@ -100,18 +100,18 @@ INSERT INTO `axes_cours` (`id`, `axe_id`, `cours_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `cours`
+-- Table structure for table `cours`
 --
 
 CREATE TABLE `cours` (
   `id` int(11) UNSIGNED NOT NULL,
-  `nom` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `nom` varchar(50) NOT NULL,
   `session` tinyint(1) NOT NULL,
   `annee` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `cours`
+-- Dumping data for table `cours`
 --
 
 INSERT INTO `cours` (`id`, `nom`, `session`, `annee`) VALUES
@@ -143,25 +143,25 @@ INSERT INTO `cours` (`id`, `nom`, `session`, `annee`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `diplomes`
+-- Table structure for table `diplomes`
 --
 
 CREATE TABLE `diplomes` (
   `id` int(11) UNSIGNED NOT NULL,
-  `nom` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `prenom` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `presentation` text COLLATE utf8_unicode_ci,
-  `interet_conception` enum('1','2','3','4','5','6','7','8','9','10') COLLATE utf8_unicode_ci NOT NULL DEFAULT '5' COMMENT 'De 1 (pas vraiment ma force) à 10 (vraiment expert)',
-  `interet_medias` enum('1','2','3','4','5','6','7','8','9','10') COLLATE utf8_unicode_ci NOT NULL DEFAULT '5' COMMENT 'De 1 (pas vraiment ma force) à 10 (vraiment expert)',
-  `interet_integration` enum('1','2','3','4','5','6','7','8','9','10') COLLATE utf8_unicode_ci NOT NULL DEFAULT '5' COMMENT 'De 1 (pas vraiment ma force) à 10 (vraiment expert)',
-  `interet_programmation` enum('1','2','3','4','5','6','7','8','9','10') COLLATE utf8_unicode_ci NOT NULL DEFAULT '5' COMMENT 'De 1 (pas vraiment ma force) à 10 (vraiment expert)',
-  `courriel` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `linkedin` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `site_web` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL
+  `nom` varchar(50) DEFAULT NULL,
+  `prenom` varchar(50) DEFAULT NULL,
+  `presentation` text DEFAULT NULL,
+  `interet_conception` enum('1','2','3','4','5','6','7','8','9','10') NOT NULL DEFAULT '5' COMMENT 'De 1 (pas vraiment ma force) à 10 (vraiment expert)',
+  `interet_medias` enum('1','2','3','4','5','6','7','8','9','10') NOT NULL DEFAULT '5' COMMENT 'De 1 (pas vraiment ma force) à 10 (vraiment expert)',
+  `interet_integration` enum('1','2','3','4','5','6','7','8','9','10') NOT NULL DEFAULT '5' COMMENT 'De 1 (pas vraiment ma force) à 10 (vraiment expert)',
+  `interet_programmation` enum('1','2','3','4','5','6','7','8','9','10') NOT NULL DEFAULT '5' COMMENT 'De 1 (pas vraiment ma force) à 10 (vraiment expert)',
+  `courriel` varchar(100) DEFAULT NULL,
+  `linkedin` varchar(100) DEFAULT NULL,
+  `site_web` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `diplomes`
+-- Dumping data for table `diplomes`
 --
 
 INSERT INTO `diplomes` (`id`, `nom`, `prenom`, `presentation`, `interet_conception`, `interet_medias`, `interet_integration`, `interet_programmation`, `courriel`, `linkedin`, `site_web`) VALUES
@@ -189,19 +189,19 @@ INSERT INTO `diplomes` (`id`, `nom`, `prenom`, `presentation`, `interet_concepti
 -- --------------------------------------------------------
 
 --
--- Structure de la table `etapes`
+-- Table structure for table `etapes`
 --
 
 CREATE TABLE `etapes` (
   `id` int(11) UNSIGNED NOT NULL,
-  `nom` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `nom` varchar(255) NOT NULL,
   `ordre` int(11) NOT NULL,
-  `description` varchar(3000) COLLATE utf8_unicode_ci NOT NULL,
+  `description` varchar(3000) NOT NULL,
   `projet_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `etapes`
+-- Dumping data for table `etapes`
 --
 
 INSERT INTO `etapes` (`id`, `nom`, `ordre`, `description`, `projet_id`) VALUES
@@ -283,23 +283,23 @@ INSERT INTO `etapes` (`id`, `nom`, `ordre`, `description`, `projet_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `messages`
+-- Table structure for table `messages`
 --
 
 CREATE TABLE `messages` (
   `id` int(11) UNSIGNED NOT NULL COMMENT 'Clé primaire',
-  `prenom_nom` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `courriel` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `telephone` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `prenom_nom` varchar(255) NOT NULL,
+  `courriel` varchar(255) NOT NULL,
+  `telephone` varchar(50) NOT NULL,
   `consentement` tinyint(1) NOT NULL,
-  `sujet` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `contenu` text COLLATE utf8_unicode_ci,
-  `dateheure_creation` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `sujet` varchar(255) DEFAULT NULL,
+  `contenu` text DEFAULT NULL,
+  `dateheure_creation` datetime NOT NULL DEFAULT current_timestamp(),
   `responsable_id` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `messages`
+-- Dumping data for table `messages`
 --
 
 INSERT INTO `messages` (`id`, `prenom_nom`, `courriel`, `telephone`, `consentement`, `sujet`, `contenu`, `dateheure_creation`, `responsable_id`) VALUES
@@ -310,21 +310,21 @@ INSERT INTO `messages` (`id`, `prenom_nom`, `courriel`, `telephone`, `consenteme
 -- --------------------------------------------------------
 
 --
--- Structure de la table `projets`
+-- Table structure for table `projets`
 --
 
 CREATE TABLE `projets` (
   `id` int(11) UNSIGNED NOT NULL,
-  `titre` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `technologies` text COLLATE utf8_unicode_ci NOT NULL,
-  `description` text COLLATE utf8_unicode_ci,
-  `url` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `diplome_id` int(11) UNSIGNED NOT NULL DEFAULT '0',
-  `cours_id` int(11) UNSIGNED NOT NULL DEFAULT '0'
+  `titre` varchar(250) DEFAULT NULL,
+  `technologies` text NOT NULL,
+  `description` text DEFAULT NULL,
+  `url` varchar(200) DEFAULT NULL,
+  `diplome_id` int(11) UNSIGNED NOT NULL DEFAULT 0,
+  `cours_id` int(11) UNSIGNED NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `projets`
+-- Dumping data for table `projets`
 --
 
 INSERT INTO `projets` (`id`, `titre`, `technologies`, `description`, `url`, `diplome_id`, `cours_id`) VALUES
@@ -390,20 +390,20 @@ INSERT INTO `projets` (`id`, `titre`, `technologies`, `description`, `url`, `dip
 -- --------------------------------------------------------
 
 --
--- Structure de la table `responsables`
+-- Table structure for table `responsables`
 --
 
 CREATE TABLE `responsables` (
   `id` int(11) UNSIGNED NOT NULL,
-  `responsabilite` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `courriel` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `prenom` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `nom` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `telephone` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+  `responsabilite` varchar(50) NOT NULL,
+  `courriel` varchar(100) DEFAULT NULL,
+  `prenom` varchar(50) DEFAULT NULL,
+  `nom` varchar(50) DEFAULT NULL,
+  `telephone` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Coordination, webmestre...';
 
 --
--- Déchargement des données de la table `responsables`
+-- Dumping data for table `responsables`
 --
 
 INSERT INTO `responsables` (`id`, `responsabilite`, `courriel`, `prenom`, `nom`, `telephone`) VALUES
@@ -415,21 +415,21 @@ INSERT INTO `responsables` (`id`, `responsabilite`, `courriel`, `prenom`, `nom`,
 -- --------------------------------------------------------
 
 --
--- Structure de la table `temoignages`
+-- Table structure for table `temoignages`
 --
 
 CREATE TABLE `temoignages` (
   `id` int(11) UNSIGNED NOT NULL,
-  `temoin` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `titre_poste` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
-  `entreprise` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `url_entreprise` text COLLATE utf8_unicode_ci NOT NULL,
-  `temoignage` text COLLATE utf8_unicode_ci NOT NULL,
-  `annee_diplomation` varchar(4) COLLATE utf8_unicode_ci NOT NULL
+  `temoin` varchar(50) NOT NULL,
+  `titre_poste` varchar(150) NOT NULL,
+  `entreprise` varchar(100) NOT NULL,
+  `url_entreprise` text NOT NULL,
+  `temoignage` text NOT NULL,
+  `annee_diplomation` varchar(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Témoignages-Professions des diplômés du programme';
 
 --
--- Déchargement des données de la table `temoignages`
+-- Dumping data for table `temoignages`
 --
 
 INSERT INTO `temoignages` (`id`, `temoin`, `titre_poste`, `entreprise`, `url_entreprise`, `temoignage`, `annee_diplomation`) VALUES
@@ -460,18 +460,18 @@ INSERT INTO `temoignages` (`id`, `temoin`, `titre_poste`, `entreprise`, `url_ent
 -- --------------------------------------------------------
 
 --
--- Structure de la table `textes`
+-- Table structure for table `textes`
 --
 
 CREATE TABLE `textes` (
   `id` int(11) UNSIGNED NOT NULL,
-  `titre` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `texte` text COLLATE utf8_unicode_ci,
+  `titre` varchar(100) DEFAULT NULL,
+  `texte` text DEFAULT NULL,
   `epic` smallint(6) UNSIGNED NOT NULL COMMENT 'No epic associe au texte pour le développeur'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `textes`
+-- Dumping data for table `textes`
 --
 
 INSERT INTO `textes` (`id`, `titre`, `texte`, `epic`) VALUES
@@ -504,17 +504,17 @@ INSERT INTO `textes` (`id`, `titre`, `texte`, `epic`) VALUES
 (27, '<h2>Finaux</h2>', '            <h3>Stages finaux</h3>\r\n            <p>La dernière session de la formation est divisée en deux parties. La première comporte des cours réalisés en mode intensif d’une durée de sept semaines. La seconde est entièrement consacrée à un stage rémunéré en entreprise.</p>\r\n            <p>Les étudiant.e.s de troisième année sont par la suite immédiatement disponibles à l’emploi.</p>', 1);
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `axes`
+-- Indexes for table `axes`
 --
 ALTER TABLE `axes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `axes_cours`
+-- Indexes for table `axes_cours`
 --
 ALTER TABLE `axes_cours`
   ADD PRIMARY KEY (`id`),
@@ -523,33 +523,33 @@ ALTER TABLE `axes_cours`
   ADD KEY `cours_id` (`cours_id`);
 
 --
--- Index pour la table `cours`
+-- Indexes for table `cours`
 --
 ALTER TABLE `cours`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `diplomes`
+-- Indexes for table `diplomes`
 --
 ALTER TABLE `diplomes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `etapes`
+-- Indexes for table `etapes`
 --
 ALTER TABLE `etapes`
   ADD PRIMARY KEY (`id`),
   ADD KEY `projet_id` (`projet_id`);
 
 --
--- Index pour la table `messages`
+-- Indexes for table `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`),
   ADD KEY `responsable_id` (`responsable_id`);
 
 --
--- Index pour la table `projets`
+-- Indexes for table `projets`
 --
 ALTER TABLE `projets`
   ADD PRIMARY KEY (`id`),
@@ -557,106 +557,106 @@ ALTER TABLE `projets`
   ADD KEY `cours_id` (`cours_id`);
 
 --
--- Index pour la table `responsables`
+-- Indexes for table `responsables`
 --
 ALTER TABLE `responsables`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `temoignages`
+-- Indexes for table `temoignages`
 --
 ALTER TABLE `temoignages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `textes`
+-- Indexes for table `textes`
 --
 ALTER TABLE `textes`
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `axes`
+-- AUTO_INCREMENT for table `axes`
 --
 ALTER TABLE `axes`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `axes_cours`
+-- AUTO_INCREMENT for table `axes_cours`
 --
 ALTER TABLE `axes_cours`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
--- AUTO_INCREMENT pour la table `cours`
+-- AUTO_INCREMENT for table `cours`
 --
 ALTER TABLE `cours`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT pour la table `diplomes`
+-- AUTO_INCREMENT for table `diplomes`
 --
 ALTER TABLE `diplomes`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT pour la table `etapes`
+-- AUTO_INCREMENT for table `etapes`
 --
 ALTER TABLE `etapes`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
--- AUTO_INCREMENT pour la table `messages`
+-- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Clé primaire', AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `projets`
+-- AUTO_INCREMENT for table `projets`
 --
 ALTER TABLE `projets`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 
 --
--- AUTO_INCREMENT pour la table `responsables`
+-- AUTO_INCREMENT for table `responsables`
 --
 ALTER TABLE `responsables`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT pour la table `temoignages`
+-- AUTO_INCREMENT for table `temoignages`
 --
 ALTER TABLE `temoignages`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
--- AUTO_INCREMENT pour la table `textes`
+-- AUTO_INCREMENT for table `textes`
 --
 ALTER TABLE `textes`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- Contraintes pour les tables déchargées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `axes_cours`
+-- Constraints for table `axes_cours`
 --
 ALTER TABLE `axes_cours`
   ADD CONSTRAINT `axes_cours_ibfk_1` FOREIGN KEY (`cours_id`) REFERENCES `cours` (`id`),
   ADD CONSTRAINT `axes_cours_ibfk_2` FOREIGN KEY (`axe_id`) REFERENCES `axes` (`id`);
 
 --
--- Contraintes pour la table `messages`
+-- Constraints for table `messages`
 --
 ALTER TABLE `messages`
   ADD CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`responsable_id`) REFERENCES `responsables` (`id`);
 
 --
--- Contraintes pour la table `projets`
+-- Constraints for table `projets`
 --
 ALTER TABLE `projets`
   ADD CONSTRAINT `projets_ibfk_1` FOREIGN KEY (`diplome_id`) REFERENCES `diplomes` (`id`),
