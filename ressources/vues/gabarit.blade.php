@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="../public/liaisons/css/styles.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="shortcut icon" href="../public/liaisons/svg/logo-black.svg" type="image/x-icon">
+        <meta name="robots" content="noindex, follow">
         <meta charset="utf-8">
     </head>
     <body class="light-theme">
